@@ -2,6 +2,16 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/userinterface/workareas/StudentRole/RateProfessorJPanel.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/userinterface/workareas/facultyrole/ScheduleCourseJPanel.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/userinterface/workareas/StudentRole/SearchJPanel.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/userinterface/workareas/facultyrole/ModifyCourseJPanel.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/userinterface/workareas/StudentRole/StudentJPanel.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/userinterface/adminrole/AdminCreateCourse.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/userinterface/authentication/LoginJPanel.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/userinterface/main/MainJFrame.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/userinterface/workareas/StudentRole/StudentRegisterCourseJPanel.java</file>
+        </group>
     </open-files>
 </project-private>
