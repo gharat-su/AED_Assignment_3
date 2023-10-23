@@ -45,12 +45,15 @@ public class MainJFrame extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(1000, 1000));
         setSize(new java.awt.Dimension(1000, 1000));
 
-        MainSplitPane.setSize(new java.awt.Dimension(1000, 1000));
+        MainSplitPane.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
+        MainSplitPane.setBounds(new java.awt.Rectangle(0, 0, 1000, 800));
 
-        mainMenuJPanel.setPreferredSize(new java.awt.Dimension(300, 1000));
+        mainMenuJPanel.setMinimumSize(new java.awt.Dimension(800, 300));
+        mainMenuJPanel.setPreferredSize(new java.awt.Dimension(200, 1000));
         mainMenuJPanel.setSize(new java.awt.Dimension(300, 1000));
 
         btnLogin.setText("Login");
+        btnLogin.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoginActionPerformed(evt);
@@ -58,6 +61,7 @@ public class MainJFrame extends javax.swing.JFrame {
         });
 
         btnRegister.setText("Register");
+        btnRegister.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnRegister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegisterActionPerformed(evt);
@@ -68,11 +72,12 @@ public class MainJFrame extends javax.swing.JFrame {
         mainMenuJPanel.setLayout(mainMenuJPanelLayout);
         mainMenuJPanelLayout.setHorizontalGroup(
             mainMenuJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(mainMenuJPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(mainMenuJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnRegister, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
-                    .addComponent(btnLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainMenuJPanelLayout.createSequentialGroup()
+                .addContainerGap(314, Short.MAX_VALUE)
+                .addGroup(mainMenuJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(btnRegister, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
+                    .addComponent(btnLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(242, 242, 242))
         );
         mainMenuJPanelLayout.setVerticalGroup(
             mainMenuJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -81,13 +86,13 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addComponent(btnLogin)
                 .addGap(26, 26, 26)
                 .addComponent(btnRegister)
-                .addContainerGap(596, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         MainSplitPane.setLeftComponent(mainMenuJPanel);
 
-        CardSequencePanel.setPreferredSize(new java.awt.Dimension(700, 1000));
-        CardSequencePanel.setSize(new java.awt.Dimension(700, 1000));
+        CardSequencePanel.setPreferredSize(new java.awt.Dimension(800, 800));
+        CardSequencePanel.setSize(new java.awt.Dimension(800, 500));
         CardSequencePanel.setLayout(new java.awt.CardLayout());
         MainSplitPane.setRightComponent(CardSequencePanel);
 
