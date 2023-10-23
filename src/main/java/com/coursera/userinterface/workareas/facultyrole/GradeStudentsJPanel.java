@@ -4,17 +4,24 @@
  */
 package main.java.com.coursera.userinterface.workareas.facultyrole;
 
+import javax.swing.JPanel;
+
 /**
  *
  * @author sghar
  */
 public class GradeStudentsJPanel extends javax.swing.JPanel {
 
+    javax.swing.JPanel CardSequencePanel;
+    
     /**
      * Creates new form GradeStudentsJPanel
+     * @param gsjp
      */
-    public GradeStudentsJPanel() {
+    
+    public GradeStudentsJPanel(JPanel gsjp) {
         initComponents();
+        this.CardSequencePanel = gsjp;
     }
 
     /**
@@ -26,19 +33,44 @@ public class GradeStudentsJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnBacklog = new javax.swing.JButton();
+
+        btnBacklog.setText("<<Back");
+        btnBacklog.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBacklogActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 492, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnBacklog)
+                .addContainerGap(414, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 357, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnBacklog)
+                .addContainerGap(329, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnBacklogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBacklogActionPerformed
+        // TODO add your handling code here:
+        FacultyJPanel facultyJPanel;
+        facultyJPanel = new FacultyJPanel(CardSequencePanel);
+        CardSequencePanel.removeAll();
+        CardSequencePanel.add("Back", facultyJPanel);
+        ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
+    }//GEN-LAST:event_btnBacklogActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBacklog;
     // End of variables declaration//GEN-END:variables
 }

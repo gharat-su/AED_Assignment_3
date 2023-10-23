@@ -4,17 +4,23 @@
  */
 package main.java.com.coursera.userinterface.workareas.facultyrole;
 
+import javax.swing.JPanel;
+import main.java.com.coursera.userinterface.authentication.LoginJPanel;
+
 /**
  *
  * @author sghar
  */
-public class FacultyWorkAreaJPanel extends javax.swing.JPanel {
+public class FacultyJPanel extends javax.swing.JPanel {
 
+    javax.swing.JPanel CardSequencePanel;
     /**
      * Creates new form FacultyWorkAreaJPanel
+     * @param fjp
      */
-    public FacultyWorkAreaJPanel() {
+    public FacultyJPanel(JPanel fjp) {
         initComponents();
+        this.CardSequencePanel=fjp;
     }
 
     /**
@@ -26,12 +32,11 @@ public class FacultyWorkAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        facultySplitPane = new javax.swing.JSplitPane();
-        facultyMenuJPanel = new javax.swing.JPanel();
         btnCreateCourse = new javax.swing.JButton();
         btnModifyCourse = new javax.swing.JButton();
         btnScheduleCourse = new javax.swing.JButton();
-        facultyContentAreaJPanel = new javax.swing.JPanel();
+        btnBacklog = new javax.swing.JButton();
+        btnGradeStudents = new javax.swing.JButton();
 
         btnCreateCourse.setText("Create Course");
         btnCreateCourse.addActionListener(new java.awt.event.ActionListener() {
@@ -54,82 +59,109 @@ public class FacultyWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout facultyMenuJPanelLayout = new javax.swing.GroupLayout(facultyMenuJPanel);
-        facultyMenuJPanel.setLayout(facultyMenuJPanelLayout);
-        facultyMenuJPanelLayout.setHorizontalGroup(
-            facultyMenuJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(facultyMenuJPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(facultyMenuJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnScheduleCourse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnCreateCourse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnModifyCourse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        facultyMenuJPanelLayout.setVerticalGroup(
-            facultyMenuJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(facultyMenuJPanelLayout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(btnCreateCourse)
-                .addGap(18, 18, 18)
-                .addComponent(btnModifyCourse)
-                .addGap(18, 18, 18)
-                .addComponent(btnScheduleCourse)
-                .addContainerGap(154, Short.MAX_VALUE))
-        );
+        btnBacklog.setText("<<Back");
+        btnBacklog.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBacklogActionPerformed(evt);
+            }
+        });
 
-        facultySplitPane.setLeftComponent(facultyMenuJPanel);
-
-        javax.swing.GroupLayout facultyContentAreaJPanelLayout = new javax.swing.GroupLayout(facultyContentAreaJPanel);
-        facultyContentAreaJPanel.setLayout(facultyContentAreaJPanelLayout);
-        facultyContentAreaJPanelLayout.setHorizontalGroup(
-            facultyContentAreaJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 376, Short.MAX_VALUE)
-        );
-        facultyContentAreaJPanelLayout.setVerticalGroup(
-            facultyContentAreaJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 305, Short.MAX_VALUE)
-        );
-
-        facultySplitPane.setRightComponent(facultyContentAreaJPanel);
+        btnGradeStudents.setText("Grade Students");
+        btnGradeStudents.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGradeStudentsActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(facultySplitPane)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnBacklog)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 25, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnGradeStudents, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnCreateCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnModifyCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnScheduleCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(29, 29, 29))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(facultySplitPane)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnBacklog)
+                .addGap(47, 47, 47)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnModifyCourse, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
+                    .addComponent(btnScheduleCourse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCreateCourse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnGradeStudents, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
+                .addGap(36, 36, 36))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCreateCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateCourseActionPerformed
         // TODO add your handling code here:
-        CreateCourseJPanel createcourse = new CreateCourseJPanel();
-        facultySplitPane.setRightComponent(createcourse);
+        CreateCourseJPanel createcourseJPanel;
+            createcourseJPanel = new CreateCourseJPanel(CardSequencePanel);
+            CardSequencePanel.removeAll();
+            CardSequencePanel.add("CreateCourse",createcourseJPanel );
+            ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
     }//GEN-LAST:event_btnCreateCourseActionPerformed
 
     private void btnModifyCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifyCourseActionPerformed
         // TODO add your handling code here:
-        ModifyCourseJPanel modifycourse = new ModifyCourseJPanel();
-        facultySplitPane.setRightComponent(modifycourse);
+        ModifyCourseJPanel modifycourseJPanel;
+            modifycourseJPanel = new ModifyCourseJPanel(CardSequencePanel);
+            CardSequencePanel.removeAll();
+            CardSequencePanel.add("ModifyCourse",modifycourseJPanel );
+            ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
     }//GEN-LAST:event_btnModifyCourseActionPerformed
 
     private void btnScheduleCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnScheduleCourseActionPerformed
         // TODO add your handling code here:
-        ScheduleCourseJPanel schedulecourse = new ScheduleCourseJPanel();
-        facultySplitPane.setRightComponent(schedulecourse);
+        ScheduleCourseJPanel schedulecourseJPanel;
+            schedulecourseJPanel = new ScheduleCourseJPanel(CardSequencePanel);
+            CardSequencePanel.removeAll();
+            CardSequencePanel.add("ScheduleCourse",schedulecourseJPanel );
+            ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
     }//GEN-LAST:event_btnScheduleCourseActionPerformed
+
+    private void btnBacklogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBacklogActionPerformed
+        // TODO add your handling code here:
+        LoginJPanel loginJPanel;
+        loginJPanel = new LoginJPanel(CardSequencePanel);
+        CardSequencePanel.removeAll();
+        CardSequencePanel.add("Back", loginJPanel);
+        ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
+    }//GEN-LAST:event_btnBacklogActionPerformed
+
+    private void btnGradeStudentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGradeStudentsActionPerformed
+        // TODO add your handling code here:
+        GradeStudentsJPanel gradestudentsJPanel;
+            gradestudentsJPanel = new GradeStudentsJPanel(CardSequencePanel);
+            CardSequencePanel.removeAll();
+            CardSequencePanel.add("GradeStudents",gradestudentsJPanel );
+            ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
+    }//GEN-LAST:event_btnGradeStudentsActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBacklog;
     private javax.swing.JButton btnCreateCourse;
+    private javax.swing.JButton btnGradeStudents;
     private javax.swing.JButton btnModifyCourse;
     private javax.swing.JButton btnScheduleCourse;
-    private javax.swing.JPanel facultyContentAreaJPanel;
-    private javax.swing.JPanel facultyMenuJPanel;
-    private javax.swing.JSplitPane facultySplitPane;
     // End of variables declaration//GEN-END:variables
 }
