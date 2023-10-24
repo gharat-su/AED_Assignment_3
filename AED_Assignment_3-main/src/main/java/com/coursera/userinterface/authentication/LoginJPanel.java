@@ -5,8 +5,10 @@
 package main.java.com.coursera.userinterface.authentication;
 
 import javax.swing.JPanel;
+import main.java.com.coursera.model.CourseDirectory;
 import main.java.com.coursera.userinterface.workareas.StudentRole.RateProfessorJPanel;
 import main.java.com.coursera.userinterface.workareas.StudentRole.StudentJPanel;
+import main.java.com.coursera.userinterface.workareas.facultyrole.FacultyJPanel;
 
 /**
  *
@@ -18,9 +20,11 @@ public class LoginJPanel extends javax.swing.JPanel {
      * Creates new form LoginJPanel
      */
     javax.swing.JPanel CardSequencePanel;
+    private CourseDirectory courseDirectory;
     public LoginJPanel(JPanel csp) {
         this.CardSequencePanel= csp;
         initComponents();
+        this.courseDirectory =courseDirectory;
         
     }
 
@@ -34,11 +38,19 @@ public class LoginJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         btnStud = new javax.swing.JButton();
+        btnFaculty = new javax.swing.JButton();
 
         btnStud.setText("Student");
         btnStud.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnStudActionPerformed(evt);
+            }
+        });
+
+        btnFaculty.setText("Faculty");
+        btnFaculty.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFacultyActionPerformed(evt);
             }
         });
 
@@ -48,7 +60,9 @@ public class LoginJPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(135, 135, 135)
-                .addComponent(btnStud, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnFaculty, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnStud, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE))
                 .addContainerGap(359, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -56,21 +70,33 @@ public class LoginJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(95, 95, 95)
                 .addComponent(btnStud, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(378, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnFaculty, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(321, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnStudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudActionPerformed
         // TODO add your handling code here:
         StudentJPanel StudentJPanel;
-            StudentJPanel = new StudentJPanel(CardSequencePanel);
+            StudentJPanel = new StudentJPanel(CardSequencePanel,courseDirectory);
             CardSequencePanel.removeAll();
             CardSequencePanel.add("Student", StudentJPanel);
             ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
     }//GEN-LAST:event_btnStudActionPerformed
 
+    private void btnFacultyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFacultyActionPerformed
+        // TODO add your handling code here:
+        FacultyJPanel facultyJPanel;
+            facultyJPanel = new FacultyJPanel(CardSequencePanel);
+            CardSequencePanel.removeAll();
+            CardSequencePanel.add("Student", facultyJPanel);
+            ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
+    }//GEN-LAST:event_btnFacultyActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnFaculty;
     private javax.swing.JButton btnStud;
     // End of variables declaration//GEN-END:variables
 }

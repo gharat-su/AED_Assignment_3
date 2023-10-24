@@ -5,6 +5,7 @@
 package main.java.com.coursera.userinterface.workareas.StudentRole;
 
 import javax.swing.JPanel;
+import main.java.com.coursera.model.CourseDirectory;
 import main.java.com.coursera.userinterface.authentication.LoginJPanel;
 
 /**
@@ -17,10 +18,12 @@ public class StudentJPanel extends javax.swing.JPanel {
      * Creates new form StudentJPanel
      */
     javax.swing.JPanel CardSequencePanel;
+    private CourseDirectory courseDirectory;
     
-    public StudentJPanel(JPanel csp) {
+    public StudentJPanel(JPanel csp,CourseDirectory courseDirectory) {
         this.CardSequencePanel=csp;
         initComponents();
+        this.courseDirectory=courseDirectory;
     }
 
     /**
@@ -118,7 +121,7 @@ public class StudentJPanel extends javax.swing.JPanel {
     private void btnCourseRegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCourseRegActionPerformed
         // TODO add your handling code here:
             StudentRegisterCourseJPanel StudentRegisterCourseJPanel;
-            StudentRegisterCourseJPanel = new StudentRegisterCourseJPanel(CardSequencePanel);
+            StudentRegisterCourseJPanel = new StudentRegisterCourseJPanel(CardSequencePanel,courseDirectory);
             CardSequencePanel.removeAll();
             CardSequencePanel.add("Course", StudentRegisterCourseJPanel);
             ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);

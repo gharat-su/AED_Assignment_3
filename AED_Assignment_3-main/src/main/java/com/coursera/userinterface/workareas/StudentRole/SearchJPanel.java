@@ -118,20 +118,20 @@ public class SearchJPanel extends javax.swing.JPanel {
 
     private void btnBackSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackSearchActionPerformed
         // TODO add your handling code here:
-        StudentJPanel StudentJPanel;
+        /*StudentJPanel StudentJPanel;
         StudentJPanel = new StudentJPanel(CardSequencePanel);
         CardSequencePanel.removeAll();
         CardSequencePanel.add("Student", StudentJPanel);
-        ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
+        ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);*/
     }//GEN-LAST:event_btnBackSearchActionPerformed
 
     private void btnSearchRegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchRegActionPerformed
         // TODO add your handling code here:
-            StudentRegisterCourseJPanel StudentRegisterCourseJPanel;
+            /*StudentRegisterCourseJPanel StudentRegisterCourseJPanel;
             StudentRegisterCourseJPanel = new StudentRegisterCourseJPanel(CardSequencePanel);
             CardSequencePanel.removeAll();
             CardSequencePanel.add("Course", StudentRegisterCourseJPanel);
-            ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
+            ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);*/
     }//GEN-LAST:event_btnSearchRegActionPerformed
 
 
