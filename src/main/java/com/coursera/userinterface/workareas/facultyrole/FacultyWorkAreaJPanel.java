@@ -69,9 +69,9 @@ public class FacultyWorkAreaJPanel extends javax.swing.JPanel {
         facultyMenuJPanelLayout.setVerticalGroup(
             facultyMenuJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(facultyMenuJPanelLayout.createSequentialGroup()
-                .addGap(49, 49, 49)
+                .addGap(55, 55, 55)
                 .addComponent(btnCreateCourse)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnModifyCourse)
                 .addGap(18, 18, 18)
                 .addComponent(btnScheduleCourse)
