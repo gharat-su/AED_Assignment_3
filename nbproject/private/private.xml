@@ -2,6 +2,18 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/Users/sanketkesarkar/Documents/NEU/AED_Assignment_3/src/main/java/com/coursera/userinterface/adminrole/AdminCreateProfessor.java</file>
+            <file>file:/Users/sanketkesarkar/Documents/NEU/AED_Assignment_3/src/main/java/com/coursera/userinterface/adminrole/AdminCreateEmployee.java</file>
+            <file>file:/Users/sanketkesarkar/Documents/NEU/AED_Assignment_3/src/main/java/com/coursera/userinterface/workareas/StudentRole/StudentJPanel.java</file>
+            <file>file:/Users/sanketkesarkar/Documents/NEU/AED_Assignment_3/src/main/java/com/coursera/userinterface/workareas/StudentRole/StudentRegisterCourseJPanel.java</file>
+            <file>file:/Users/sanketkesarkar/Documents/NEU/AED_Assignment_3/src/main/java/com/coursera/userinterface/authentication/LoginJPanel.java</file>
+            <file>file:/Users/sanketkesarkar/Documents/NEU/AED_Assignment_3/src/main/java/com/coursera/userinterface/workareas/StudentRole/SearchJPanel.java</file>
+            <file>file:/Users/sanketkesarkar/Documents/NEU/AED_Assignment_3/src/main/java/com/coursera/userinterface/workareas/StudentRole/RateProfessorJPanel.java</file>
+            <file>file:/Users/sanketkesarkar/Documents/NEU/AED_Assignment_3/src/main/java/com/coursera/userinterface/main/MainJFrame.java</file>
+            <file>file:/Users/sanketkesarkar/Documents/NEU/AED_Assignment_3/src/main/java/com/coursera/userinterface/authentication/RegistrationJPanel.java</file>
+            <file>file:/Users/sanketkesarkar/Documents/NEU/AED_Assignment_3/src/main/java/com/coursera/userinterface/adminrole/AdminWorkArea.java</file>
+            <file>file:/Users/sanketkesarkar/Documents/NEU/AED_Assignment_3/src/main/java/com/coursera/userinterface/adminrole/AdminCreateCourse.java</file>
+        </group>
     </open-files>
 </project-private>
