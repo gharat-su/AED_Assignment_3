@@ -6,9 +6,6 @@ package main.java.com.coursera.userinterface.workareas.StudentRole;
 
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
-import main.java.com.coursera.model.Course;
-import main.java.com.coursera.model.CourseDirectory;
-
 /**
  *
  * @author pradnyashinde
@@ -19,14 +16,11 @@ public class StudentRegisterCourseJPanel extends javax.swing.JPanel {
      * Creates new form RegisterStudentJPanel
      */
     javax.swing.JPanel CardSequencePanel;
-    private CourseDirectory courseDirectory;
     
-    public StudentRegisterCourseJPanel(JPanel csp,CourseDirectory courseDirectory) {
+    public StudentRegisterCourseJPanel(JPanel csp) {
         this.CardSequencePanel =csp;
         initComponents();
-        this.courseDirectory=courseDirectory;
         
-        populateTable();
     }
 
     /**
@@ -164,11 +158,11 @@ public class StudentRegisterCourseJPanel extends javax.swing.JPanel {
 
     private void btnBackCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackCourseActionPerformed
         // TODO add your handling code here:
-            /*StudentJPanel StudentJPanel;
+            StudentJPanel StudentJPanel;
             StudentJPanel = new StudentJPanel(CardSequencePanel);
             CardSequencePanel.removeAll();
             CardSequencePanel.add("Student", StudentJPanel);
-            ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);*/
+            ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
     }//GEN-LAST:event_btnBackCourseActionPerformed
 
 
@@ -186,21 +180,5 @@ public class StudentRegisterCourseJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtStudentId;
     // End of variables declaration//GEN-END:variables
 
-    private void populateTable() {
-        
-        DefaultTableModel dtm=(DefaultTableModel) tblListProfessor.getModel();
-        dtm.setRowCount(0);
-        //CourseDirectory cd = new CourseDirectory();
-        for(Course course:courseDirectory.getCourseList())
-        {
-            Object[] row=new Object[4];
-            row[0] = course;
-            row[1]=course.getCourseId();
-            row[2]=course.getCourseName();
-            row[3]=course.getTerm();
-            
-            dtm.addRow(row);
-        }
-        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    
 }

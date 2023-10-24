@@ -6,8 +6,6 @@ package main.java.com.coursera.userinterface.workareas.facultyrole;
 
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import main.java.com.coursera.model.Course;
-import main.java.com.coursera.model.CourseDirectory;
 import main.java.com.coursera.userinterface.authentication.LoginJPanel;
 
 /**
@@ -17,16 +15,14 @@ import main.java.com.coursera.userinterface.authentication.LoginJPanel;
 public class CreateCourseJPanel extends javax.swing.JPanel {
 
      javax.swing.JPanel CardSequencePanel;
-     private CourseDirectory courseDirectory;
     /**
      * Creates new form CreateCourseJPanel
      * @param ccjp
      * @param courseDirectory
      */
-    public CreateCourseJPanel(JPanel ccjp,CourseDirectory courseDirectory) {
+    public CreateCourseJPanel(JPanel ccjp) {
         initComponents();
         this.CardSequencePanel =ccjp;
-        this.courseDirectory=courseDirectory;
     }
 
     /**
@@ -206,10 +202,7 @@ public class CreateCourseJPanel extends javax.swing.JPanel {
         String courseId=txtMaxNoOfStudents.getText();
         
         
-        Course course=courseDirectory.addCourse();
-        course.setCourseName(courseName);
-        course.setTerm(term);
-        course.setCourseId(courseId);
+    
         
         
         JOptionPane.showMessageDialog(null,"Course Successfully Created");

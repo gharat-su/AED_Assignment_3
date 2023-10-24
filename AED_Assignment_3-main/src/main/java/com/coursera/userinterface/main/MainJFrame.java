@@ -42,9 +42,10 @@ public class MainJFrame extends javax.swing.JFrame {
         CardSequencePanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setSize(new java.awt.Dimension(1000, 1000));
+        setSize(new java.awt.Dimension(800, 950));
 
         MainSplitPane.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
+        MainSplitPane.setSize(new java.awt.Dimension(800, 950));
 
         mainMenuJPanel.setMinimumSize(new java.awt.Dimension(800, 150));
         mainMenuJPanel.setPreferredSize(new java.awt.Dimension(800, 150));
@@ -74,7 +75,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(194, 194, 194)
                 .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(249, Short.MAX_VALUE))
+                .addContainerGap(450, Short.MAX_VALUE))
         );
         mainMenuJPanelLayout.setVerticalGroup(
             mainMenuJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -89,6 +90,7 @@ public class MainJFrame extends javax.swing.JFrame {
         MainSplitPane.setLeftComponent(mainMenuJPanel);
 
         CardSequencePanel.setPreferredSize(new java.awt.Dimension(800, 800));
+        CardSequencePanel.setSize(new java.awt.Dimension(800, 800));
         CardSequencePanel.setLayout(new java.awt.CardLayout());
         MainSplitPane.setRightComponent(CardSequencePanel);
 

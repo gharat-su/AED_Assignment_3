@@ -5,7 +5,6 @@
 package main.java.com.coursera.userinterface.workareas.StudentRole;
 
 import javax.swing.JPanel;
-import main.java.com.coursera.model.CourseDirectory;
 import main.java.com.coursera.userinterface.authentication.LoginJPanel;
 
 /**
@@ -18,12 +17,10 @@ public class StudentJPanel extends javax.swing.JPanel {
      * Creates new form StudentJPanel
      */
     javax.swing.JPanel CardSequencePanel;
-    private CourseDirectory courseDirectory;
     
-    public StudentJPanel(JPanel csp,CourseDirectory courseDirectory) {
+    public StudentJPanel(JPanel csp) {
         this.CardSequencePanel=csp;
         initComponents();
-        this.courseDirectory=courseDirectory;
     }
 
     /**
@@ -39,6 +36,10 @@ public class StudentJPanel extends javax.swing.JPanel {
         btnCourseReg = new javax.swing.JButton();
         btnRateProf = new javax.swing.JButton();
         btnBacklog = new javax.swing.JButton();
+        btnGraduate = new javax.swing.JButton();
+        btnViewProgress = new javax.swing.JButton();
+
+        setPreferredSize(new java.awt.Dimension(800, 950));
 
         btnSearchStudent.setText("Search ");
         btnSearchStudent.addActionListener(new java.awt.event.ActionListener() {
@@ -68,35 +69,55 @@ public class StudentJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnGraduate.setText("Graduate");
+        btnGraduate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGraduateActionPerformed(evt);
+            }
+        });
+
+        btnViewProgress.setText("My Courses");
+        btnViewProgress.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewProgressActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(148, 148, 148)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(148, 148, 148)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnRateProf, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnCourseReg, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnSearchStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addComponent(btnBacklog)))
-                .addContainerGap(494, Short.MAX_VALUE))
+                    .addComponent(btnRateProf, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCourseReg, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSearchStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnGraduate, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(btnBacklog)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 597, Short.MAX_VALUE)
+                .addComponent(btnViewProgress, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(85, 85, 85))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(32, 32, 32)
-                .addComponent(btnBacklog)
-                .addGap(102, 102, 102)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnBacklog)
+                    .addComponent(btnViewProgress, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(82, 82, 82)
                 .addComponent(btnSearchStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
+                .addGap(53, 53, 53)
                 .addComponent(btnCourseReg, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(58, 58, 58)
                 .addComponent(btnRateProf, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(177, Short.MAX_VALUE))
+                .addGap(69, 69, 69)
+                .addComponent(btnGraduate, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(310, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -121,7 +142,7 @@ public class StudentJPanel extends javax.swing.JPanel {
     private void btnCourseRegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCourseRegActionPerformed
         // TODO add your handling code here:
             StudentRegisterCourseJPanel StudentRegisterCourseJPanel;
-            StudentRegisterCourseJPanel = new StudentRegisterCourseJPanel(CardSequencePanel,courseDirectory);
+            StudentRegisterCourseJPanel = new StudentRegisterCourseJPanel(CardSequencePanel);
             CardSequencePanel.removeAll();
             CardSequencePanel.add("Course", StudentRegisterCourseJPanel);
             ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
@@ -136,11 +157,21 @@ public class StudentJPanel extends javax.swing.JPanel {
             ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
     }//GEN-LAST:event_btnBacklogActionPerformed
 
+    private void btnGraduateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraduateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGraduateActionPerformed
+
+    private void btnViewProgressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewProgressActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnViewProgressActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBacklog;
     private javax.swing.JButton btnCourseReg;
+    private javax.swing.JButton btnGraduate;
     private javax.swing.JButton btnRateProf;
     private javax.swing.JButton btnSearchStudent;
+    private javax.swing.JButton btnViewProgress;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,7 +5,6 @@
 package main.java.com.coursera.userinterface.authentication;
 
 import javax.swing.JPanel;
-import main.java.com.coursera.model.CourseDirectory;
 import main.java.com.coursera.userinterface.workareas.StudentRole.RateProfessorJPanel;
 import main.java.com.coursera.userinterface.workareas.StudentRole.StudentJPanel;
 import main.java.com.coursera.userinterface.workareas.facultyrole.FacultyJPanel;
@@ -20,11 +19,9 @@ public class LoginJPanel extends javax.swing.JPanel {
      * Creates new form LoginJPanel
      */
     javax.swing.JPanel CardSequencePanel;
-    private CourseDirectory courseDirectory;
     public LoginJPanel(JPanel csp) {
         this.CardSequencePanel= csp;
         initComponents();
-        this.courseDirectory =courseDirectory;
         
     }
 
@@ -63,7 +60,7 @@ public class LoginJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnFaculty, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnStud, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE))
-                .addContainerGap(359, Short.MAX_VALUE))
+                .addContainerGap(687, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -72,14 +69,14 @@ public class LoginJPanel extends javax.swing.JPanel {
                 .addComponent(btnStud, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnFaculty, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(321, Short.MAX_VALUE))
+                .addContainerGap(607, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnStudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudActionPerformed
         // TODO add your handling code here:
         StudentJPanel StudentJPanel;
-            StudentJPanel = new StudentJPanel(CardSequencePanel,courseDirectory);
+            StudentJPanel = new StudentJPanel(CardSequencePanel);
             CardSequencePanel.removeAll();
             CardSequencePanel.add("Student", StudentJPanel);
             ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
