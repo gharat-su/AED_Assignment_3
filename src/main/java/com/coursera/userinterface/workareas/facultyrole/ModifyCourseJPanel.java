@@ -4,17 +4,22 @@
  */
 package main.java.com.coursera.userinterface.workareas.facultyrole;
 
+import javax.swing.JPanel;
+
 /**
  *
  * @author sghar
  */
 public class ModifyCourseJPanel extends javax.swing.JPanel {
 
+    javax.swing.JPanel CardSequencePanel;
     /**
      * Creates new form ModifyCourseJPanel
+     * @param mcjp
      */
-    public ModifyCourseJPanel() {
+    public ModifyCourseJPanel(JPanel mcjp) {
         initComponents();
+        this.CardSequencePanel = mcjp;
     }
 
     /**
@@ -26,19 +31,83 @@ public class ModifyCourseJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnBacklog = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        btnUpdateCourseDetails = new javax.swing.JButton();
+
+        btnBacklog.setText("<<Back");
+        btnBacklog.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBacklogActionPerformed(evt);
+            }
+        });
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Course ID", "Course Title", "Assigned Professor", "Assigned Credits", "Capacity", "Start Date", "End Date"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true, true, true, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jTable1);
+
+        btnUpdateCourseDetails.setText("Update Course Details");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 673, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnBacklog)
+                            .addComponent(btnUpdateCourseDetails))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnBacklog)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnUpdateCourseDetails)
+                .addContainerGap(56, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnBacklogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBacklogActionPerformed
+        // TODO add your handling code here:
+        FacultyJPanel facultyJPanel;
+        facultyJPanel = new FacultyJPanel(CardSequencePanel);
+        CardSequencePanel.removeAll();
+        CardSequencePanel.add("Back", facultyJPanel);
+        ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
+    }//GEN-LAST:event_btnBacklogActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBacklog;
+    private javax.swing.JButton btnUpdateCourseDetails;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
