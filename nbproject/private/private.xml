@@ -5,19 +5,29 @@
         <group>
             <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/userinterface/workareas/facultyrole/ScheduleCourseJPanel.java</file>
             <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/userinterface/workareas/facultyrole/ModifyCourseJPanel.java</file>
-            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/userinterface/adminrole/AdminCreateEmployee.java</file>
             <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/userinterface/adminrole/AdminCreateProfessor.java</file>
-            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/userinterface/workareas/facultyrole/CreateCourseJPanel.java</file>
-            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/userinterface/workareas/StudentRole/StudentJPanel.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/userinterface/authentication/StudentRegistrationJPanel.java</file>
             <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/userinterface/adminrole/AdminCreateCourse.java</file>
             <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/userinterface/authentication/LoginJPanel.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/userinterface/authentication/ProfessorRegistrationJPanel.java</file>
             <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/userinterface/workareas/facultyrole/FacultyJPanel.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/userinterface/authentication/RegisterMenuJPanel.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/users/Student.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/userinterface/workareas/facultyrole/GradeStudentsJPanel.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/userinterface/adminrole/AdminCreateEmployee.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/userinterface/workareas/facultyrole/CreateCourseJPanel.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/userinterface/workareas/StudentRole/StudentJPanel.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/users/UserType.java</file>
             <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/userinterface/workareas/StudentRole/StudentRegisterCourseJPanel.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/usermanagement/UserList.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/business/Course.java</file>
             <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/userinterface/workareas/StudentRole/RateProfessorJPanel.java</file>
             <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/userinterface/workareas/StudentRole/SearchJPanel.java</file>
-            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/userinterface/workareas/facultyrole/GradeStudentsJPanel.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/users/User.java</file>
             <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/userinterface/adminrole/AdminWorkArea.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/users/Faculty.java</file>
             <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/userinterface/main/MainJFrame.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/business/Business.java</file>
         </group>
     </open-files>
 </project-private>

@@ -6,6 +6,7 @@ package main.java.com.coursera.userinterface.workareas.StudentRole;
 
 import javax.swing.JPanel;
 import main.java.com.coursera.userinterface.authentication.LoginJPanel;
+import main.java.com.coursera.usermanagement.UserList;
 
 /**
  *
@@ -17,7 +18,7 @@ public class StudentJPanel extends javax.swing.JPanel {
      * Creates new form StudentJPanel
      */
     javax.swing.JPanel CardSequencePanel;
-    
+    private UserList ulist;
     public StudentJPanel(JPanel csp) {
         this.CardSequencePanel=csp;
         initComponents();
@@ -127,7 +128,7 @@ public class StudentJPanel extends javax.swing.JPanel {
     private void btnBacklogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBacklogActionPerformed
         // TODO add your handling code here:
             LoginJPanel LoginJPanel;
-            LoginJPanel = new LoginJPanel(CardSequencePanel);
+            LoginJPanel = new LoginJPanel(CardSequencePanel, ulist);
             CardSequencePanel.removeAll();
             CardSequencePanel.add("Back", LoginJPanel);
             ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);

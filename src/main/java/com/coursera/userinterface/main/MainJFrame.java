@@ -4,11 +4,10 @@
  */
 package main.java.com.coursera.userinterface.main;
 
-import java.awt.CardLayout;
-import javax.swing.JPanel;
+
 import main.java.com.coursera.userinterface.authentication.LoginJPanel;
-import javax.swing.JPanel;
-import main.java.com.coursera.userinterface.authentication.RegistrationJPanel;
+import main.java.com.coursera.userinterface.authentication.RegisterMenuJPanel;
+import main.java.com.coursera.usermanagement.UserList;
 
 /**
  *
@@ -20,9 +19,10 @@ public class MainJFrame extends javax.swing.JFrame {
      * Creates new form MainJFrame
      */
     //javax.swing.JPanel CardSequencePanel;
-    
+     private UserList ulist;  // Add a UserList variable here
     public MainJFrame() {
         initComponents();
+        this.ulist = new UserList();
         //this.CardSequencePanel=csp;
     }
 
@@ -46,8 +46,8 @@ public class MainJFrame extends javax.swing.JFrame {
 
         MainSplitPane.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
-        mainMenuJPanel.setMinimumSize(new java.awt.Dimension(800, 150));
-        mainMenuJPanel.setPreferredSize(new java.awt.Dimension(800, 150));
+        mainMenuJPanel.setMinimumSize(new java.awt.Dimension(800, 100));
+        mainMenuJPanel.setPreferredSize(new java.awt.Dimension(800, 100));
 
         btnLogin.setText("Login");
         btnLogin.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -70,20 +70,20 @@ public class MainJFrame extends javax.swing.JFrame {
         mainMenuJPanelLayout.setHorizontalGroup(
             mainMenuJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainMenuJPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(194, 194, 194)
-                .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(249, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(513, Short.MAX_VALUE))
         );
         mainMenuJPanelLayout.setVerticalGroup(
             mainMenuJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainMenuJPanelLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(15, 15, 15)
                 .addGroup(mainMenuJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnLogin)
-                    .addComponent(btnRegister))
-                .addGap(272, 272, 272))
+                    .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         MainSplitPane.setLeftComponent(mainMenuJPanel);
@@ -100,7 +100,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
             LoginJPanel LoginJPanel;
-            LoginJPanel = new LoginJPanel(CardSequencePanel);
+            LoginJPanel = new LoginJPanel(CardSequencePanel, ulist);
             //CardSequencePanel.removeAll();
             CardSequencePanel.add("Login", LoginJPanel);
             ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
@@ -109,10 +109,10 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
         // TODO add your handling code here:
-            RegistrationJPanel RegistrationJPanel;
-            RegistrationJPanel = new RegistrationJPanel(CardSequencePanel);
+            RegisterMenuJPanel registerMenu;
+            registerMenu = new RegisterMenuJPanel(CardSequencePanel,ulist);
             //CardSequencePanel.removeAll();
-            CardSequencePanel.add("Register", RegistrationJPanel);
+            CardSequencePanel.add("Register", registerMenu);
             ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
     }//GEN-LAST:event_btnRegisterActionPerformed
 

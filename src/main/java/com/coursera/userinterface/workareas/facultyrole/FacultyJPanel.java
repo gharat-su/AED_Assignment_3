@@ -140,11 +140,8 @@ public class FacultyJPanel extends javax.swing.JPanel {
 
     private void btnBacklogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBacklogActionPerformed
         // TODO add your handling code here:
-        LoginJPanel loginJPanel;
-        loginJPanel = new LoginJPanel(CardSequencePanel);
-        CardSequencePanel.removeAll();
-        CardSequencePanel.add("Back", loginJPanel);
-        ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
+         CardSequencePanel.remove(this); // Remove the current panel
+    ((java.awt.CardLayout) CardSequencePanel.getLayout()).previous(CardSequencePanel); // Show the previous panel
     }//GEN-LAST:event_btnBacklogActionPerformed
 
     private void btnGradeStudentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGradeStudentsActionPerformed

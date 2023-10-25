@@ -5,6 +5,7 @@
 package main.java.com.coursera.userinterface.workareas.facultyrole;
 
 import javax.swing.JPanel;
+import main.java.com.coursera.business.Business;
 
 /**
  *
@@ -12,7 +13,8 @@ import javax.swing.JPanel;
  */
 public class CreateCourseJPanel extends javax.swing.JPanel {
 
-     javax.swing.JPanel CardSequencePanel;
+    private javax.swing.JPanel CardSequencePanel;
+    private Business business;
      
     /**
      * Creates new form CreateCourseJPanel
@@ -21,6 +23,7 @@ public class CreateCourseJPanel extends javax.swing.JPanel {
     public CreateCourseJPanel(JPanel ccjp) {
         initComponents();
         this.CardSequencePanel =ccjp;
+        this.business = business; // Initialize the business logic class
     }
 
     /**
@@ -34,7 +37,6 @@ public class CreateCourseJPanel extends javax.swing.JPanel {
 
         txtCreateCourseSchedule = new javax.swing.JTextField();
         txtMaxNoOfStudents = new javax.swing.JTextField();
-        lbltags = new javax.swing.JLabel();
         txtCreateCourseAssignedCredits = new javax.swing.JTextField();
         btnCreateCourse = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
@@ -46,14 +48,14 @@ public class CreateCourseJPanel extends javax.swing.JPanel {
         txtCreateCourseName = new javax.swing.JTextField();
         txtProfessorName = new javax.swing.JTextField();
         lblCreateCourseAssignedCredits1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
-
-        lbltags.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
-        lbltags.setText("tags:");
 
         btnCreateCourse.setFont(new java.awt.Font("Lucida Grande", 0, 13)); // NOI18N
         btnCreateCourse.setText("CREATE");
+        btnCreateCourse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateCourseActionPerformed(evt);
+            }
+        });
 
         btnBack.setFont(new java.awt.Font("Lucida Grande", 0, 13)); // NOI18N
         btnBack.setText("BACK");
@@ -88,13 +90,6 @@ public class CreateCourseJPanel extends javax.swing.JPanel {
         lblCreateCourseAssignedCredits1.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         lblCreateCourseAssignedCredits1.setText("Assigned Credits:");
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane1.setViewportView(jList1);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -115,7 +110,6 @@ public class CreateCourseJPanel extends javax.swing.JPanel {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(lbltags)
                                             .addComponent(lblCreateProfessorName)
                                             .addComponent(lblCreateCourseSchedule)
                                             .addComponent(lblCreateMaxNoOfStudents)
@@ -124,8 +118,7 @@ public class CreateCourseJPanel extends javax.swing.JPanel {
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                             .addComponent(txtCreateCourseSchedule, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                                             .addComponent(txtMaxNoOfStudents, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                                            .addComponent(txtCreateCourseAssignedCredits, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)))
+                                            .addComponent(txtCreateCourseAssignedCredits, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)))
                                     .addComponent(txtProfessorName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(287, 287, 287)))
                 .addContainerGap())
@@ -161,18 +154,11 @@ public class CreateCourseJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtCreateCourseAssignedCredits, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblCreateCourseAssignedCredits1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lbltags)
-                        .addGap(155, 155, 155))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnCreateCourse)
-                            .addComponent(btnBack))
-                        .addContainerGap(42, Short.MAX_VALUE))))
+                .addGap(122, 122, 122)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCreateCourse)
+                    .addComponent(btnBack))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -189,19 +175,38 @@ public class CreateCourseJPanel extends javax.swing.JPanel {
         ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
     }//GEN-LAST:event_btnBackActionPerformed
 
+    private void btnCreateCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateCourseActionPerformed
+        // TODO add your handling code here:
+         // Get course details from input fields
+        String courseName = txtCreateCourseName.getText();
+        String professorName = txtProfessorName.getText();
+        String courseSchedule = txtCreateCourseSchedule.getText();
+        int maxStudents = Integer.parseInt(txtMaxNoOfStudents.getText());
+        int assignedCredits = Integer.parseInt(txtCreateCourseAssignedCredits.getText());
+
+        // Tags can be collected from jList1, but you need to implement it
+
+        // Create a professor (you need a way to fetch an existing professor or create a new one)
+        //Professor professor = new Faculty(professorName); // You should adjust this logic
+
+        // Create the course
+        //Course course = new Course(courseName, professor, courseSchedule, maxStudents, assignedCredits, new ArrayList<>()); // Tags are empty in this example
+
+        // Add the course to your business logic class (which should store it in an ArrayList)
+        //business.addCourse(course);
+
+    }//GEN-LAST:event_btnCreateCourseActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnCreateCourse;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblCreateCourseAssignedCredits1;
     private javax.swing.JLabel lblCreateCourseName;
     private javax.swing.JLabel lblCreateCourseSchedule;
     private javax.swing.JLabel lblCreateMaxNoOfStudents;
     private javax.swing.JLabel lblCreateProfessorName;
     private javax.swing.JLabel lblTitleCreateCourse;
-    private javax.swing.JLabel lbltags;
     private javax.swing.JTextField txtCreateCourseAssignedCredits;
     private javax.swing.JTextField txtCreateCourseName;
     private javax.swing.JTextField txtCreateCourseSchedule;
