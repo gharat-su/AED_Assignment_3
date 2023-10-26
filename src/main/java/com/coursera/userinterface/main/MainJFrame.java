@@ -4,11 +4,19 @@
  */
 package main.java.com.coursera.userinterface.main;
 
+<<<<<<< HEAD
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 import main.java.com.coursera.userinterface.authentication.LoginJPanel;
 import javax.swing.JPanel;
 import main.java.com.coursera.userinterface.authentication.RegistrationJPanel;
+=======
+
+import main.java.com.coursera.auth.AuthManager;
+import main.java.com.coursera.userinterface.authentication.LoginJPanel;
+import main.java.com.coursera.userinterface.authentication.RegisterMenuJPanel;
+import main.java.com.coursera.usermanagement.UserList;
+>>>>>>> Pradnya_Student_development
 
 /**
  *
@@ -20,9 +28,18 @@ public class MainJFrame extends javax.swing.JFrame {
      * Creates new form MainJFrame
      */
     //javax.swing.JPanel CardSequencePanel;
+<<<<<<< HEAD
     
     public MainJFrame() {
         initComponents();
+=======
+    private UserList ulist;  // Add a UserList variable here
+    private AuthManager authManager; // Add AuthManager
+    public MainJFrame() {
+        initComponents();
+        this.ulist = new UserList();
+         this.authManager = new AuthManager(ulist);
+>>>>>>> Pradnya_Student_development
         //this.CardSequencePanel=csp;
     }
 
@@ -42,6 +59,7 @@ public class MainJFrame extends javax.swing.JFrame {
         CardSequencePanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+<<<<<<< HEAD
         setPreferredSize(new java.awt.Dimension(1000, 1000));
         setSize(new java.awt.Dimension(1000, 1000));
 
@@ -51,6 +69,14 @@ public class MainJFrame extends javax.swing.JFrame {
         mainMenuJPanel.setMinimumSize(new java.awt.Dimension(800, 300));
         mainMenuJPanel.setPreferredSize(new java.awt.Dimension(200, 1000));
         mainMenuJPanel.setSize(new java.awt.Dimension(300, 1000));
+=======
+        setSize(new java.awt.Dimension(1000, 1000));
+
+        MainSplitPane.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
+
+        mainMenuJPanel.setMinimumSize(new java.awt.Dimension(800, 100));
+        mainMenuJPanel.setPreferredSize(new java.awt.Dimension(800, 100));
+>>>>>>> Pradnya_Student_development
 
         btnLogin.setText("Login");
         btnLogin.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -72,27 +98,47 @@ public class MainJFrame extends javax.swing.JFrame {
         mainMenuJPanel.setLayout(mainMenuJPanelLayout);
         mainMenuJPanelLayout.setHorizontalGroup(
             mainMenuJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainMenuJPanelLayout.createSequentialGroup()
                 .addContainerGap(314, Short.MAX_VALUE)
                 .addGroup(mainMenuJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(btnRegister, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
                     .addComponent(btnLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(242, 242, 242))
+=======
+            .addGroup(mainMenuJPanelLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(513, Short.MAX_VALUE))
+>>>>>>> Pradnya_Student_development
         );
         mainMenuJPanelLayout.setVerticalGroup(
             mainMenuJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainMenuJPanelLayout.createSequentialGroup()
+<<<<<<< HEAD
                 .addGap(175, 175, 175)
                 .addComponent(btnLogin)
                 .addGap(26, 26, 26)
                 .addComponent(btnRegister)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+=======
+                .addGap(15, 15, 15)
+                .addGroup(mainMenuJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+>>>>>>> Pradnya_Student_development
         );
 
         MainSplitPane.setLeftComponent(mainMenuJPanel);
 
         CardSequencePanel.setPreferredSize(new java.awt.Dimension(800, 800));
+<<<<<<< HEAD
         CardSequencePanel.setSize(new java.awt.Dimension(800, 500));
+=======
+>>>>>>> Pradnya_Student_development
         CardSequencePanel.setLayout(new java.awt.CardLayout());
         MainSplitPane.setRightComponent(CardSequencePanel);
 
@@ -104,7 +150,11 @@ public class MainJFrame extends javax.swing.JFrame {
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
             LoginJPanel LoginJPanel;
+<<<<<<< HEAD
             LoginJPanel = new LoginJPanel(CardSequencePanel);
+=======
+            LoginJPanel = new LoginJPanel(CardSequencePanel,authManager,ulist);
+>>>>>>> Pradnya_Student_development
             //CardSequencePanel.removeAll();
             CardSequencePanel.add("Login", LoginJPanel);
             ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
@@ -113,10 +163,17 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
         // TODO add your handling code here:
+<<<<<<< HEAD
             RegistrationJPanel RegistrationJPanel;
             RegistrationJPanel = new RegistrationJPanel(CardSequencePanel);
             //CardSequencePanel.removeAll();
             CardSequencePanel.add("Register", RegistrationJPanel);
+=======
+            RegisterMenuJPanel registerMenu;
+            registerMenu = new RegisterMenuJPanel(CardSequencePanel,ulist);
+            //CardSequencePanel.removeAll();
+            CardSequencePanel.add("Register", registerMenu);
+>>>>>>> Pradnya_Student_development
             ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
     }//GEN-LAST:event_btnRegisterActionPerformed
 

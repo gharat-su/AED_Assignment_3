@@ -34,6 +34,14 @@ public class GradeStudentsJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         btnBacklog = new javax.swing.JButton();
+<<<<<<< HEAD
+=======
+        cbSelectCourse = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        lblCourseSelect = new javax.swing.JLabel();
+        btnSaveChanges = new javax.swing.JButton();
+>>>>>>> Pradnya_Student_development
 
         btnBacklog.setText("<<Back");
         btnBacklog.addActionListener(new java.awt.event.ActionListener() {
@@ -42,35 +50,105 @@ public class GradeStudentsJPanel extends javax.swing.JPanel {
             }
         });
 
+<<<<<<< HEAD
+=======
+        cbSelectCourse.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Course1", "Course2", "Course3" }));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "StudentID", "Name", "Course", "Term", "Grade"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jTable1);
+
+        lblCourseSelect.setText("Filter by :");
+
+        btnSaveChanges.setText("Save Changes");
+
+>>>>>>> Pradnya_Student_development
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
+<<<<<<< HEAD
                 .addComponent(btnBacklog)
                 .addContainerGap(414, Short.MAX_VALUE))
+=======
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 584, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnBacklog)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblCourseSelect)
+                                .addGap(18, 18, 18)
+                                .addComponent(cbSelectCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnSaveChanges))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+>>>>>>> Pradnya_Student_development
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnBacklog)
+<<<<<<< HEAD
                 .addContainerGap(329, Short.MAX_VALUE))
+=======
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbSelectCourse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblCourseSelect))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnSaveChanges)
+                .addContainerGap(108, Short.MAX_VALUE))
+>>>>>>> Pradnya_Student_development
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBacklogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBacklogActionPerformed
         // TODO add your handling code here:
+<<<<<<< HEAD
         FacultyJPanel facultyJPanel;
         facultyJPanel = new FacultyJPanel(CardSequencePanel);
         CardSequencePanel.removeAll();
         CardSequencePanel.add("Back", facultyJPanel);
         ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
+=======
+              CardSequencePanel.remove(this); // Remove the current panel
+        ((java.awt.CardLayout) CardSequencePanel.getLayout()).previous(CardSequencePanel); // Show the previous panel
+>>>>>>> Pradnya_Student_development
     }//GEN-LAST:event_btnBacklogActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBacklog;
+<<<<<<< HEAD
+=======
+    private javax.swing.JButton btnSaveChanges;
+    private javax.swing.JComboBox<String> cbSelectCourse;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JLabel lblCourseSelect;
+>>>>>>> Pradnya_Student_development
     // End of variables declaration//GEN-END:variables
 }

@@ -4,7 +4,19 @@
  */
 package main.java.com.coursera.userinterface.workareas.facultyrole;
 
+<<<<<<< HEAD
 import javax.swing.JPanel;
+=======
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+import main.java.com.coursera.business.Course;
+import main.java.com.coursera.coursemanagement.CourseList;
+import main.java.com.coursera.usermanagement.UserList;
+import main.java.com.coursera.users.User;
+>>>>>>> Pradnya_Student_development
 
 /**
  *
@@ -13,6 +25,7 @@ import javax.swing.JPanel;
 public class ModifyCourseJPanel extends javax.swing.JPanel {
 
     javax.swing.JPanel CardSequencePanel;
+<<<<<<< HEAD
     /**
      * Creates new form ModifyCourseJPanel
      * @param mcjp
@@ -20,6 +33,24 @@ public class ModifyCourseJPanel extends javax.swing.JPanel {
     public ModifyCourseJPanel(JPanel mcjp) {
         initComponents();
         this.CardSequencePanel = mcjp;
+=======
+    private CourseList cList;
+    private UserList uList;
+    private int professorId; // The professor whose courses you want to display
+
+    /**
+     * Creates new form ModifyCourseJPanel
+     *
+     * @param mcjp
+     */
+    public ModifyCourseJPanel(JPanel mcjp, CourseList cList, UserList uList, User professor) {
+        initComponents();
+        this.CardSequencePanel = mcjp;
+        this.cList = cList;
+        this.uList = uList;
+        this.professorId = professor.getUserID();
+        populateCoursesTable();
+>>>>>>> Pradnya_Student_development
     }
 
     /**
@@ -32,6 +63,12 @@ public class ModifyCourseJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         btnBacklog = new javax.swing.JButton();
+<<<<<<< HEAD
+=======
+        jScrollPane1 = new javax.swing.JScrollPane();
+        CoursesJTable = new javax.swing.JTable();
+        btnUpdateCourseDetails = new javax.swing.JButton();
+>>>>>>> Pradnya_Student_development
 
         btnBacklog.setText("<<Back");
         btnBacklog.addActionListener(new java.awt.event.ActionListener() {
@@ -40,26 +77,84 @@ public class ModifyCourseJPanel extends javax.swing.JPanel {
             }
         });
 
+<<<<<<< HEAD
+=======
+        CoursesJTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Course ID", "Course Title", "Assigned Professor", "Assigned Credits", "Capacity", "Start Date", "End Date"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true, true, true, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(CoursesJTable);
+
+        btnUpdateCourseDetails.setText("Update Course Details");
+        btnUpdateCourseDetails.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateCourseDetailsActionPerformed(evt);
+            }
+        });
+
+>>>>>>> Pradnya_Student_development
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
+<<<<<<< HEAD
                 .addComponent(btnBacklog)
                 .addContainerGap(322, Short.MAX_VALUE))
+=======
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 673, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnBacklog)
+                            .addComponent(btnUpdateCourseDetails))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+>>>>>>> Pradnya_Student_development
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnBacklog)
+<<<<<<< HEAD
                 .addContainerGap(272, Short.MAX_VALUE))
+=======
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnUpdateCourseDetails)
+                .addContainerGap(56, Short.MAX_VALUE))
+>>>>>>> Pradnya_Student_development
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBacklogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBacklogActionPerformed
         // TODO add your handling code here:
+<<<<<<< HEAD
         FacultyJPanel facultyJPanel;
         facultyJPanel = new FacultyJPanel(CardSequencePanel);
         CardSequencePanel.removeAll();
@@ -71,4 +166,103 @@ public class ModifyCourseJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBacklog;
     // End of variables declaration//GEN-END:variables
+=======
+        CardSequencePanel.remove(this); // Remove the current panel
+        ((java.awt.CardLayout) CardSequencePanel.getLayout()).previous(CardSequencePanel); // Show the previous panel
+    }//GEN-LAST:event_btnBacklogActionPerformed
+
+    private void btnUpdateCourseDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateCourseDetailsActionPerformed
+        // TODO add your handling code here:
+       int selectedRow = CoursesJTable.getSelectedRow();
+
+    if (selectedRow == -1) {
+        // No course selected, show an error message
+        JOptionPane.showMessageDialog(this, "No course selected. Please select a course to update.", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    int courseId = (int) CoursesJTable.getValueAt(selectedRow, 0); // Course ID is in the first column
+    String newStartDate = (String) CoursesJTable.getValueAt(selectedRow, 5); // Start Date in the 6th column
+    String newEndDate = (String) CoursesJTable.getValueAt(selectedRow, 6); // End Date in the 7th column
+    int newCapacity = (int) CoursesJTable.getValueAt(selectedRow, 4); // Capacity in the 5th column
+
+    Course course = cList.getCourseById(courseId);
+
+    if (course != null) {
+        boolean success = true;
+
+        if (!isValidDate(newStartDate)) {
+            // Acknowledge and prevent the update
+            JOptionPane.showMessageDialog(this, "Invalid start date format. Please enter a valid date in the dd/mm/yyyy format.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        if (!isValidDate(newEndDate)) {
+            // Acknowledge and prevent the update
+            JOptionPane.showMessageDialog(this, "Invalid end date format. Please enter a valid date in the dd/mm/yyyy format.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        if (newCapacity < 0) {
+            // Capacity cannot be negative, acknowledge and prevent the update
+            JOptionPane.showMessageDialog(this, "Capacity cannot be negative. Please enter a valid capacity.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        if (!cList.updateCourseDates(courseId, newStartDate, newEndDate)) {
+            success = false;
+        }
+
+        if (!cList.updateCourseCapacity(courseId, newCapacity)) {
+            success = false;
+        }
+
+        if (success) {
+            // Show a success message or update the table with the new course details
+            populateCoursesTable();
+            JOptionPane.showMessageDialog(this, "Course details updated successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            // Show an error message if any updates failed
+            JOptionPane.showMessageDialog(this, "Course details update failed. Please try again.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    }//GEN-LAST:event_btnUpdateCourseDetailsActionPerformed
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable CoursesJTable;
+    private javax.swing.JButton btnBacklog;
+    private javax.swing.JButton btnUpdateCourseDetails;
+    private javax.swing.JScrollPane jScrollPane1;
+    // End of variables declaration//GEN-END:variables
+
+    private void populateCoursesTable() {
+        DefaultTableModel model = (DefaultTableModel) CoursesJTable.getModel();
+        model.setRowCount(0); // Clear the table
+
+        if (professorId != 0) {
+            for (Course course : cList.getAllCourses()) {
+                if (course.getProfessor() != null && course.getProfessor().getUserID() == professorId) {
+                    model.addRow(new Object[]{
+                        course.getCourseId(),
+                        course.getCourseName(),
+                        course.getProfessor().getFullName(),
+                        course.getAssignedCredits(),
+                        course.getMaxCapacity(),
+                        course.getCourseStartDate(), // Corrected typo here
+                        course.getCourseEndDate()
+                    });
+                }
+            }
+        }
+    }
+    
+    private boolean isValidDate(String date) {
+    String datePattern = "\\d{2}/\\d{2}/\\d{4}"; // Pattern for "dd/mm/yyyy" format
+    Pattern pattern = Pattern.compile(datePattern);
+    Matcher matcher = pattern.matcher(date);
+    return matcher.matches();
+}   
+>>>>>>> Pradnya_Student_development
 }

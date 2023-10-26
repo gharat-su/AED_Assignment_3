@@ -4,10 +4,22 @@
  */
 package main.java.com.coursera.userinterface.authentication;
 
+<<<<<<< HEAD
 import javax.swing.JPanel;
 import main.java.com.coursera.userinterface.workareas.StudentRole.RateProfessorJPanel;
 import main.java.com.coursera.userinterface.workareas.StudentRole.StudentJPanel;
 import main.java.com.coursera.userinterface.workareas.facultyrole.FacultyJPanel;
+=======
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import main.java.com.coursera.auth.AuthManager;
+import main.java.com.coursera.coursemanagement.CourseList;
+import main.java.com.coursera.userinterface.workareas.StudentRole.StudentJPanel;
+import main.java.com.coursera.userinterface.workareas.facultyrole.FacultyJPanel;
+import main.java.com.coursera.usermanagement.UserList;
+import main.java.com.coursera.users.User;
+import main.java.com.coursera.users.UserType;
+>>>>>>> Pradnya_Student_development
 
 /**
  *
@@ -19,10 +31,24 @@ public class LoginJPanel extends javax.swing.JPanel {
      * Creates new form LoginJPanel
      */
     javax.swing.JPanel CardSequencePanel;
+<<<<<<< HEAD
     public LoginJPanel(JPanel csp) {
         this.CardSequencePanel= csp;
         initComponents();
         
+=======
+    private UserList ulist;
+    private CourseList clist;
+    private AuthManager authManager; // Add AuthManager
+
+    public LoginJPanel(JPanel csp, AuthManager authManager, UserList userList) {
+        this.CardSequencePanel = csp;
+        this.ulist = userList;
+        this.authManager = authManager; // Initialize AuthManager
+        this.clist = new CourseList();
+        initComponents();
+
+>>>>>>> Pradnya_Student_development
     }
 
     /**
@@ -34,6 +60,7 @@ public class LoginJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+<<<<<<< HEAD
         btnStud = new javax.swing.JButton();
         btnFaculty = new javax.swing.JButton();
 
@@ -48,6 +75,54 @@ public class LoginJPanel extends javax.swing.JPanel {
         btnFaculty.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFacultyActionPerformed(evt);
+=======
+        txtLgpassword = new javax.swing.JPasswordField();
+        cbLgshowpassword = new javax.swing.JCheckBox();
+        lblLgpassword = new javax.swing.JLabel();
+        lblLgusername = new javax.swing.JLabel();
+        txtLgusername = new javax.swing.JTextField();
+        lblLogin = new javax.swing.JLabel();
+        btnexit = new javax.swing.JButton();
+        btnlogin = new javax.swing.JButton();
+
+        txtLgpassword.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        cbLgshowpassword.setFont(new java.awt.Font("Lucida Grande", 0, 13)); // NOI18N
+        cbLgshowpassword.setText("Show Password");
+        cbLgshowpassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbLgshowpasswordActionPerformed(evt);
+            }
+        });
+
+        lblLgpassword.setFont(new java.awt.Font("Lucida Grande", 0, 13)); // NOI18N
+        lblLgpassword.setText("PASSWORD:");
+
+        lblLgusername.setFont(new java.awt.Font("Lucida Grande", 0, 13)); // NOI18N
+        lblLgusername.setText("USERNAME:");
+
+        txtLgusername.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        lblLogin.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        lblLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblLogin.setText("  LOGIN APPLICATION");
+
+        btnexit.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        btnexit.setText("EXIT");
+        btnexit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnexitActionPerformed(evt);
+            }
+        });
+
+        btnlogin.setBackground(new java.awt.Color(4, 120, 92));
+        btnlogin.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        btnlogin.setForeground(new java.awt.Color(255, 255, 255));
+        btnlogin.setText("LOGIN");
+        btnlogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnloginActionPerformed(evt);
+>>>>>>> Pradnya_Student_development
             }
         });
 
@@ -56,15 +131,39 @@ public class LoginJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD
                 .addGap(135, 135, 135)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnFaculty, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnStud, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE))
                 .addContainerGap(359, Short.MAX_VALUE))
+=======
+                .addGap(188, 188, 188)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(cbLgshowpassword)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnlogin)
+                        .addGap(62, 62, 62)
+                        .addComponent(btnexit))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblLgpassword)
+                            .addComponent(lblLgusername))
+                        .addGap(90, 90, 90)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtLgusername)
+                            .addComponent(txtLgpassword, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))))
+                .addContainerGap(113, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+>>>>>>> Pradnya_Student_development
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD
                 .addGap(95, 95, 95)
                 .addComponent(btnStud, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -95,5 +194,89 @@ public class LoginJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnFaculty;
     private javax.swing.JButton btnStud;
+=======
+                .addGap(18, 18, 18)
+                .addComponent(lblLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(117, 117, 117)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblLgusername)
+                    .addComponent(txtLgusername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblLgpassword)
+                    .addComponent(txtLgpassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addComponent(cbLgshowpassword)
+                .addGap(39, 39, 39)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnexit)
+                    .addComponent(btnlogin))
+                .addContainerGap(145, Short.MAX_VALUE))
+        );
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void cbLgshowpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbLgshowpasswordActionPerformed
+        // TODO add your handling code here:
+
+        if (cbLgshowpassword.isSelected()) {
+            txtLgpassword.setEchoChar((char) 0);
+        } else {
+            txtLgpassword.setEchoChar('*');
+        }
+    }//GEN-LAST:event_cbLgshowpasswordActionPerformed
+
+    private void btnexitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnexitActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_btnexitActionPerformed
+
+    private void btnloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnloginActionPerformed
+        // TODO add your handling code here:
+        // Get the entered username and password
+        String username = txtLgusername.getText();
+        String password = txtLgpassword.getText();
+
+        User authenticatedUser = authManager.authenticateUser(username, password);
+
+        if (authenticatedUser != null) {
+            // Authentication successful
+            if (authenticatedUser.getUserType() == UserType.FACULTY) {
+                JOptionPane.showMessageDialog(this, "Welcome, Faculty: " + authenticatedUser.getFullName(), "Login Success", JOptionPane.INFORMATION_MESSAGE);
+
+                FacultyJPanel facultyJPanel;
+                facultyJPanel = new FacultyJPanel(CardSequencePanel, clist, ulist, authManager);
+                CardSequencePanel.removeAll();
+                CardSequencePanel.add("GradeStudents", facultyJPanel);
+                ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
+
+            } else if (authenticatedUser.getUserType() == UserType.STUDENT) {
+                JOptionPane.showMessageDialog(this, "Welcome, Student: " + authenticatedUser.getFullName(), "Login Success", JOptionPane.INFORMATION_MESSAGE);
+                StudentJPanel studentJPanel;
+                studentJPanel = new StudentJPanel(CardSequencePanel, clist, ulist, authManager);
+                CardSequencePanel.removeAll();
+                CardSequencePanel.add("Students", studentJPanel);
+                ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
+            } else {
+                // Handle other user types if needed
+                JOptionPane.showMessageDialog(this, "Welcome, User: " + authenticatedUser.getFullName(), "Login Success", JOptionPane.INFORMATION_MESSAGE);
+            }
+            // You can navigate to the next panel or perform other actions here
+        } else {
+            // Authentication failed
+            JOptionPane.showMessageDialog(this, "Invalid username or password.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnloginActionPerformed
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnexit;
+    private javax.swing.JButton btnlogin;
+    private javax.swing.JCheckBox cbLgshowpassword;
+    private javax.swing.JLabel lblLgpassword;
+    private javax.swing.JLabel lblLgusername;
+    private javax.swing.JLabel lblLogin;
+    private javax.swing.JPasswordField txtLgpassword;
+    private javax.swing.JTextField txtLgusername;
+>>>>>>> Pradnya_Student_development
     // End of variables declaration//GEN-END:variables
 }

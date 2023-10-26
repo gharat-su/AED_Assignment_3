@@ -4,8 +4,19 @@
  */
 package main.java.com.coursera.userinterface.workareas.StudentRole;
 
+<<<<<<< HEAD
 import javax.swing.JPanel;
 import main.java.com.coursera.userinterface.authentication.LoginJPanel;
+=======
+import java.io.File;
+import java.util.Scanner;
+import javax.swing.JPanel;
+import main.java.com.coursera.auth.AuthManager;
+import main.java.com.coursera.coursemanagement.CourseList;
+import main.java.com.coursera.userinterface.authentication.LoginJPanel;
+import main.java.com.coursera.usermanagement.UserList;
+import main.java.com.coursera.users.User;
+>>>>>>> Pradnya_Student_development
 
 /**
  *
@@ -17,10 +28,26 @@ public class StudentJPanel extends javax.swing.JPanel {
      * Creates new form StudentJPanel
      */
     javax.swing.JPanel CardSequencePanel;
+<<<<<<< HEAD
     
     public StudentJPanel(JPanel csp) {
         this.CardSequencePanel=csp;
         initComponents();
+=======
+    private UserList ulist;
+    private CourseList clist;
+    private AuthManager authManager;
+    private User loggedInUser;
+    
+    public StudentJPanel(JPanel csp,CourseList courseList, UserList userList, AuthManager authManager) {
+        this.CardSequencePanel=csp;
+        initComponents();
+       this.clist = courseList;
+        this.ulist = userList;
+        this.authManager = authManager;
+        
+        this.loggedInUser = authManager.getLoggedInUser();
+>>>>>>> Pradnya_Student_development
     }
 
     /**
@@ -36,6 +63,11 @@ public class StudentJPanel extends javax.swing.JPanel {
         btnCourseReg = new javax.swing.JButton();
         btnRateProf = new javax.swing.JButton();
         btnBacklog = new javax.swing.JButton();
+<<<<<<< HEAD
+=======
+        btnGraduate = new javax.swing.JButton();
+        btnViewCourse = new javax.swing.JButton();
+>>>>>>> Pradnya_Student_development
 
         btnSearchStudent.setText("Search ");
         btnSearchStudent.addActionListener(new java.awt.event.ActionListener() {
@@ -65,11 +97,29 @@ public class StudentJPanel extends javax.swing.JPanel {
             }
         });
 
+<<<<<<< HEAD
+=======
+        btnGraduate.setText("Graduate?");
+        btnGraduate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGraduateActionPerformed(evt);
+            }
+        });
+
+        btnViewCourse.setText("My Courses");
+        btnViewCourse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewCourseActionPerformed(evt);
+            }
+        });
+
+>>>>>>> Pradnya_Student_development
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(148, 148, 148)
@@ -81,19 +131,47 @@ public class StudentJPanel extends javax.swing.JPanel {
                         .addGap(29, 29, 29)
                         .addComponent(btnBacklog)))
                 .addContainerGap(494, Short.MAX_VALUE))
+=======
+                .addGap(148, 148, 148)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnGraduate, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRateProf, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCourseReg, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSearchStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(btnBacklog)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 478, Short.MAX_VALUE)
+                .addComponent(btnViewCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(59, 59, 59))
+>>>>>>> Pradnya_Student_development
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(32, 32, 32)
+<<<<<<< HEAD
                 .addComponent(btnBacklog)
                 .addGap(102, 102, 102)
+=======
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnBacklog)
+                    .addComponent(btnViewCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(86, 86, 86)
+>>>>>>> Pradnya_Student_development
                 .addComponent(btnSearchStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(49, 49, 49)
                 .addComponent(btnCourseReg, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(58, 58, 58)
                 .addComponent(btnRateProf, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
                 .addContainerGap(177, Short.MAX_VALUE))
+=======
+                .addGap(59, 59, 59)
+                .addComponent(btnGraduate, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(79, Short.MAX_VALUE))
+>>>>>>> Pradnya_Student_development
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -126,6 +204,7 @@ public class StudentJPanel extends javax.swing.JPanel {
 
     private void btnBacklogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBacklogActionPerformed
         // TODO add your handling code here:
+<<<<<<< HEAD
             LoginJPanel LoginJPanel;
             LoginJPanel = new LoginJPanel(CardSequencePanel);
             CardSequencePanel.removeAll();
@@ -133,11 +212,32 @@ public class StudentJPanel extends javax.swing.JPanel {
             ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
     }//GEN-LAST:event_btnBacklogActionPerformed
 
+=======
+            CardSequencePanel.remove(this); // Remove the current panel
+        ((java.awt.CardLayout) CardSequencePanel.getLayout()).previous(CardSequencePanel); // Show the previous panel
+    }//GEN-LAST:event_btnBacklogActionPerformed
+
+    private void btnGraduateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraduateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGraduateActionPerformed
+
+    private void btnViewCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewCourseActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnViewCourseActionPerformed
+
+>>>>>>> Pradnya_Student_development
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBacklog;
     private javax.swing.JButton btnCourseReg;
+<<<<<<< HEAD
     private javax.swing.JButton btnRateProf;
     private javax.swing.JButton btnSearchStudent;
+=======
+    private javax.swing.JButton btnGraduate;
+    private javax.swing.JButton btnRateProf;
+    private javax.swing.JButton btnSearchStudent;
+    private javax.swing.JButton btnViewCourse;
+>>>>>>> Pradnya_Student_development
     // End of variables declaration//GEN-END:variables
 }
