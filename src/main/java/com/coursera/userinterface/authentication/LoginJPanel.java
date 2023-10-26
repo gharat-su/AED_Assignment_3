@@ -6,6 +6,9 @@ package main.java.com.coursera.userinterface.authentication;
 
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import main.java.com.coursera.auth.AuthManager;
+import main.java.com.coursera.coursemanagement.CourseList;
+import main.java.com.coursera.userinterface.workareas.facultyrole.FacultyJPanel;
 import main.java.com.coursera.usermanagement.UserList;
 import main.java.com.coursera.users.User;
 import main.java.com.coursera.users.UserType;
@@ -20,11 +23,15 @@ public class LoginJPanel extends javax.swing.JPanel {
      * Creates new form LoginJPanel
      */
     javax.swing.JPanel CardSequencePanel;
-    private UserList userList;
+    private UserList ulist;
+    private CourseList clist;
+    private AuthManager authManager; // Add AuthManager
 
-    public LoginJPanel(JPanel csp, UserList userList) {
+    public LoginJPanel(JPanel csp, AuthManager authManager, UserList userList) {
         this.CardSequencePanel = csp;
-        this.userList = userList;
+        this.ulist = userList;
+        this.authManager = authManager; // Initialize AuthManager
+        this.clist = new CourseList();
         initComponents();
 
     }
@@ -154,26 +161,33 @@ public class LoginJPanel extends javax.swing.JPanel {
     private void btnloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnloginActionPerformed
         // TODO add your handling code here:
         // Get the entered username and password
-    String username = txtLgusername.getText();
-    String password = txtLgpassword.getText();
+        String username = txtLgusername.getText();
+        String password = txtLgpassword.getText();
 
-    User authenticatedUser = userList.authenticateUser(username, password);
+        User authenticatedUser = authManager.authenticateUser(username, password);
 
-    if (authenticatedUser != null) {
-        // Authentication successful
-        if (authenticatedUser.getUserType() == UserType.FACULTY) {
-            JOptionPane.showMessageDialog(this, "Welcome, Faculty: " + authenticatedUser.getFullName(), "Login Success", JOptionPane.INFORMATION_MESSAGE);
-        } else if (authenticatedUser.getUserType() == UserType.STUDENT) {
-            JOptionPane.showMessageDialog(this, "Welcome, Student: " + authenticatedUser.getFullName(), "Login Success", JOptionPane.INFORMATION_MESSAGE);
+        if (authenticatedUser != null) {
+            // Authentication successful
+            if (authenticatedUser.getUserType() == UserType.FACULTY) {
+                JOptionPane.showMessageDialog(this, "Welcome, Faculty: " + authenticatedUser.getFullName(), "Login Success", JOptionPane.INFORMATION_MESSAGE);
+
+                FacultyJPanel facultyJPanel;
+                facultyJPanel = new FacultyJPanel(CardSequencePanel, clist, ulist, authManager);
+                CardSequencePanel.removeAll();
+                CardSequencePanel.add("GradeStudents", facultyJPanel);
+                ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
+
+            } else if (authenticatedUser.getUserType() == UserType.STUDENT) {
+                JOptionPane.showMessageDialog(this, "Welcome, Student: " + authenticatedUser.getFullName(), "Login Success", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                // Handle other user types if needed
+                JOptionPane.showMessageDialog(this, "Welcome, User: " + authenticatedUser.getFullName(), "Login Success", JOptionPane.INFORMATION_MESSAGE);
+            }
+            // You can navigate to the next panel or perform other actions here
         } else {
-            // Handle other user types if needed
-            JOptionPane.showMessageDialog(this, "Welcome, User: " + authenticatedUser.getFullName(), "Login Success", JOptionPane.INFORMATION_MESSAGE);
+            // Authentication failed
+            JOptionPane.showMessageDialog(this, "Invalid username or password.", "Error", JOptionPane.ERROR_MESSAGE);
         }
-        // You can navigate to the next panel or perform other actions here
-    } else {
-        // Authentication failed
-        JOptionPane.showMessageDialog(this, "Invalid username or password.", "Error", JOptionPane.ERROR_MESSAGE);
-    }
     }//GEN-LAST:event_btnloginActionPerformed
 
 

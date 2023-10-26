@@ -13,6 +13,7 @@
             <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/userinterface/workareas/facultyrole/FacultyJPanel.java</file>
             <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/userinterface/authentication/RegisterMenuJPanel.java</file>
             <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/users/Student.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/coursemanagement/CourseList.java</file>
             <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/userinterface/workareas/facultyrole/GradeStudentsJPanel.java</file>
             <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/userinterface/adminrole/AdminCreateEmployee.java</file>
             <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/userinterface/workareas/facultyrole/CreateCourseJPanel.java</file>
@@ -28,6 +29,7 @@
             <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/users/Faculty.java</file>
             <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/userinterface/main/MainJFrame.java</file>
             <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/business/Business.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/AED_Assignment_3/src/main/java/com/coursera/auth/AuthManager.java</file>
         </group>
     </open-files>
 </project-private>

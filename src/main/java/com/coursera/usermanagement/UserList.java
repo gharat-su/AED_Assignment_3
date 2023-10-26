@@ -5,6 +5,7 @@
 package main.java.com.coursera.usermanagement;
 
 import java.util.ArrayList;
+import main.java.com.coursera.users.Faculty;
 import main.java.com.coursera.users.User;
 
 /**
@@ -60,15 +61,13 @@ public class UserList {
     public ArrayList<User> getAllUsers() {
         return userList;
     }
-    
-    public User authenticateUser(String username, String password) {
-    for (User user : userList) {
-        if (user.getUsername().equals(username)) {
-            if (user.getPassword().equals(User.hashPassword(password))) {
-                return user; // Authentication successful
+
+    public Faculty findFacultyById(int facultyId) {
+        for (User user : userList) {
+            if (user instanceof Faculty && user.getUserID() == facultyId) {
+                return (Faculty) user; // Found a Faculty user with the specified ID
             }
         }
+        return null; // Faculty user not found with the specified ID
     }
-    return null; // Authentication failed
-}
 }

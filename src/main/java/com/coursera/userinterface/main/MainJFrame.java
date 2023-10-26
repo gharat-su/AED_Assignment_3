@@ -5,6 +5,7 @@
 package main.java.com.coursera.userinterface.main;
 
 
+import main.java.com.coursera.auth.AuthManager;
 import main.java.com.coursera.userinterface.authentication.LoginJPanel;
 import main.java.com.coursera.userinterface.authentication.RegisterMenuJPanel;
 import main.java.com.coursera.usermanagement.UserList;
@@ -19,10 +20,12 @@ public class MainJFrame extends javax.swing.JFrame {
      * Creates new form MainJFrame
      */
     //javax.swing.JPanel CardSequencePanel;
-     private UserList ulist;  // Add a UserList variable here
+    private UserList ulist;  // Add a UserList variable here
+    private AuthManager authManager; // Add AuthManager
     public MainJFrame() {
         initComponents();
         this.ulist = new UserList();
+         this.authManager = new AuthManager(ulist);
         //this.CardSequencePanel=csp;
     }
 
@@ -100,7 +103,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
             LoginJPanel LoginJPanel;
-            LoginJPanel = new LoginJPanel(CardSequencePanel, ulist);
+            LoginJPanel = new LoginJPanel(CardSequencePanel,authManager,ulist);
             //CardSequencePanel.removeAll();
             CardSequencePanel.add("Login", LoginJPanel);
             ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);

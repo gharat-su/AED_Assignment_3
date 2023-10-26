@@ -19,86 +19,78 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="lblTitleCreateCourse" alignment="1" max="32767" attributes="0"/>
+                  <Component id="lblTitleCreateCourse" max="32767" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
-                              <Component id="lblCreateCourseName" max="32767" attributes="0"/>
-                              <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
-                              <Component id="txtCreateCourseName" min="-2" pref="200" max="-2" attributes="0"/>
+                              <Component id="btnCreateCourse" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                              <Component id="btnBack" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="lblCreateCourseName" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblCreateCourseStartDate" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblCreateMaxNoOfStudents" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblCreateCourseAssignedCredits1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblCourseEndDate" alignment="1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="lblCreateProfessorName" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="lblCreateCourseSchedule" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="lblCreateMaxNoOfStudents" min="-2" max="-2" attributes="0"/>
-                                          <Component id="lblCreateCourseAssignedCredits1" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="txtCreateCourseSchedule" alignment="0" pref="200" max="32767" attributes="0"/>
-                                          <Component id="txtMaxNoOfStudents" alignment="0" pref="200" max="32767" attributes="0"/>
-                                          <Component id="txtCreateCourseAssignedCredits" alignment="0" pref="200" max="32767" attributes="0"/>
-                                      </Group>
+                                  <Group type="103" alignment="1" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="txtCreateCourseSchedule" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="txtMaxNoOfStudents" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="txtCreateCourseAssignedCredits" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                                      <Component id="txtCreateCourseSchedule1" alignment="0" max="32767" attributes="0"/>
                                   </Group>
-                                  <Component id="txtProfessorName" alignment="1" min="-2" pref="200" max="-2" attributes="0"/>
+                                  <Component id="txtCreateCourseName" alignment="1" min="-2" pref="200" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="287" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="146" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="278" max="-2" attributes="0"/>
-              <Component id="btnCreateCourse" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-              <Component id="btnBack" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="12" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
               <Component id="lblTitleCreateCourse" min="-2" pref="65" max="-2" attributes="0"/>
-              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblCreateCourseName" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtCreateCourseName" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblCreateProfessorName" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtProfessorName" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblCreateCourseSchedule" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblCreateCourseStartDate" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtCreateCourseSchedule" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblCourseEndDate" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtCreateCourseSchedule1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblCreateMaxNoOfStudents" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtMaxNoOfStudents" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="txtCreateCourseAssignedCredits" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblCreateCourseAssignedCredits1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnCreateCourse" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnBack" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="42" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -149,20 +141,12 @@
         <Property name="text" type="java.lang.String" value="Course Name:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblCreateProfessorName">
+    <Component class="javax.swing.JLabel" name="lblCreateCourseStartDate">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="13" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Professor Name:"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lblCreateCourseSchedule">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="13" style="1"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Course Schedule:"/>
+        <Property name="text" type="java.lang.String" value="Course Start Date:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblCreateMaxNoOfStudents">
@@ -175,11 +159,6 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txtCreateCourseName">
     </Component>
-    <Component class="javax.swing.JTextField" name="txtProfessorName">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtProfessorNameActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JLabel" name="lblCreateCourseAssignedCredits1">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -187,6 +166,16 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Assigned Credits:"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblCourseEndDate">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="13" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Course End Date:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtCreateCourseSchedule1">
     </Component>
   </SubComponents>
 </Form>
