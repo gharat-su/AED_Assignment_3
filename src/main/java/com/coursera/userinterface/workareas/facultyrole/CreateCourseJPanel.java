@@ -4,6 +4,9 @@
  */
 package main.java.com.coursera.userinterface.workareas.facultyrole;
 
+<<<<<<< HEAD
+import javax.swing.JPanel;
+=======
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import main.java.com.coursera.business.Course;
@@ -11,6 +14,7 @@ import main.java.com.coursera.auth.AuthManager;
 import main.java.com.coursera.coursemanagement.CourseList;
 import main.java.com.coursera.usermanagement.UserList;
 import main.java.com.coursera.users.User;
+>>>>>>> Pradnya_Student_development
 
 /**
  *
@@ -18,6 +22,17 @@ import main.java.com.coursera.users.User;
  */
 public class CreateCourseJPanel extends javax.swing.JPanel {
 
+<<<<<<< HEAD
+     javax.swing.JPanel CardSequencePanel;
+     
+    /**
+     * Creates new form CreateCourseJPanel
+     * @param ccjp
+     */
+    public CreateCourseJPanel(JPanel ccjp) {
+        initComponents();
+        this.CardSequencePanel =ccjp;
+=======
     private javax.swing.JPanel CardSequencePanel;
     private UserList ulist;
     private CourseList clist;
@@ -34,6 +49,7 @@ public class CreateCourseJPanel extends javax.swing.JPanel {
         this.clist = courseList;
         this.ulist = userList;
         this.authManager = authManager; // Initialize the AuthManager
+>>>>>>> Pradnya_Student_development
     }
 
     /**
@@ -45,6 +61,17 @@ public class CreateCourseJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+<<<<<<< HEAD
+        btnBacklog = new javax.swing.JButton();
+
+        btnBacklog.setText("<<Back");
+        btnBacklog.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBacklogActionPerformed(evt);
+            }
+        });
+
+=======
         txtCreateCourseSchedule = new javax.swing.JTextField();
         txtMaxNoOfStudents = new javax.swing.JTextField();
         txtCreateCourseAssignedCredits = new javax.swing.JTextField();
@@ -94,12 +121,40 @@ public class CreateCourseJPanel extends javax.swing.JPanel {
         lblCourseEndDate.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         lblCourseEndDate.setText("Course End Date:");
 
+>>>>>>> Pradnya_Student_development
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
+<<<<<<< HEAD
+                .addComponent(btnBacklog)
+                .addContainerGap(454, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnBacklog)
+                .addContainerGap(319, Short.MAX_VALUE))
+        );
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void btnBacklogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBacklogActionPerformed
+        // TODO add your handling code here:
+        FacultyJPanel facultyJPanel;
+        facultyJPanel = new FacultyJPanel(CardSequencePanel);
+        CardSequencePanel.removeAll();
+        CardSequencePanel.add("Back", facultyJPanel);
+        ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
+    }//GEN-LAST:event_btnBacklogActionPerformed
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBacklog;
+    // End of variables declaration//GEN-END:variables
+=======
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblTitleCreateCourse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -257,4 +312,5 @@ public class CreateCourseJPanel extends javax.swing.JPanel {
     txtMaxNoOfStudents.setText(""); // Clear Max Students field
     txtCreateCourseAssignedCredits.setText(""); // Clear Assigned Credits field
 }
+>>>>>>> Pradnya_Student_development
 }

@@ -4,11 +4,15 @@
  */
 package main.java.com.coursera.userinterface.workareas.StudentRole;
 
+<<<<<<< HEAD
+import javax.swing.JPanel;
+=======
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+>>>>>>> Pradnya_Student_development
 
 /**
  *
@@ -23,6 +27,8 @@ public class StudentRegisterCourseJPanel extends javax.swing.JPanel {
     public StudentRegisterCourseJPanel(JPanel csp) {
         this.CardSequencePanel =csp;
         initComponents();
+<<<<<<< HEAD
+=======
         
          
         DefaultTableModel model =  (DefaultTableModel) tblListProfessor.getModel();
@@ -47,6 +53,7 @@ public class StudentRegisterCourseJPanel extends javax.swing.JPanel {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+>>>>>>> Pradnya_Student_development
     }
 
     /**
@@ -115,10 +122,13 @@ public class StudentRegisterCourseJPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
+=======
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(574, Short.MAX_VALUE)
                 .addComponent(btnViewCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(192, 192, 192))
+>>>>>>> Pradnya_Student_development
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -134,6 +144,28 @@ public class StudentRegisterCourseJPanel extends javax.swing.JPanel {
                         .addGap(121, 121, 121)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtStudentId, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
+                            .addComponent(txtCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(47, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 791, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(42, 42, 42))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnViewCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(192, 192, 192))))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(btnBackCourse))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(332, 332, 332)
+                        .addComponent(btnRegisterCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
+=======
                             .addComponent(txtCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(332, 332, 332)
@@ -144,6 +176,7 @@ public class StudentRegisterCourseJPanel extends javax.swing.JPanel {
                             .addComponent(btnBackCourse)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 833, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+>>>>>>> Pradnya_Student_development
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -154,8 +187,13 @@ public class StudentRegisterCourseJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtSearchCourse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblSearchCourse))
+<<<<<<< HEAD
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+=======
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+>>>>>>> Pradnya_Student_development
                 .addGap(26, 26, 26)
                 .addComponent(btnViewCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -178,8 +216,16 @@ public class StudentRegisterCourseJPanel extends javax.swing.JPanel {
 
     private void btnBackCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackCourseActionPerformed
         // TODO add your handling code here:
+<<<<<<< HEAD
+            StudentJPanel StudentJPanel;
+            StudentJPanel = new StudentJPanel(CardSequencePanel);
+            CardSequencePanel.removeAll();
+            CardSequencePanel.add("Student", StudentJPanel);
+            ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
+=======
          CardSequencePanel.remove(this); // Remove the current panel
         ((java.awt.CardLayout) CardSequencePanel.getLayout()).previous(CardSequencePanel); 
+>>>>>>> Pradnya_Student_development
     }//GEN-LAST:event_btnBackCourseActionPerformed
 
 

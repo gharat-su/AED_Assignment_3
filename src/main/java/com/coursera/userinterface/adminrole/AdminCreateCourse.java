@@ -30,19 +30,30 @@ public class AdminCreateCourse extends javax.swing.JPanel {
         lblCreateCourseName = new javax.swing.JLabel();
         lblCreateCourseId = new javax.swing.JLabel();
         lblCreateProfessorName = new javax.swing.JLabel();
+<<<<<<< HEAD
+        lblCreateCourseSchedule = new javax.swing.JLabel();
+=======
         lblCreateCourseStartDate = new javax.swing.JLabel();
+>>>>>>> Pradnya_Student_development
         lblCreateMaxNoOfStudents = new javax.swing.JLabel();
         txtCreateCourseName = new javax.swing.JTextField();
         txtCreateCourseId = new javax.swing.JTextField();
         txtProfessorName = new javax.swing.JTextField();
+<<<<<<< HEAD
+        txtCreateCourseSchedule = new javax.swing.JTextField();
+=======
         txtCreateCourseStartDate = new javax.swing.JTextField();
+>>>>>>> Pradnya_Student_development
         txtMaxNoOfStudents = new javax.swing.JTextField();
         lblCreateCourseAssignedCredits = new javax.swing.JLabel();
         txtCreateCourseAssignedCredits = new javax.swing.JTextField();
         btnCreateCourse = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
+<<<<<<< HEAD
+=======
         lblCreateCourseEndDate = new javax.swing.JLabel();
         txtCreateCourseEndDate = new javax.swing.JTextField();
+>>>>>>> Pradnya_Student_development
 
         lblTitleCreateCourse.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
         lblTitleCreateCourse.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -57,8 +68,13 @@ public class AdminCreateCourse extends javax.swing.JPanel {
         lblCreateProfessorName.setFont(new java.awt.Font("Lucida Grande", 0, 13)); // NOI18N
         lblCreateProfessorName.setText("Professor Name:");
 
+<<<<<<< HEAD
+        lblCreateCourseSchedule.setFont(new java.awt.Font("Lucida Grande", 0, 13)); // NOI18N
+        lblCreateCourseSchedule.setText("Course Schedule:");
+=======
         lblCreateCourseStartDate.setFont(new java.awt.Font("Lucida Grande", 0, 13)); // NOI18N
         lblCreateCourseStartDate.setText("Course Start Date:");
+>>>>>>> Pradnya_Student_development
 
         lblCreateMaxNoOfStudents.setFont(new java.awt.Font("Lucida Grande", 0, 13)); // NOI18N
         lblCreateMaxNoOfStudents.setText("Maximum No. of Students:");
@@ -69,7 +85,10 @@ public class AdminCreateCourse extends javax.swing.JPanel {
             }
         });
 
+<<<<<<< HEAD
+=======
         lblCreateCourseAssignedCredits.setFont(new java.awt.Font("Lucida Grande", 0, 13)); // NOI18N
+>>>>>>> Pradnya_Student_development
         lblCreateCourseAssignedCredits.setText("Assigned Credits:");
 
         btnCreateCourse.setFont(new java.awt.Font("Lucida Grande", 0, 13)); // NOI18N
@@ -78,14 +97,54 @@ public class AdminCreateCourse extends javax.swing.JPanel {
         btnBack.setFont(new java.awt.Font("Lucida Grande", 0, 13)); // NOI18N
         btnBack.setText("BACK");
 
+<<<<<<< HEAD
+=======
         lblCreateCourseEndDate.setText("CourseEnd Date:");
 
+>>>>>>> Pradnya_Student_development
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(lblTitleCreateCourse, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+<<<<<<< HEAD
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(78, 78, 78)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblCreateMaxNoOfStudents, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(60, 60, 60)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblCreateCourseSchedule, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(37, 37, 37)
+                                                .addComponent(lblCreateCourseId, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                            .addComponent(lblCreateProfessorName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(15, 15, 15)
+                                                .addComponent(lblCreateCourseName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                        .addGap(5, 5, 5)))))
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblCreateCourseAssignedCredits)
+                        .addGap(31, 31, 31)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnCreateCourse)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnBack))
+                    .addComponent(txtCreateCourseAssignedCredits, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCreateCourseId, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCreateCourseSchedule, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtMaxNoOfStudents, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCreateCourseName, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtProfessorName, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+=======
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -126,6 +185,7 @@ public class AdminCreateCourse extends javax.swing.JPanel {
                             .addComponent(txtCreateCourseStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtCreateCourseName, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtProfessorName, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
+>>>>>>> Pradnya_Student_development
                 .addGap(320, 320, 320))
         );
         layout.setVerticalGroup(
@@ -147,6 +207,11 @@ public class AdminCreateCourse extends javax.swing.JPanel {
                     .addComponent(txtProfessorName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+<<<<<<< HEAD
+                    .addComponent(lblCreateCourseSchedule)
+                    .addComponent(txtCreateCourseSchedule, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(17, 17, 17)
+=======
                     .addComponent(lblCreateCourseStartDate)
                     .addComponent(txtCreateCourseStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
@@ -154,6 +219,7 @@ public class AdminCreateCourse extends javax.swing.JPanel {
                     .addComponent(lblCreateCourseEndDate)
                     .addComponent(txtCreateCourseEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+>>>>>>> Pradnya_Student_development
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCreateMaxNoOfStudents)
                     .addComponent(txtMaxNoOfStudents, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -161,6 +227,16 @@ public class AdminCreateCourse extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtCreateCourseAssignedCredits, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblCreateCourseAssignedCredits))
+<<<<<<< HEAD
+                .addGap(41, 41, 41)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCreateCourse)
+                    .addComponent(btnBack))
+                .addContainerGap(44, Short.MAX_VALUE))
+        );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {lblCreateCourseId, lblCreateCourseSchedule, lblCreateMaxNoOfStudents, lblCreateProfessorName});
+=======
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCreateCourse)
@@ -169,6 +245,7 @@ public class AdminCreateCourse extends javax.swing.JPanel {
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {lblCreateCourseId, lblCreateCourseStartDate, lblCreateMaxNoOfStudents, lblCreateProfessorName});
+>>>>>>> Pradnya_Student_development
 
     }// </editor-fold>//GEN-END:initComponents
 
@@ -181,18 +258,30 @@ public class AdminCreateCourse extends javax.swing.JPanel {
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnCreateCourse;
     private javax.swing.JLabel lblCreateCourseAssignedCredits;
+<<<<<<< HEAD
+    private javax.swing.JLabel lblCreateCourseId;
+    private javax.swing.JLabel lblCreateCourseName;
+    private javax.swing.JLabel lblCreateCourseSchedule;
+=======
     private javax.swing.JLabel lblCreateCourseEndDate;
     private javax.swing.JLabel lblCreateCourseId;
     private javax.swing.JLabel lblCreateCourseName;
     private javax.swing.JLabel lblCreateCourseStartDate;
+>>>>>>> Pradnya_Student_development
     private javax.swing.JLabel lblCreateMaxNoOfStudents;
     private javax.swing.JLabel lblCreateProfessorName;
     private javax.swing.JLabel lblTitleCreateCourse;
     private javax.swing.JTextField txtCreateCourseAssignedCredits;
+<<<<<<< HEAD
+    private javax.swing.JTextField txtCreateCourseId;
+    private javax.swing.JTextField txtCreateCourseName;
+    private javax.swing.JTextField txtCreateCourseSchedule;
+=======
     private javax.swing.JTextField txtCreateCourseEndDate;
     private javax.swing.JTextField txtCreateCourseId;
     private javax.swing.JTextField txtCreateCourseName;
     private javax.swing.JTextField txtCreateCourseStartDate;
+>>>>>>> Pradnya_Student_development
     private javax.swing.JTextField txtMaxNoOfStudents;
     private javax.swing.JTextField txtProfessorName;
     // End of variables declaration//GEN-END:variables

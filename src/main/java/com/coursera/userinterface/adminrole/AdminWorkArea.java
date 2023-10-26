@@ -30,9 +30,13 @@ public class AdminWorkArea extends javax.swing.JPanel {
         btnAdminCreateEmployee = new javax.swing.JButton();
         btnAdminCreateProfessor = new javax.swing.JButton();
         lblAdminWorkAreaTitle = new javax.swing.JLabel();
+<<<<<<< HEAD
+        jButton1 = new javax.swing.JButton();
+=======
         btnAdminModifyCourse = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+>>>>>>> Pradnya_Student_development
 
         btnAdminCreateCourse.setFont(new java.awt.Font("Lucida Grande", 0, 13)); // NOI18N
         btnAdminCreateCourse.setText("Create Course");
@@ -57,6 +61,9 @@ public class AdminWorkArea extends javax.swing.JPanel {
         lblAdminWorkAreaTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblAdminWorkAreaTitle.setText("ADMIN WORKAREA");
 
+<<<<<<< HEAD
+        jButton1.setText("jButton1");
+=======
         btnAdminModifyCourse.setText("Modify Course");
         btnAdminModifyCourse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,6 +79,7 @@ public class AdminWorkArea extends javax.swing.JPanel {
                 jButton2ActionPerformed(evt);
             }
         });
+>>>>>>> Pradnya_Student_development
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -87,17 +95,25 @@ public class AdminWorkArea extends javax.swing.JPanel {
                     .addComponent(btnAdminCreateEmployee)
                     .addComponent(btnAdminCreateCourse))
                 .addGap(59, 59, 59)
+<<<<<<< HEAD
+                .addComponent(jButton1)
+                .addGap(0, 467, Short.MAX_VALUE))
+=======
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnAdminModifyCourse)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
                 .addGap(0, 413, Short.MAX_VALUE))
+>>>>>>> Pradnya_Student_development
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnAdminCreateCourse, btnAdminCreateEmployee, btnAdminCreateProfessor});
 
+<<<<<<< HEAD
+=======
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnAdminModifyCourse, jButton1, jButton2});
 
+>>>>>>> Pradnya_Student_development
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -106,6 +122,15 @@ public class AdminWorkArea extends javax.swing.JPanel {
                 .addGap(68, 68, 68)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAdminCreateCourse)
+<<<<<<< HEAD
+                    .addComponent(jButton1))
+                .addGap(36, 36, 36)
+                .addComponent(btnAdminCreateEmployee)
+                .addGap(37, 37, 37)
+                .addComponent(btnAdminCreateProfessor)
+                .addContainerGap(206, Short.MAX_VALUE))
+        );
+=======
                     .addComponent(btnAdminModifyCourse))
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -120,6 +145,7 @@ public class AdminWorkArea extends javax.swing.JPanel {
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAdminModifyCourse, jButton1, jButton2});
 
+>>>>>>> Pradnya_Student_development
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAdminCreateCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminCreateCourseActionPerformed
@@ -130,6 +156,8 @@ public class AdminWorkArea extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAdminCreateEmployeeActionPerformed
 
+<<<<<<< HEAD
+=======
     private void btnAdminModifyCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminModifyCourseActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAdminModifyCourseActionPerformed
@@ -138,14 +166,19 @@ public class AdminWorkArea extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
+>>>>>>> Pradnya_Student_development
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdminCreateCourse;
     private javax.swing.JButton btnAdminCreateEmployee;
     private javax.swing.JButton btnAdminCreateProfessor;
+<<<<<<< HEAD
+    private javax.swing.JButton jButton1;
+=======
     private javax.swing.JButton btnAdminModifyCourse;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+>>>>>>> Pradnya_Student_development
     private javax.swing.JLabel lblAdminWorkAreaTitle;
     // End of variables declaration//GEN-END:variables
 }

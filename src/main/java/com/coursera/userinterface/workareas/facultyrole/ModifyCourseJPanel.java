@@ -4,6 +4,9 @@
  */
 package main.java.com.coursera.userinterface.workareas.facultyrole;
 
+<<<<<<< HEAD
+import javax.swing.JPanel;
+=======
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
@@ -13,6 +16,7 @@ import main.java.com.coursera.business.Course;
 import main.java.com.coursera.coursemanagement.CourseList;
 import main.java.com.coursera.usermanagement.UserList;
 import main.java.com.coursera.users.User;
+>>>>>>> Pradnya_Student_development
 
 /**
  *
@@ -21,6 +25,15 @@ import main.java.com.coursera.users.User;
 public class ModifyCourseJPanel extends javax.swing.JPanel {
 
     javax.swing.JPanel CardSequencePanel;
+<<<<<<< HEAD
+    /**
+     * Creates new form ModifyCourseJPanel
+     * @param mcjp
+     */
+    public ModifyCourseJPanel(JPanel mcjp) {
+        initComponents();
+        this.CardSequencePanel = mcjp;
+=======
     private CourseList cList;
     private UserList uList;
     private int professorId; // The professor whose courses you want to display
@@ -37,6 +50,7 @@ public class ModifyCourseJPanel extends javax.swing.JPanel {
         this.uList = uList;
         this.professorId = professor.getUserID();
         populateCoursesTable();
+>>>>>>> Pradnya_Student_development
     }
 
     /**
@@ -49,9 +63,12 @@ public class ModifyCourseJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         btnBacklog = new javax.swing.JButton();
+<<<<<<< HEAD
+=======
         jScrollPane1 = new javax.swing.JScrollPane();
         CoursesJTable = new javax.swing.JTable();
         btnUpdateCourseDetails = new javax.swing.JButton();
+>>>>>>> Pradnya_Student_development
 
         btnBacklog.setText("<<Back");
         btnBacklog.addActionListener(new java.awt.event.ActionListener() {
@@ -60,6 +77,8 @@ public class ModifyCourseJPanel extends javax.swing.JPanel {
             }
         });
 
+<<<<<<< HEAD
+=======
         CoursesJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
@@ -95,12 +114,17 @@ public class ModifyCourseJPanel extends javax.swing.JPanel {
             }
         });
 
+>>>>>>> Pradnya_Student_development
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
+<<<<<<< HEAD
+                .addComponent(btnBacklog)
+                .addContainerGap(322, Short.MAX_VALUE))
+=======
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 673, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
@@ -109,22 +133,40 @@ public class ModifyCourseJPanel extends javax.swing.JPanel {
                             .addComponent(btnUpdateCourseDetails))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+>>>>>>> Pradnya_Student_development
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnBacklog)
+<<<<<<< HEAD
+                .addContainerGap(272, Short.MAX_VALUE))
+=======
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnUpdateCourseDetails)
                 .addContainerGap(56, Short.MAX_VALUE))
+>>>>>>> Pradnya_Student_development
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBacklogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBacklogActionPerformed
         // TODO add your handling code here:
+<<<<<<< HEAD
+        FacultyJPanel facultyJPanel;
+        facultyJPanel = new FacultyJPanel(CardSequencePanel);
+        CardSequencePanel.removeAll();
+        CardSequencePanel.add("Back", facultyJPanel);
+        ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
+    }//GEN-LAST:event_btnBacklogActionPerformed
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBacklog;
+    // End of variables declaration//GEN-END:variables
+=======
         CardSequencePanel.remove(this); // Remove the current panel
         ((java.awt.CardLayout) CardSequencePanel.getLayout()).previous(CardSequencePanel); // Show the previous panel
     }//GEN-LAST:event_btnBacklogActionPerformed
@@ -222,4 +264,5 @@ public class ModifyCourseJPanel extends javax.swing.JPanel {
     Matcher matcher = pattern.matcher(date);
     return matcher.matches();
 }   
+>>>>>>> Pradnya_Student_development
 }

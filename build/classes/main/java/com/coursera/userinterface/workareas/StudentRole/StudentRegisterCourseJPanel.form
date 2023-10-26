@@ -16,11 +16,14 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
+=======
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace pref="574" max="32767" attributes="0"/>
               <Component id="btnViewCourse" min="-2" pref="114" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="192" max="-2" attributes="0"/>
           </Group>
+>>>>>>> Pradnya_Student_development
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
@@ -41,10 +44,39 @@
                           <Component id="txtCourse" min="-2" pref="151" max="-2" attributes="0"/>
                       </Group>
                   </Group>
+<<<<<<< HEAD
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace pref="47" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="jScrollPane1" min="-2" pref="791" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="btnViewCourse" min="-2" pref="114" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="192" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                      <Component id="btnBackCourse" min="-2" max="-2" attributes="0"/>
+                  </Group>
+=======
+>>>>>>> Pradnya_Student_development
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="332" max="-2" attributes="0"/>
                       <Component id="btnRegisterCourse" min="-2" pref="131" max="-2" attributes="0"/>
                   </Group>
+<<<<<<< HEAD
+              </Group>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+=======
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -54,6 +86,7 @@
                   </Group>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
+>>>>>>> Pradnya_Student_development
           </Group>
       </Group>
     </DimensionLayout>
@@ -67,8 +100,13 @@
                   <Component id="txtSearchCourse" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblSearchCourse" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
+<<<<<<< HEAD
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" pref="162" max="-2" attributes="0"/>
+=======
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="168" max="-2" attributes="0"/>
+>>>>>>> Pradnya_Student_development
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               <Component id="btnViewCourse" min="-2" pref="31" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>

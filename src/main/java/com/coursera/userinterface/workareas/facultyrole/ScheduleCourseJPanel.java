@@ -60,8 +60,16 @@ public class ScheduleCourseJPanel extends javax.swing.JPanel {
 
     private void btnBacklogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBacklogActionPerformed
         // TODO add your handling code here:
+<<<<<<< HEAD
+        FacultyJPanel facultyJPanel;
+        facultyJPanel = new FacultyJPanel(CardSequencePanel);
+        CardSequencePanel.removeAll();
+        CardSequencePanel.add("Back", facultyJPanel);
+        ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
+=======
          CardSequencePanel.remove(this); // Remove the current panel
         ((java.awt.CardLayout) CardSequencePanel.getLayout()).previous(CardSequencePanel); // Show the previous panel
+>>>>>>> Pradnya_Student_development
     }//GEN-LAST:event_btnBacklogActionPerformed
 
 

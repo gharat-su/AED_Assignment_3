@@ -4,6 +4,12 @@
  */
 package main.java.com.coursera.userinterface.authentication;
 
+<<<<<<< HEAD
+import javax.swing.JPanel;
+import main.java.com.coursera.userinterface.workareas.StudentRole.RateProfessorJPanel;
+import main.java.com.coursera.userinterface.workareas.StudentRole.StudentJPanel;
+import main.java.com.coursera.userinterface.workareas.facultyrole.FacultyJPanel;
+=======
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import main.java.com.coursera.auth.AuthManager;
@@ -13,6 +19,7 @@ import main.java.com.coursera.userinterface.workareas.facultyrole.FacultyJPanel;
 import main.java.com.coursera.usermanagement.UserList;
 import main.java.com.coursera.users.User;
 import main.java.com.coursera.users.UserType;
+>>>>>>> Pradnya_Student_development
 
 /**
  *
@@ -24,6 +31,12 @@ public class LoginJPanel extends javax.swing.JPanel {
      * Creates new form LoginJPanel
      */
     javax.swing.JPanel CardSequencePanel;
+<<<<<<< HEAD
+    public LoginJPanel(JPanel csp) {
+        this.CardSequencePanel= csp;
+        initComponents();
+        
+=======
     private UserList ulist;
     private CourseList clist;
     private AuthManager authManager; // Add AuthManager
@@ -35,6 +48,7 @@ public class LoginJPanel extends javax.swing.JPanel {
         this.clist = new CourseList();
         initComponents();
 
+>>>>>>> Pradnya_Student_development
     }
 
     /**
@@ -46,6 +60,22 @@ public class LoginJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+<<<<<<< HEAD
+        btnStud = new javax.swing.JButton();
+        btnFaculty = new javax.swing.JButton();
+
+        btnStud.setText("Student");
+        btnStud.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnStudActionPerformed(evt);
+            }
+        });
+
+        btnFaculty.setText("Faculty");
+        btnFaculty.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFacultyActionPerformed(evt);
+=======
         txtLgpassword = new javax.swing.JPasswordField();
         cbLgshowpassword = new javax.swing.JCheckBox();
         lblLgpassword = new javax.swing.JLabel();
@@ -92,6 +122,7 @@ public class LoginJPanel extends javax.swing.JPanel {
         btnlogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnloginActionPerformed(evt);
+>>>>>>> Pradnya_Student_development
             }
         });
 
@@ -100,6 +131,13 @@ public class LoginJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD
+                .addGap(135, 135, 135)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnFaculty, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnStud, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE))
+                .addContainerGap(359, Short.MAX_VALUE))
+=======
                 .addGap(188, 188, 188)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(cbLgshowpassword)
@@ -120,10 +158,43 @@ public class LoginJPanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(lblLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+>>>>>>> Pradnya_Student_development
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD
+                .addGap(95, 95, 95)
+                .addComponent(btnStud, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnFaculty, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(321, Short.MAX_VALUE))
+        );
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void btnStudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudActionPerformed
+        // TODO add your handling code here:
+        StudentJPanel StudentJPanel;
+            StudentJPanel = new StudentJPanel(CardSequencePanel);
+            CardSequencePanel.removeAll();
+            CardSequencePanel.add("Student", StudentJPanel);
+            ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
+    }//GEN-LAST:event_btnStudActionPerformed
+
+    private void btnFacultyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFacultyActionPerformed
+        // TODO add your handling code here:
+        FacultyJPanel facultyJPanel;
+            facultyJPanel = new FacultyJPanel(CardSequencePanel);
+            CardSequencePanel.removeAll();
+            CardSequencePanel.add("Student", facultyJPanel);
+            ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
+    }//GEN-LAST:event_btnFacultyActionPerformed
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnFaculty;
+    private javax.swing.JButton btnStud;
+=======
                 .addGap(18, 18, 18)
                 .addComponent(lblLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(117, 117, 117)
@@ -206,5 +277,6 @@ public class LoginJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblLogin;
     private javax.swing.JPasswordField txtLgpassword;
     private javax.swing.JTextField txtLgusername;
+>>>>>>> Pradnya_Student_development
     // End of variables declaration//GEN-END:variables
 }
