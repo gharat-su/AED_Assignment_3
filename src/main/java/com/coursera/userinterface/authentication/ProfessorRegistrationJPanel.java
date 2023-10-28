@@ -56,9 +56,14 @@ public class ProfessorRegistrationJPanel extends javax.swing.JPanel {
         txtPassword = new javax.swing.JTextField();
         lblCreateProfessorBloodGroup2 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
+        lblTitleCreateProfessor.setBackground(new java.awt.Color(0, 0, 0));
         lblTitleCreateProfessor.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        lblTitleCreateProfessor.setForeground(new java.awt.Color(255, 51, 0));
         lblTitleCreateProfessor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitleCreateProfessor.setText("CREATE PROFESSOR");
+        lblTitleCreateProfessor.setOpaque(true);
 
         lblCreateProfessorSpecialization.setText("Professor Specialization:");
 
@@ -69,6 +74,8 @@ public class ProfessorRegistrationJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnCreateProfessor.setBackground(new java.awt.Color(204, 0, 0));
+        btnCreateProfessor.setForeground(new java.awt.Color(255, 255, 255));
         btnCreateProfessor.setText("CREATE");
         btnCreateProfessor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,6 +85,8 @@ public class ProfessorRegistrationJPanel extends javax.swing.JPanel {
 
         lblCreateProfessorEmailId.setText("Professor Email ID:");
 
+        btnProfessorBack.setBackground(new java.awt.Color(204, 0, 0));
+        btnProfessorBack.setForeground(new java.awt.Color(255, 255, 255));
         btnProfessorBack.setText("BACK");
         btnProfessorBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,36 +106,39 @@ public class ProfessorRegistrationJPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblTitleCreateProfessor, javax.swing.GroupLayout.DEFAULT_SIZE, 864, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblExperience)
-                    .addComponent(lblCreateProfessorEmailId)
-                    .addComponent(lblCreateProfessorSpecialization)
-                    .addComponent(lblCreateProfessorName)
-                    .addComponent(lblCreateProfessorBloodGroup1)
-                    .addComponent(lblCreateProfessorBloodGroup2))
-                .addGap(18, 18, 18)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnCreateProfessor)
-                        .addGap(53, 53, 53)
-                        .addComponent(btnProfessorBack))
-                    .addComponent(txtCreateProfessorName, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtCreateProfessorSpecialization, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbExperience, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtCreateProfessorEmailId1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 237, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblExperience)
+                            .addComponent(lblCreateProfessorEmailId)
+                            .addComponent(lblCreateProfessorSpecialization)
+                            .addComponent(lblCreateProfessorName)
+                            .addComponent(lblCreateProfessorBloodGroup1)
+                            .addComponent(lblCreateProfessorBloodGroup2))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnCreateProfessor)
+                                .addGap(53, 53, 53)
+                                .addComponent(btnProfessorBack))
+                            .addComponent(txtCreateProfessorName, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCreateProfessorSpecialization, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbExperience, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCreateProfessorEmailId1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 250, Short.MAX_VALUE))
+                    .addComponent(lblTitleCreateProfessor, javax.swing.GroupLayout.DEFAULT_SIZE, 852, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
                 .addComponent(lblTitleCreateProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(47, 47, 47)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblCreateProfessorName)
                     .addComponent(txtCreateProfessorName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))

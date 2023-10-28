@@ -58,6 +58,8 @@ public class StudentRegistrationJPanel extends javax.swing.JPanel {
         lblTitleStudent = new javax.swing.JLabel();
         txtStudentName = new javax.swing.JTextField();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
         lblStudentUsername.setText("Username:");
 
         cbStudentEducation.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select one", "Bachelor's Degree", "Master's Degree", "Doctoral Degree (Ph.D.)", "Professional Degree (e.g., MD, JD, MBA)", "Other" }));
@@ -69,6 +71,8 @@ public class StudentRegistrationJPanel extends javax.swing.JPanel {
 
         lblStudentPassword.setText("Password:");
 
+        btnCreateStudent.setBackground(new java.awt.Color(204, 0, 0));
+        btnCreateStudent.setForeground(new java.awt.Color(255, 255, 255));
         btnCreateStudent.setText("CREATE");
         btnCreateStudent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,6 +82,8 @@ public class StudentRegistrationJPanel extends javax.swing.JPanel {
 
         lblStudentEmailId.setText("Student Email ID:");
 
+        btnStudentBack.setBackground(new java.awt.Color(204, 0, 0));
+        btnStudentBack.setForeground(new java.awt.Color(255, 255, 255));
         btnStudentBack.setText("BACK");
         btnStudentBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,9 +95,12 @@ public class StudentRegistrationJPanel extends javax.swing.JPanel {
 
         lblStudentName.setText("Student Name:");
 
+        lblTitleStudent.setBackground(new java.awt.Color(0, 0, 0));
         lblTitleStudent.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        lblTitleStudent.setForeground(new java.awt.Color(255, 0, 0));
         lblTitleStudent.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitleStudent.setText("CREATE STUDENT");
+        lblTitleStudent.setOpaque(true);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -122,9 +131,8 @@ public class StudentRegistrationJPanel extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
                 .addComponent(lblTitleStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(47, 47, 47)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtStudentName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblStudentName))

@@ -54,6 +54,10 @@ public class StudentJPanel extends javax.swing.JPanel {
         btnGraduate = new javax.swing.JButton();
         btnViewCourse = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
+        btnSearchStudent.setBackground(new java.awt.Color(204, 0, 0));
+        btnSearchStudent.setForeground(new java.awt.Color(255, 255, 255));
         btnSearchStudent.setText("Search ");
         btnSearchStudent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,6 +65,8 @@ public class StudentJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnCourseReg.setBackground(new java.awt.Color(204, 0, 0));
+        btnCourseReg.setForeground(new java.awt.Color(255, 255, 255));
         btnCourseReg.setText("Register for Course");
         btnCourseReg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,6 +74,8 @@ public class StudentJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnRateProf.setBackground(new java.awt.Color(204, 0, 0));
+        btnRateProf.setForeground(new java.awt.Color(255, 255, 255));
         btnRateProf.setText("Rate Professor");
         btnRateProf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,6 +83,8 @@ public class StudentJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnBacklog.setBackground(new java.awt.Color(204, 0, 0));
+        btnBacklog.setForeground(new java.awt.Color(255, 255, 255));
         btnBacklog.setText("<<Back");
         btnBacklog.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,6 +92,8 @@ public class StudentJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnGraduate.setBackground(new java.awt.Color(204, 0, 0));
+        btnGraduate.setForeground(new java.awt.Color(255, 255, 255));
         btnGraduate.setText("Graduate?");
         btnGraduate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,6 +101,8 @@ public class StudentJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnViewCourse.setBackground(new java.awt.Color(204, 0, 0));
+        btnViewCourse.setForeground(new java.awt.Color(255, 255, 255));
         btnViewCourse.setText("My Courses");
         btnViewCourse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

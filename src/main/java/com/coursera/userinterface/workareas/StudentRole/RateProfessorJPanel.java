@@ -42,6 +42,8 @@ public class RateProfessorJPanel extends javax.swing.JPanel {
         btnSubmit = new javax.swing.JButton();
         btnSearch = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
         tblListProfessor.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -68,9 +70,11 @@ public class RateProfessorJPanel extends javax.swing.JPanel {
         jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
 
         jTextField1.setEditable(false);
-        jTextField1.setBackground(new java.awt.Color(204, 204, 204));
+        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
         jTextField1.setText("(On a scale of 1 to 5 : 1 is minimum and 5 is maximum)");
 
+        btnBackRate.setBackground(new java.awt.Color(204, 0, 0));
+        btnBackRate.setForeground(new java.awt.Color(255, 255, 255));
         btnBackRate.setText("<<Back");
         btnBackRate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,6 +84,8 @@ public class RateProfessorJPanel extends javax.swing.JPanel {
 
         lblSearchProf.setText("Search By Professor Name:");
 
+        btnSubmit.setBackground(new java.awt.Color(204, 0, 0));
+        btnSubmit.setForeground(new java.awt.Color(255, 255, 255));
         btnSubmit.setText("Submit");
 
         btnSearch.setText("Search");
@@ -133,7 +139,7 @@ public class RateProfessorJPanel extends javax.swing.JPanel {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(57, 57, 57)
+                .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -141,7 +147,7 @@ public class RateProfessorJPanel extends javax.swing.JPanel {
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(51, 51, 51)
                 .addComponent(btnSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

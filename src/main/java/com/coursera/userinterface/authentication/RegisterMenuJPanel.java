@@ -38,6 +38,11 @@ public class RegisterMenuJPanel extends javax.swing.JPanel {
         btnStudent = new javax.swing.JButton();
         btnProfessor = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
+        btnStudent.setBackground(new java.awt.Color(204, 0, 0));
+        btnStudent.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        btnStudent.setForeground(new java.awt.Color(255, 255, 255));
         btnStudent.setText("Student");
         btnStudent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -45,6 +50,9 @@ public class RegisterMenuJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnProfessor.setBackground(new java.awt.Color(204, 0, 0));
+        btnProfessor.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        btnProfessor.setForeground(new java.awt.Color(255, 255, 255));
         btnProfessor.setText("Professor");
         btnProfessor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

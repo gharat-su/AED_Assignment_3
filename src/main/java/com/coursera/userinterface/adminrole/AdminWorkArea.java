@@ -33,8 +33,15 @@ public class AdminWorkArea extends javax.swing.JPanel {
         btnAdminModifyCourse = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        lblWorkAreaCourse = new javax.swing.JLabel();
+        lblWorkAreaEmployee = new javax.swing.JLabel();
+        lblWorkAreaProfessor = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
+        btnAdminCreateCourse.setBackground(new java.awt.Color(204, 51, 0));
         btnAdminCreateCourse.setFont(new java.awt.Font("Lucida Grande", 0, 13)); // NOI18N
+        btnAdminCreateCourse.setForeground(new java.awt.Color(255, 255, 255));
         btnAdminCreateCourse.setText("Create Course");
         btnAdminCreateCourse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -42,21 +49,30 @@ public class AdminWorkArea extends javax.swing.JPanel {
             }
         });
 
+        btnAdminCreateEmployee.setBackground(new java.awt.Color(204, 0, 0));
         btnAdminCreateEmployee.setFont(new java.awt.Font("Lucida Grande", 0, 13)); // NOI18N
-        btnAdminCreateEmployee.setText("Create Employee");
+        btnAdminCreateEmployee.setForeground(new java.awt.Color(255, 255, 255));
+        btnAdminCreateEmployee.setText("Create Employer");
         btnAdminCreateEmployee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAdminCreateEmployeeActionPerformed(evt);
             }
         });
 
+        btnAdminCreateProfessor.setBackground(new java.awt.Color(204, 0, 0));
         btnAdminCreateProfessor.setFont(new java.awt.Font("Lucida Grande", 0, 13)); // NOI18N
+        btnAdminCreateProfessor.setForeground(new java.awt.Color(255, 255, 255));
         btnAdminCreateProfessor.setText("Create Professor");
 
+        lblAdminWorkAreaTitle.setBackground(new java.awt.Color(0, 0, 0));
         lblAdminWorkAreaTitle.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        lblAdminWorkAreaTitle.setForeground(new java.awt.Color(255, 51, 0));
         lblAdminWorkAreaTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblAdminWorkAreaTitle.setText("ADMIN WORKAREA");
+        lblAdminWorkAreaTitle.setOpaque(true);
 
+        btnAdminModifyCourse.setBackground(new java.awt.Color(204, 51, 0));
+        btnAdminModifyCourse.setForeground(new java.awt.Color(255, 255, 255));
         btnAdminModifyCourse.setText("Modify Course");
         btnAdminModifyCourse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,8 +80,12 @@ public class AdminWorkArea extends javax.swing.JPanel {
             }
         });
 
-        jButton1.setText("Modify Employee");
+        jButton1.setBackground(new java.awt.Color(204, 51, 0));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Modify Employer");
 
+        jButton2.setBackground(new java.awt.Color(204, 51, 0));
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Modify Professor");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,25 +93,41 @@ public class AdminWorkArea extends javax.swing.JPanel {
             }
         });
 
+        lblWorkAreaCourse.setText("COURSE");
+
+        lblWorkAreaEmployee.setText("EMPLOYER");
+
+        lblWorkAreaProfessor.setText("PROFESSOR");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblAdminWorkAreaTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(62, 62, 62)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(67, 67, 67)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnAdminCreateProfessor)
-                    .addComponent(btnAdminCreateEmployee)
-                    .addComponent(btnAdminCreateCourse))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(lblWorkAreaCourse)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnAdminCreateCourse))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(lblWorkAreaProfessor)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnAdminCreateProfessor))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(lblWorkAreaEmployee)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnAdminCreateEmployee)))
                 .addGap(59, 59, 59)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnAdminModifyCourse)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
-                .addGap(0, 413, Short.MAX_VALUE))
+                .addGap(132, 132, 132))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblAdminWorkAreaTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 788, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnAdminCreateCourse, btnAdminCreateEmployee, btnAdminCreateProfessor});
@@ -101,21 +137,23 @@ public class AdminWorkArea extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
                 .addComponent(lblAdminWorkAreaTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(68, 68, 68)
+                .addGap(83, 83, 83)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAdminCreateCourse)
-                    .addComponent(btnAdminModifyCourse))
+                    .addComponent(btnAdminModifyCourse)
+                    .addComponent(lblWorkAreaCourse))
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAdminCreateEmployee)
-                    .addComponent(jButton1))
+                    .addComponent(jButton1)
+                    .addComponent(lblWorkAreaEmployee))
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAdminCreateProfessor)
-                    .addComponent(jButton2))
-                .addContainerGap(205, Short.MAX_VALUE))
+                    .addComponent(jButton2)
+                    .addComponent(lblWorkAreaProfessor))
+                .addContainerGap(215, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAdminModifyCourse, jButton1, jButton2});
@@ -147,5 +185,8 @@ public class AdminWorkArea extends javax.swing.JPanel {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel lblAdminWorkAreaTitle;
+    private javax.swing.JLabel lblWorkAreaCourse;
+    private javax.swing.JLabel lblWorkAreaEmployee;
+    private javax.swing.JLabel lblWorkAreaProfessor;
     // End of variables declaration//GEN-END:variables
 }

@@ -49,9 +49,13 @@ public class MainJFrame extends javax.swing.JFrame {
 
         MainSplitPane.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
+        mainMenuJPanel.setBackground(new java.awt.Color(0, 0, 0));
         mainMenuJPanel.setMinimumSize(new java.awt.Dimension(800, 100));
         mainMenuJPanel.setPreferredSize(new java.awt.Dimension(800, 100));
 
+        btnLogin.setBackground(new java.awt.Color(204, 0, 0));
+        btnLogin.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        btnLogin.setForeground(new java.awt.Color(255, 255, 255));
         btnLogin.setText("Login");
         btnLogin.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
@@ -60,6 +64,9 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        btnRegister.setBackground(new java.awt.Color(204, 0, 0));
+        btnRegister.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        btnRegister.setForeground(new java.awt.Color(255, 255, 255));
         btnRegister.setText("Register");
         btnRegister.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnRegister.addActionListener(new java.awt.event.ActionListener() {
@@ -91,6 +98,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         MainSplitPane.setLeftComponent(mainMenuJPanel);
 
+        CardSequencePanel.setBackground(new java.awt.Color(255, 255, 255));
         CardSequencePanel.setPreferredSize(new java.awt.Dimension(800, 800));
         CardSequencePanel.setLayout(new java.awt.CardLayout());
         MainSplitPane.setRightComponent(CardSequencePanel);

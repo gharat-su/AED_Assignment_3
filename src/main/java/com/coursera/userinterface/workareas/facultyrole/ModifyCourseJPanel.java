@@ -53,6 +53,10 @@ public class ModifyCourseJPanel extends javax.swing.JPanel {
         CoursesJTable = new javax.swing.JTable();
         btnUpdateCourseDetails = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
+        btnBacklog.setBackground(new java.awt.Color(204, 0, 0));
+        btnBacklog.setForeground(new java.awt.Color(255, 255, 255));
         btnBacklog.setText("<<Back");
         btnBacklog.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,6 +92,8 @@ public class ModifyCourseJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(CoursesJTable);
 
+        btnUpdateCourseDetails.setBackground(new java.awt.Color(204, 0, 0));
+        btnUpdateCourseDetails.setForeground(new java.awt.Color(255, 255, 255));
         btnUpdateCourseDetails.setText("Update Course Details");
         btnUpdateCourseDetails.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

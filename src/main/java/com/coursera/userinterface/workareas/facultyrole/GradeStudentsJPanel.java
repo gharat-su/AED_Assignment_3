@@ -40,6 +40,11 @@ public class GradeStudentsJPanel extends javax.swing.JPanel {
         lblCourseSelect = new javax.swing.JLabel();
         btnSaveChanges = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+        setForeground(new java.awt.Color(255, 255, 255));
+
+        btnBacklog.setBackground(new java.awt.Color(204, 0, 0));
+        btnBacklog.setForeground(new java.awt.Color(255, 255, 255));
         btnBacklog.setText("<<Back");
         btnBacklog.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,6 +77,8 @@ public class GradeStudentsJPanel extends javax.swing.JPanel {
 
         lblCourseSelect.setText("Filter by :");
 
+        btnSaveChanges.setBackground(new java.awt.Color(204, 0, 0));
+        btnSaveChanges.setForeground(new java.awt.Color(255, 255, 255));
         btnSaveChanges.setText("Save Changes");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

@@ -45,6 +45,8 @@ public class ViewCoursesJPanel extends javax.swing.JPanel {
         btnBackCourse = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -58,6 +60,8 @@ public class ViewCoursesJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(jTable1);
 
+        jButton1.setBackground(new java.awt.Color(204, 0, 0));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("View");
 
         jLabel1.setText("Course Id");
@@ -70,6 +74,8 @@ public class ViewCoursesJPanel extends javax.swing.JPanel {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "25%", "50%", "75%", "100%" }));
 
+        jButton2.setBackground(new java.awt.Color(204, 0, 0));
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Save");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,6 +83,8 @@ public class ViewCoursesJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnBackCourse.setBackground(new java.awt.Color(204, 0, 0));
+        btnBackCourse.setForeground(new java.awt.Color(255, 255, 255));
         btnBackCourse.setText("<<Back");
         btnBackCourse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,6 +92,8 @@ public class ViewCoursesJPanel extends javax.swing.JPanel {
             }
         });
 
+        jButton3.setBackground(new java.awt.Color(204, 0, 0));
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Done");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

@@ -42,9 +42,14 @@ public class AdminCreateProfessor extends javax.swing.JPanel {
         btnCreateProfessor = new javax.swing.JButton();
         btnProfessorBack = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
+        lblTitleCreateProfessor.setBackground(new java.awt.Color(0, 0, 0));
         lblTitleCreateProfessor.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        lblTitleCreateProfessor.setForeground(new java.awt.Color(255, 0, 0));
         lblTitleCreateProfessor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitleCreateProfessor.setText("CREATE PROFESSOR");
+        lblTitleCreateProfessor.setOpaque(true);
 
         lblCreateProfessorSpecialization.setText("Professor Specialization:");
 
@@ -65,6 +70,8 @@ public class AdminCreateProfessor extends javax.swing.JPanel {
             }
         });
 
+        btnCreateProfessor.setBackground(new java.awt.Color(204, 0, 0));
+        btnCreateProfessor.setForeground(new java.awt.Color(255, 255, 255));
         btnCreateProfessor.setText("CREATE");
         btnCreateProfessor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,6 +79,8 @@ public class AdminCreateProfessor extends javax.swing.JPanel {
             }
         });
 
+        btnProfessorBack.setBackground(new java.awt.Color(204, 0, 0));
+        btnProfessorBack.setForeground(new java.awt.Color(255, 255, 255));
         btnProfessorBack.setText("BACK");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -80,7 +89,7 @@ public class AdminCreateProfessor extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(lblTitleCreateProfessor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(104, 104, 104)
+                .addGap(228, 228, 228)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblCreateProfessorBloodGroup)
                     .addComponent(lblCreateProfessorEmailId)
@@ -100,16 +109,15 @@ public class AdminCreateProfessor extends javax.swing.JPanel {
                     .addComponent(txtCreateProfessorSubject, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtCreateProfessorEmailId, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbProfessorBloodGroup, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(435, Short.MAX_VALUE))
+                .addContainerGap(306, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
+                .addComponent(lblTitleCreateProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblTitleCreateProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(52, 52, 52)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblCreateProfessorName)
                             .addComponent(txtCreateProfessorName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -136,7 +144,7 @@ public class AdminCreateProfessor extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCreateProfessor)
                     .addComponent(btnProfessorBack))
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addGap(68, 68, 68))
         );
     }// </editor-fold>//GEN-END:initComponents
 

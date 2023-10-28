@@ -55,6 +55,8 @@ public class LoginJPanel extends javax.swing.JPanel {
         btnexit = new javax.swing.JButton();
         btnlogin = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
         txtLgpassword.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         cbLgshowpassword.setFont(new java.awt.Font("Lucida Grande", 0, 13)); // NOI18N
@@ -73,11 +75,16 @@ public class LoginJPanel extends javax.swing.JPanel {
 
         txtLgusername.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
+        lblLogin.setBackground(new java.awt.Color(0, 0, 0));
         lblLogin.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        lblLogin.setForeground(new java.awt.Color(255, 0, 0));
         lblLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLogin.setText("  LOGIN APPLICATION");
+        lblLogin.setOpaque(true);
 
+        btnexit.setBackground(new java.awt.Color(204, 51, 0));
         btnexit.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        btnexit.setForeground(new java.awt.Color(255, 255, 255));
         btnexit.setText("EXIT");
         btnexit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,7 +92,7 @@ public class LoginJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnlogin.setBackground(new java.awt.Color(4, 120, 92));
+        btnlogin.setBackground(new java.awt.Color(204, 51, 0));
         btnlogin.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         btnlogin.setForeground(new java.awt.Color(255, 255, 255));
         btnlogin.setText("LOGIN");
@@ -116,17 +123,13 @@ public class LoginJPanel extends javax.swing.JPanel {
                             .addComponent(txtLgusername)
                             .addComponent(txtLgpassword, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))))
                 .addContainerGap(113, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(lblLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
                 .addComponent(lblLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(117, 117, 117)
+                .addGap(135, 135, 135)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblLgusername)
                     .addComponent(txtLgusername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))

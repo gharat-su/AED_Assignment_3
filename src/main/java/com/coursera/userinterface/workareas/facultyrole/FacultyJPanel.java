@@ -51,6 +51,10 @@ public class FacultyJPanel extends javax.swing.JPanel {
         btnBacklog = new javax.swing.JButton();
         btnGradeStudents = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
+        btnCreateCourse.setBackground(new java.awt.Color(204, 0, 0));
+        btnCreateCourse.setForeground(new java.awt.Color(255, 255, 255));
         btnCreateCourse.setText("Create Course");
         btnCreateCourse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -58,6 +62,8 @@ public class FacultyJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnModifyCourse.setBackground(new java.awt.Color(204, 0, 0));
+        btnModifyCourse.setForeground(new java.awt.Color(255, 255, 255));
         btnModifyCourse.setText("Modify Course");
         btnModifyCourse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,6 +71,8 @@ public class FacultyJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnScheduleCourse.setBackground(new java.awt.Color(204, 0, 0));
+        btnScheduleCourse.setForeground(new java.awt.Color(255, 255, 255));
         btnScheduleCourse.setText("Schedule Course");
         btnScheduleCourse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,6 +80,8 @@ public class FacultyJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnBacklog.setBackground(new java.awt.Color(204, 0, 0));
+        btnBacklog.setForeground(new java.awt.Color(255, 255, 255));
         btnBacklog.setText("<<Back");
         btnBacklog.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,6 +89,8 @@ public class FacultyJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnGradeStudents.setBackground(new java.awt.Color(204, 0, 0));
+        btnGradeStudents.setForeground(new java.awt.Color(255, 255, 255));
         btnGradeStudents.setText("Grade Students");
         btnGradeStudents.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
