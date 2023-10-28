@@ -4,6 +4,8 @@
  */
 package main.java.com.coursera.userinterface.workareas.StudentRole;
 
+import javax.swing.JPanel;
+
 /**
  *
  * @author pradnyashinde
@@ -13,7 +15,9 @@ public class GraduatedJPanel extends javax.swing.JPanel {
     /**
      * Creates new form GraduatedJPanel
      */
-    public GraduatedJPanel() {
+    javax.swing.JPanel CardSequencePanel;
+    public GraduatedJPanel(JPanel csp) {
+        this.CardSequencePanel=csp;
         initComponents();
     }
 

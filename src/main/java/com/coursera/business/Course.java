@@ -35,6 +35,18 @@ public class Course {
         this.enrolledStudents = new ArrayList<>();
     }
 
+    public void setCourseId(int courseId) {
+        this.courseId = courseId;
+    }
+
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
+    }
+
+    public void setAssignedCredits(int assignedCredits) {
+        this.assignedCredits = assignedCredits;
+    }
+
     public int getCourseId() {
         return courseId;
     }

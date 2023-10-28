@@ -219,7 +219,7 @@ public class CreateCourseJPanel extends javax.swing.JPanel {
 
     // Add the course to the CourseList (assuming you have access to the CourseList)
     clist.addCourse(course);
-
+    //Course course=new Course("ProfSmith","a","b",1,1,10,ulist);
     // Show a confirmation message with course details
     String message = "Course created successfully:\n\n" +
             "Course Name: " + courseName + "\n" +

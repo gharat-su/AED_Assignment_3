@@ -5,6 +5,7 @@
 package main.java.com.coursera.coursemanagement;
 
 import java.util.ArrayList;
+import java.util.List;
 import main.java.com.coursera.business.Course;
 import main.java.com.coursera.usermanagement.UserList;
 import main.java.com.coursera.users.Faculty;
@@ -12,17 +13,39 @@ import main.java.com.coursera.users.Student;
 
 /**
  *
- * @author sghar
+ * @author sghar 
  */
 public class CourseList {
-     private ArrayList<Course> courses;
+     private static ArrayList<Course> courses;
+     public static List<List<String>> nestedList;//Pradnya
+     static int counter;
 
     public CourseList() {
+        if(counter==0){
         courses = new ArrayList<>();
+        nestedList = new ArrayList<>();
+        counter++;
+       
+        }
+         //System.out.println("main"+courses.size());
+    }
+//  public void CourseListNew() {
+//      courses=new ArrayList<>();
+//      
+//  }
+    public List<String> getList(String studentid, String courseid){
+        List<String> innerList = new ArrayList<>();
+        innerList.add(studentid);
+        innerList.add(courseid);
+        return innerList;
+    }
+    public void setCourses(ArrayList<Course> courses) {
+        this.courses = courses;
     }
 
     public void addCourse(Course course) {
         courses.add(course);
+        System.out.println("add"+courses.size());
     }
 
     public Course getCourseById(int courseId) {
@@ -35,6 +58,7 @@ public class CourseList {
     }
 
     public ArrayList<Course> getAllCourses() {
+        System.out.println("get"+courses.size());
         return courses;
     }
 
@@ -89,4 +113,5 @@ public class CourseList {
         }
         return null; // Course not found
     }
+    
 }
