@@ -4,17 +4,22 @@
  */
 package main.java.com.coursera.userinterface.workareas.facultyrole;
 
+import javax.swing.JPanel;
+
 /**
  *
  * @author sghar
  */
 public class ScheduleCourseJPanel extends javax.swing.JPanel {
 
+    javax.swing.JPanel CardSequencePanel;
     /**
      * Creates new form ScheduleCourseJPanel
+     * @param scjp
      */
-    public ScheduleCourseJPanel() {
+    public ScheduleCourseJPanel(JPanel scjp) {
         initComponents();
+        this.CardSequencePanel = scjp;
     }
 
     /**
@@ -26,19 +31,41 @@ public class ScheduleCourseJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnBacklog = new javax.swing.JButton();
+
+        btnBacklog.setText("<<Back");
+        btnBacklog.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBacklogActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 556, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnBacklog)
+                .addContainerGap(478, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 363, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnBacklog)
+                .addContainerGap(335, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnBacklogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBacklogActionPerformed
+        // TODO add your handling code here:
+         CardSequencePanel.remove(this); // Remove the current panel
+        ((java.awt.CardLayout) CardSequencePanel.getLayout()).previous(CardSequencePanel); // Show the previous panel
+    }//GEN-LAST:event_btnBacklogActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBacklog;
     // End of variables declaration//GEN-END:variables
 }

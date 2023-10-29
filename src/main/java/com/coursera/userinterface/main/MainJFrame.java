@@ -4,6 +4,12 @@
  */
 package main.java.com.coursera.userinterface.main;
 
+
+import main.java.com.coursera.auth.AuthManager;
+import main.java.com.coursera.userinterface.authentication.LoginJPanel;
+import main.java.com.coursera.userinterface.authentication.RegisterMenuJPanel;
+import main.java.com.coursera.usermanagement.UserList;
+
 /**
  *
  * @author sghar
@@ -13,8 +19,14 @@ public class MainJFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainJFrame
      */
+    //javax.swing.JPanel CardSequencePanel;
+    private UserList ulist;  // Add a UserList variable here
+    private AuthManager authManager; // Add AuthManager
     public MainJFrame() {
         initComponents();
+        this.ulist = new UserList();
+         this.authManager = new AuthManager(ulist);
+        //this.CardSequencePanel=csp;
     }
 
     /**
@@ -30,62 +42,82 @@ public class MainJFrame extends javax.swing.JFrame {
         mainMenuJPanel = new javax.swing.JPanel();
         btnLogin = new javax.swing.JButton();
         btnRegister = new javax.swing.JButton();
-        mainContentJPanel = new javax.swing.JPanel();
+        CardSequencePanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setSize(new java.awt.Dimension(1000, 1000));
+
+        MainSplitPane.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
+
+        mainMenuJPanel.setMinimumSize(new java.awt.Dimension(800, 100));
+        mainMenuJPanel.setPreferredSize(new java.awt.Dimension(800, 100));
 
         btnLogin.setText("Login");
+        btnLogin.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginActionPerformed(evt);
+            }
+        });
 
         btnRegister.setText("Register");
+        btnRegister.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnRegister.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegisterActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout mainMenuJPanelLayout = new javax.swing.GroupLayout(mainMenuJPanel);
         mainMenuJPanel.setLayout(mainMenuJPanelLayout);
         mainMenuJPanelLayout.setHorizontalGroup(
             mainMenuJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainMenuJPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(mainMenuJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnRegister, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)))
+                .addGap(18, 18, 18)
+                .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(513, Short.MAX_VALUE))
         );
         mainMenuJPanelLayout.setVerticalGroup(
             mainMenuJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainMenuJPanelLayout.createSequentialGroup()
-                .addGap(75, 75, 75)
-                .addComponent(btnLogin)
-                .addGap(18, 18, 18)
-                .addComponent(btnRegister)
-                .addContainerGap(163, Short.MAX_VALUE))
+                .addGap(15, 15, 15)
+                .addGroup(mainMenuJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         MainSplitPane.setLeftComponent(mainMenuJPanel);
 
-        javax.swing.GroupLayout mainContentJPanelLayout = new javax.swing.GroupLayout(mainContentJPanel);
-        mainContentJPanel.setLayout(mainContentJPanelLayout);
-        mainContentJPanelLayout.setHorizontalGroup(
-            mainContentJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 295, Short.MAX_VALUE)
-        );
-        mainContentJPanelLayout.setVerticalGroup(
-            mainContentJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        CardSequencePanel.setPreferredSize(new java.awt.Dimension(800, 800));
+        CardSequencePanel.setLayout(new java.awt.CardLayout());
+        MainSplitPane.setRightComponent(CardSequencePanel);
 
-        MainSplitPane.setRightComponent(mainContentJPanel);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(MainSplitPane)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(MainSplitPane)
-        );
+        getContentPane().add(MainSplitPane, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+        // TODO add your handling code here:
+            LoginJPanel LoginJPanel;
+            LoginJPanel = new LoginJPanel(CardSequencePanel,authManager,ulist);
+            //CardSequencePanel.removeAll();
+            CardSequencePanel.add("Login", LoginJPanel);
+            ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
+       
+    }//GEN-LAST:event_btnLoginActionPerformed
+
+    private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
+        // TODO add your handling code here:
+            RegisterMenuJPanel registerMenu;
+            registerMenu = new RegisterMenuJPanel(CardSequencePanel,ulist);
+            //CardSequencePanel.removeAll();
+            CardSequencePanel.add("Register", registerMenu);
+            ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
+    }//GEN-LAST:event_btnRegisterActionPerformed
 
     /**
      * @param args the command line arguments
@@ -123,10 +155,10 @@ public class MainJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel CardSequencePanel;
     private javax.swing.JSplitPane MainSplitPane;
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnRegister;
-    private javax.swing.JPanel mainContentJPanel;
     private javax.swing.JPanel mainMenuJPanel;
     // End of variables declaration//GEN-END:variables
 }
