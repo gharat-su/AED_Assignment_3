@@ -4,6 +4,7 @@
  */
 package main.java.com.coursera.userinterface.workareas.facultyrole;
 
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import main.java.com.coursera.business.Course;
@@ -22,18 +23,20 @@ public class CreateCourseJPanel extends javax.swing.JPanel {
     private UserList ulist;
     private CourseList clist;
     private AuthManager authManager;
+    private int _professorId;
 
     /**
      * Creates new form CreateCourseJPanel
      *
      * @param ccjp
      */
-    public CreateCourseJPanel(JPanel ccjp, CourseList courseList, UserList userList,  AuthManager authManager) {
+    public CreateCourseJPanel(JPanel ccjp, CourseList courseList, UserList userList, AuthManager authManager, int professorId) {
         initComponents();
         this.CardSequencePanel = ccjp;
         this.clist = courseList;
         this.ulist = userList;
-        this.authManager = authManager; // Initialize the AuthManager
+        this.authManager = authManager;
+        this._professorId = professorId; // Set the professorId
     }
 
     /**
@@ -45,7 +48,7 @@ public class CreateCourseJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtCreateCourseSchedule = new javax.swing.JTextField();
+        txtCreateCourseScheduleStart = new javax.swing.JTextField();
         txtMaxNoOfStudents = new javax.swing.JTextField();
         txtCreateCourseAssignedCredits = new javax.swing.JTextField();
         btnCreateCourse = new javax.swing.JButton();
@@ -57,7 +60,8 @@ public class CreateCourseJPanel extends javax.swing.JPanel {
         txtCreateCourseName = new javax.swing.JTextField();
         lblCreateCourseAssignedCredits1 = new javax.swing.JLabel();
         lblCourseEndDate = new javax.swing.JLabel();
-        txtCreateCourseSchedule1 = new javax.swing.JTextField();
+        txtCreateCourseScheduleEnd = new javax.swing.JTextField();
+        btnModifyCourse = new javax.swing.JButton();
 
         btnCreateCourse.setFont(new java.awt.Font("Lucida Grande", 0, 13)); // NOI18N
         btnCreateCourse.setText("CREATE");
@@ -94,6 +98,13 @@ public class CreateCourseJPanel extends javax.swing.JPanel {
         lblCourseEndDate.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         lblCourseEndDate.setText("Course End Date:");
 
+        btnModifyCourse.setText("MODIFY COURSE");
+        btnModifyCourse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModifyCourseActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -106,6 +117,8 @@ public class CreateCourseJPanel extends javax.swing.JPanel {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(btnModifyCourse)
+                                .addGap(18, 18, 18)
                                 .addComponent(btnCreateCourse)
                                 .addGap(45, 45, 45)
                                 .addComponent(btnBack))
@@ -119,10 +132,10 @@ public class CreateCourseJPanel extends javax.swing.JPanel {
                                 .addGap(57, 57, 57)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(txtCreateCourseSchedule, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txtCreateCourseScheduleStart, javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(txtMaxNoOfStudents, javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(txtCreateCourseAssignedCredits, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txtCreateCourseSchedule1, javax.swing.GroupLayout.Alignment.LEADING))
+                                        .addComponent(txtCreateCourseScheduleEnd, javax.swing.GroupLayout.Alignment.LEADING))
                                     .addComponent(txtCreateCourseName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(0, 146, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -139,11 +152,11 @@ public class CreateCourseJPanel extends javax.swing.JPanel {
                 .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCreateCourseStartDate)
-                    .addComponent(txtCreateCourseSchedule, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCreateCourseScheduleStart, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCourseEndDate)
-                    .addComponent(txtCreateCourseSchedule1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCreateCourseScheduleEnd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCreateMaxNoOfStudents)
@@ -155,88 +168,93 @@ public class CreateCourseJPanel extends javax.swing.JPanel {
                 .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCreateCourse)
-                    .addComponent(btnBack))
+                    .addComponent(btnBack)
+                    .addComponent(btnModifyCourse))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
-        CardSequencePanel.remove(this); // Remove the current panel
-        ((java.awt.CardLayout) CardSequencePanel.getLayout()).previous(CardSequencePanel); // Show the previous panel
+        FacultyJPanel facultyPanel = new FacultyJPanel(CardSequencePanel, clist, ulist, authManager, _professorId);
+        CardSequencePanel.add("FacultyJPanel", facultyPanel);
+
+        // Show the FacultyJPanel
+        ((java.awt.CardLayout) CardSequencePanel.getLayout()).show(CardSequencePanel, "FacultyJPanel");
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void btnCreateCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateCourseActionPerformed
         // TODO add your handling code here:
-     // Get course details from input fields
-    String courseName = txtCreateCourseName.getText();
-    String courseStartDate = txtCreateCourseSchedule.getText(); // Renamed variable
-    String courseEndDate = txtCreateCourseSchedule1.getText(); // New variable
-    String maxStudentsText = txtMaxNoOfStudents.getText();
-    String assignedCreditsText = txtCreateCourseAssignedCredits.getText();
+        String courseName = txtCreateCourseName.getText();
+        String courseStartDate = txtCreateCourseScheduleStart.getText();
+        String courseEndDate = txtCreateCourseScheduleEnd.getText();
+        String maxStudentsText = txtMaxNoOfStudents.getText();
+        String assignedCreditsText = txtCreateCourseAssignedCredits.getText();
 
-    int maxCapacity;
-    int assignedCredits;
-    int professorId;
+        int maxCapacity;
+        int assignedCredits;
+        int professorId = this._professorId;
 
-    // Validate and convert maxStudentsText to an integer
-    try {
-        maxCapacity = Integer.parseInt(maxStudentsText);
-    } catch (NumberFormatException ex) {
-        // Handle the error, show a user-friendly message
-        JOptionPane.showMessageDialog(this, "Maximum Students must be a valid number.", "Input Error", JOptionPane.ERROR_MESSAGE);
-        return; // Exit the method
-    }
+        try {
+            maxCapacity = Integer.parseInt(maxStudentsText);
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Maximum Students must be a valid number.", "Input Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
 
-    // Validate and convert assignedCreditsText to an integer
-    try {
-        assignedCredits = Integer.parseInt(assignedCreditsText);
-    } catch (NumberFormatException ex) {
-        // Handle the error, show a user-friendly message
-        JOptionPane.showMessageDialog(this, "Assigned Credits must be a valid number.", "Input Error", JOptionPane.ERROR_MESSAGE);
-        return; // Exit the method
-    }
+        try {
+            assignedCredits = Integer.parseInt(assignedCreditsText);
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Assigned Credits must be a valid number.", "Input Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
 
-    // Get the userID of the currently logged-in user
-    User loggedInUser = authManager.getLoggedInUser();
+        User loggedInUser = authManager.getLoggedInUser();
 
-    if (loggedInUser != null) {
-        professorId = loggedInUser.getUserID();
-    } else {
-        // Handle the case when no user is logged in
-        professorId = 0; // You can assign a default or error value here
-    }
+        if (loggedInUser != null) {
+            professorId = loggedInUser.getUserID();
+        } else {
+            professorId = 0; // You can assign a default or error value here
+        }
 
-    // Validate input fields
-    if (courseName.isEmpty() || courseStartDate.isEmpty() || courseEndDate.isEmpty()) {
-        // Show a user-friendly message if any of the fields are empty
-        JOptionPane.showMessageDialog(this, "Course Name, Course Start Date, and Course End Date are required fields.", "Input Error", JOptionPane.ERROR_MESSAGE);
-        return; // Exit the method
-    }
+        if (courseName.isEmpty() || courseStartDate.isEmpty() || courseEndDate.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Course Name, Course Start Date, and Course End Date are required fields.", "Input Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
 
-    // Assuming you have a reference to the business class (you should initialize it when creating the CreateCourseJPanel), create the course
-    Course course = new Course(courseName, courseStartDate, courseEndDate, assignedCredits, professorId, maxCapacity, ulist); // Updated to include courseEndDate
+        System.out.println(assignedCredits + "Assigned Credits");
+        Course course = new Course(courseName, courseStartDate, courseEndDate, maxCapacity, assignedCredits, professorId, ulist);
 
-    // Add the course to the CourseList (assuming you have access to the CourseList)
-    clist.addCourse(course);
+        clist.addCourse(course);
 
-    // Show a confirmation message with course details
-    String message = "Course created successfully:\n\n" +
-            "Course Name: " + courseName + "\n" +
-            "Course Start Date: " + courseStartDate + "\n" +
-            "Course End Date: " + courseEndDate + "\n" + // Added Course End Date
-            "Max Students: " + maxCapacity + "\n" +
-            "Assigned Credits: " + assignedCredits;
+        String message = "Course created successfully:\n\n"
+                + "Course Name: " + courseName + "\n"
+                + "Course Start Date: " + courseStartDate + "\n"
+                + "Course End Date: " + courseEndDate + "\n"
+                + "Max Students: " + maxCapacity + "\n"
+                + "Assigned Credits: " + assignedCredits;
 
-    JOptionPane.showMessageDialog(this, message, "Course Created", JOptionPane.INFORMATION_MESSAGE);
-    clearFormFields();
-            CardSequencePanel.add("FacultyJPanel", new FacultyJPanel(CardSequencePanel, clist, ulist, authManager));
+        JOptionPane.showMessageDialog(this, message, "Course Created", JOptionPane.INFORMATION_MESSAGE);
+        printCourseList();
+        clearFormFields();
+
+        CardSequencePanel.add("FacultyJPanel", new FacultyJPanel(CardSequencePanel, clist, ulist, authManager, _professorId));
     }//GEN-LAST:event_btnCreateCourseActionPerformed
+
+    private void btnModifyCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifyCourseActionPerformed
+        // TODO add your handling code here:
+        ModifyCourseJPanel modifyCoursePanel = new ModifyCourseJPanel(CardSequencePanel, clist, ulist, authManager, _professorId);
+
+        CardSequencePanel.removeAll();
+        CardSequencePanel.add("ModifyCourse", modifyCoursePanel);
+        ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
+    }//GEN-LAST:event_btnModifyCourseActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnCreateCourse;
+    private javax.swing.JButton btnModifyCourse;
     private javax.swing.JLabel lblCourseEndDate;
     private javax.swing.JLabel lblCreateCourseAssignedCredits1;
     private javax.swing.JLabel lblCreateCourseName;
@@ -245,16 +263,42 @@ public class CreateCourseJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblTitleCreateCourse;
     private javax.swing.JTextField txtCreateCourseAssignedCredits;
     private javax.swing.JTextField txtCreateCourseName;
-    private javax.swing.JTextField txtCreateCourseSchedule;
-    private javax.swing.JTextField txtCreateCourseSchedule1;
+    private javax.swing.JTextField txtCreateCourseScheduleEnd;
+    private javax.swing.JTextField txtCreateCourseScheduleStart;
     private javax.swing.JTextField txtMaxNoOfStudents;
     // End of variables declaration//GEN-END:variables
 
     private void clearFormFields() {
-    txtCreateCourseName.setText(""); // Clear Course Name field
-    txtCreateCourseSchedule.setText(""); // Clear Course Start Date field
-    txtCreateCourseSchedule1.setText(""); // Clear Course End Date field
-    txtMaxNoOfStudents.setText(""); // Clear Max Students field
-    txtCreateCourseAssignedCredits.setText(""); // Clear Assigned Credits field
-}
+        txtCreateCourseName.setText(""); // Clear Course Name field
+        txtCreateCourseScheduleStart.setText(""); // Clear Course Start Date field
+        txtCreateCourseScheduleEnd.setText(""); // Clear Course End Date field
+        txtMaxNoOfStudents.setText(""); // Clear Max Students field
+        txtCreateCourseAssignedCredits.setText(""); // Clear Assigned Credits field
+    }
+
+    private void printCourseList() {
+        ArrayList<Course> courses = clist.getAllCourses();
+        if (courses.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Course List is empty.", "Course List", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            StringBuilder message = new StringBuilder("Course List:\n\n");
+            for (Course course : courses) {
+                message.append("Course Name: ").append(course.getCourseName()).append("\n");
+                message.append("Start Date: ").append(course.getCourseStartDate()).append("\n");
+                message.append("End Date: ").append(course.getCourseEndDate()).append("\n");
+                message.append("Max Students: ").append(course.getMaxCapacity()).append("\n");
+                message.append("Assigned Credits: ").append(course.getAssignedCredits()).append("\n");
+                // Get the professor's ID for the course
+                int professorId = clist.getProfessorIdForCourse(course.getCourseId());
+                message.append("Professor ID: ");
+                if (professorId != -1) {
+                    message.append(professorId).append("\n");
+                } else {
+                    message.append("N/A\n");
+                }
+                message.append("------------------------------\n");
+            }
+            JOptionPane.showMessageDialog(this, message.toString(), "Course List", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
 }

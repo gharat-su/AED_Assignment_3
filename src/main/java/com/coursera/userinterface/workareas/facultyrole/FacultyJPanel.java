@@ -21,19 +21,21 @@ public class FacultyJPanel extends javax.swing.JPanel {
     private CourseList clist;
     private AuthManager authManager;
     private User loggedInUser;
+    private int _professorId; // Add professorId variable
+
     /**
      * Creates new form FacultyWorkAreaJPanel
      *
      * @param fjp
      */
-    public FacultyJPanel(JPanel fjp, CourseList courseList, UserList userList, AuthManager authManager) {
+    public FacultyJPanel(JPanel fjp, CourseList courseList, UserList userList, AuthManager authManager, int professorId ) {
         initComponents();
         this.CardSequencePanel = fjp;
         this.clist = courseList;
         this.ulist = userList;
         this.authManager = authManager;
-        
-        this.loggedInUser = authManager.getLoggedInUser();
+        this._professorId = professorId; // Set the professorId
+
     }
 
     /**
@@ -127,7 +129,7 @@ public class FacultyJPanel extends javax.swing.JPanel {
     private void btnCreateCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateCourseActionPerformed
         // TODO add your handling code here:
         CreateCourseJPanel createcourseJPanel;
-        createcourseJPanel = new CreateCourseJPanel(CardSequencePanel, clist, ulist, authManager);
+        createcourseJPanel = new CreateCourseJPanel(CardSequencePanel, clist, ulist, authManager, _professorId);
         CardSequencePanel.removeAll();
         CardSequencePanel.add("CreateCourse", createcourseJPanel);
         ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
@@ -136,7 +138,7 @@ public class FacultyJPanel extends javax.swing.JPanel {
     private void btnModifyCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifyCourseActionPerformed
         // TODO add your handling code here:
         ModifyCourseJPanel modifycourseJPanel;
-        modifycourseJPanel = new ModifyCourseJPanel(CardSequencePanel, clist, ulist, loggedInUser);
+        modifycourseJPanel = new ModifyCourseJPanel(CardSequencePanel, clist, ulist, authManager, _professorId);
         CardSequencePanel.removeAll();
         CardSequencePanel.add("ModifyCourse", modifycourseJPanel);
         ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);

@@ -5,8 +5,11 @@
 package main.java.com.coursera.userinterface.workareas.StudentRole;
 
 import javax.swing.JPanel;
+import main.java.com.coursera.auth.AuthManager;
+import main.java.com.coursera.coursemanagement.CourseList;
 import main.java.com.coursera.userinterface.authentication.LoginJPanel;
 import main.java.com.coursera.usermanagement.UserList;
+import main.java.com.coursera.users.User;
 
 /**
  *
@@ -19,8 +22,18 @@ public class StudentJPanel extends javax.swing.JPanel {
      */
     javax.swing.JPanel CardSequencePanel;
     private UserList ulist;
-    public StudentJPanel(JPanel csp) {
-        this.CardSequencePanel=csp;
+    private CourseList clist;
+    private AuthManager authManager;
+    private User loggedInUser;
+    private int _studentId; // Add professorId variable
+
+    public StudentJPanel(JPanel csp, CourseList courseList, UserList userList, AuthManager authManager, int studentId) {
+        this.CardSequencePanel = csp;
+        this.clist = courseList;
+        this.ulist = userList;
+        this.authManager = authManager;
+        this._studentId = studentId; // Set the professorId
+        
         initComponents();
     }
 
@@ -100,34 +113,34 @@ public class StudentJPanel extends javax.swing.JPanel {
 
     private void btnSearchStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchStudentActionPerformed
         // TODO add your handling code here:
-            SearchJPanel SearchJPanel;
-            SearchJPanel = new SearchJPanel(CardSequencePanel);
-            CardSequencePanel.removeAll();
-            CardSequencePanel.add("Search", SearchJPanel);
-            ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
+        SearchJPanel SearchJPanel;
+        SearchJPanel = new SearchJPanel(CardSequencePanel,  clist, ulist, authManager, _studentId);
+        CardSequencePanel.removeAll();
+        CardSequencePanel.add("Search", SearchJPanel);
+        ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
     }//GEN-LAST:event_btnSearchStudentActionPerformed
 
     private void btnRateProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRateProfActionPerformed
         // TODO add your handling code here:
-            RateProfessorJPanel RateProfessorJPanel;
-            RateProfessorJPanel = new RateProfessorJPanel(CardSequencePanel);
-            CardSequencePanel.removeAll();
-            CardSequencePanel.add("Professor", RateProfessorJPanel);
-            ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
+        RateProfessorJPanel RateProfessorJPanel;
+        RateProfessorJPanel = new RateProfessorJPanel(CardSequencePanel,  clist, ulist, authManager, _studentId );
+        CardSequencePanel.removeAll();
+        CardSequencePanel.add("Professor", RateProfessorJPanel);
+        ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
     }//GEN-LAST:event_btnRateProfActionPerformed
 
     private void btnCourseRegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCourseRegActionPerformed
         // TODO add your handling code here:
-            StudentRegisterCourseJPanel StudentRegisterCourseJPanel;
-            StudentRegisterCourseJPanel = new StudentRegisterCourseJPanel(CardSequencePanel);
-            CardSequencePanel.removeAll();
-            CardSequencePanel.add("Course", StudentRegisterCourseJPanel);
-            ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
+        StudentRegisterCourseJPanel StudentRegisterCourseJPanel;
+        StudentRegisterCourseJPanel = new StudentRegisterCourseJPanel(CardSequencePanel,  clist, ulist, authManager, _studentId);
+        CardSequencePanel.removeAll();
+        CardSequencePanel.add("Course", StudentRegisterCourseJPanel);
+        ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
     }//GEN-LAST:event_btnCourseRegActionPerformed
 
     private void btnBacklogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBacklogActionPerformed
         // TODO add your handling code here:
-            CardSequencePanel.remove(this); // Remove the current panel
+        CardSequencePanel.remove(this); // Remove the current panel
         ((java.awt.CardLayout) CardSequencePanel.getLayout()).previous(CardSequencePanel); // Show the previous panel
     }//GEN-LAST:event_btnBacklogActionPerformed
 

@@ -5,6 +5,10 @@
 package main.java.com.coursera.userinterface.workareas.StudentRole;
 
 import javax.swing.JPanel;
+import main.java.com.coursera.auth.AuthManager;
+import main.java.com.coursera.coursemanagement.CourseList;
+import main.java.com.coursera.usermanagement.UserList;
+import main.java.com.coursera.users.User;
 
 /**
  *
@@ -16,8 +20,18 @@ public class RateProfessorJPanel extends javax.swing.JPanel {
      * Creates new form RateProfessorJPanel
      */
     javax.swing.JPanel CardSequencePanel;
-    public RateProfessorJPanel(JPanel csp) {
-        this.CardSequencePanel=csp;
+    private UserList ulist;
+    private CourseList clist;
+    private AuthManager authManager;
+    private User loggedInUser;
+    private int _studentId; // Add professorId variable
+
+    public RateProfessorJPanel(JPanel csp, CourseList courseList, UserList userList, AuthManager authManager, int studentId) {
+        this.CardSequencePanel = csp;
+        this.clist = courseList;
+        this.ulist = userList;
+        this.authManager = authManager;
+        this._studentId = studentId; // Set the professorId
         initComponents();
     }
 
@@ -171,11 +185,11 @@ public class RateProfessorJPanel extends javax.swing.JPanel {
 
     private void btnBackRateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackRateActionPerformed
         // TODO add your handling code here:
-            StudentJPanel StudentJPanel;
-            StudentJPanel = new StudentJPanel(CardSequencePanel);
-            CardSequencePanel.removeAll();
-            CardSequencePanel.add("Student", StudentJPanel);
-            ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
+        StudentJPanel StudentJPanel;
+        StudentJPanel = new StudentJPanel(CardSequencePanel, clist, ulist, authManager, _studentId);
+        CardSequencePanel.removeAll();
+        CardSequencePanel.add("Student", StudentJPanel);
+        ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
     }//GEN-LAST:event_btnBackRateActionPerformed
 
 
