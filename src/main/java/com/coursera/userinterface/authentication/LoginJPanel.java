@@ -27,6 +27,7 @@ public class LoginJPanel extends javax.swing.JPanel {
     private UserList ulist;
     private CourseList clist;
     private AuthManager authManager; // Add AuthManager
+    private User loggedInUser;
 
     public LoginJPanel(JPanel csp, AuthManager authManager, UserList userList) {
         this.CardSequencePanel = csp;

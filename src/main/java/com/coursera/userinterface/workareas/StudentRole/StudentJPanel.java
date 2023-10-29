@@ -5,6 +5,8 @@
 package main.java.com.coursera.userinterface.workareas.StudentRole;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import javax.swing.JPanel;
 import main.java.com.coursera.auth.AuthManager;
@@ -23,10 +25,12 @@ public class StudentJPanel extends javax.swing.JPanel {
      * Creates new form StudentJPanel
      */
     javax.swing.JPanel CardSequencePanel;
+    private CourseList courseList;
     private UserList ulist;
     private CourseList clist;
     private AuthManager authManager;
     private User loggedInUser;
+    private int studentId;
     
     public StudentJPanel(JPanel csp,CourseList courseList, UserList userList, AuthManager authManager) {
         this.CardSequencePanel=csp;
@@ -34,8 +38,11 @@ public class StudentJPanel extends javax.swing.JPanel {
        this.clist = courseList;
         this.ulist = userList;
         this.authManager = authManager;
-        
+        this.courseList=courseList;
         this.loggedInUser = authManager.getLoggedInUser();
+        //this.studentId = student.getUserID();
+        
+        
     }
 
     /**
@@ -51,7 +58,6 @@ public class StudentJPanel extends javax.swing.JPanel {
         btnCourseReg = new javax.swing.JButton();
         btnRateProf = new javax.swing.JButton();
         btnBacklog = new javax.swing.JButton();
-        btnGraduate = new javax.swing.JButton();
         btnViewCourse = new javax.swing.JButton();
 
         btnSearchStudent.setText("Search ");
@@ -82,13 +88,6 @@ public class StudentJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnGraduate.setText("Graduate?");
-        btnGraduate.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGraduateActionPerformed(evt);
-            }
-        });
-
         btnViewCourse.setText("My Courses");
         btnViewCourse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,7 +102,6 @@ public class StudentJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(148, 148, 148)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnGraduate, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnRateProf, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCourseReg, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSearchStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -128,16 +126,14 @@ public class StudentJPanel extends javax.swing.JPanel {
                 .addComponent(btnCourseReg, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(58, 58, 58)
                 .addComponent(btnRateProf, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(59, 59, 59)
-                .addComponent(btnGraduate, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(79, Short.MAX_VALUE))
+                .addContainerGap(177, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSearchStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchStudentActionPerformed
         // TODO add your handling code here:
             SearchJPanel SearchJPanel;
-            SearchJPanel = new SearchJPanel(CardSequencePanel);
+            SearchJPanel = new SearchJPanel(CardSequencePanel,courseList,loggedInUser);
             CardSequencePanel.removeAll();
             CardSequencePanel.add("Search", SearchJPanel);
             ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
@@ -146,7 +142,7 @@ public class StudentJPanel extends javax.swing.JPanel {
     private void btnRateProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRateProfActionPerformed
         // TODO add your handling code here:
             RateProfessorJPanel RateProfessorJPanel;
-            RateProfessorJPanel = new RateProfessorJPanel(CardSequencePanel);
+            RateProfessorJPanel = new RateProfessorJPanel(CardSequencePanel,courseList,loggedInUser, ulist,authManager,loggedInUser);
             CardSequencePanel.removeAll();
             CardSequencePanel.add("Professor", RateProfessorJPanel);
             ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
@@ -155,7 +151,7 @@ public class StudentJPanel extends javax.swing.JPanel {
     private void btnCourseRegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCourseRegActionPerformed
         // TODO add your handling code here:
             StudentRegisterCourseJPanel StudentRegisterCourseJPanel;
-            StudentRegisterCourseJPanel = new StudentRegisterCourseJPanel(CardSequencePanel);
+            StudentRegisterCourseJPanel = new StudentRegisterCourseJPanel(CardSequencePanel,courseList,loggedInUser, ulist,authManager);
             CardSequencePanel.removeAll();
             CardSequencePanel.add("Course", StudentRegisterCourseJPanel);
             ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
@@ -167,19 +163,19 @@ public class StudentJPanel extends javax.swing.JPanel {
         ((java.awt.CardLayout) CardSequencePanel.getLayout()).previous(CardSequencePanel); // Show the previous panel
     }//GEN-LAST:event_btnBacklogActionPerformed
 
-    private void btnGraduateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraduateActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnGraduateActionPerformed
-
     private void btnViewCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewCourseActionPerformed
         // TODO add your handling code here:
+            ViewCoursesJPanel ViewCoursesJPanel;
+            ViewCoursesJPanel = new ViewCoursesJPanel(CardSequencePanel,loggedInUser,ulist,  authManager);
+            CardSequencePanel.removeAll();
+            CardSequencePanel.add("ViewCourse", ViewCoursesJPanel);
+            ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
     }//GEN-LAST:event_btnViewCourseActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBacklog;
     private javax.swing.JButton btnCourseReg;
-    private javax.swing.JButton btnGraduate;
     private javax.swing.JButton btnRateProf;
     private javax.swing.JButton btnSearchStudent;
     private javax.swing.JButton btnViewCourse;

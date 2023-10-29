@@ -4,7 +4,16 @@
  */
 package main.java.com.coursera.userinterface.workareas.StudentRole;
 
+import java.awt.CardLayout;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+import main.java.com.coursera.auth.AuthManager;
+import main.java.com.coursera.business.Course;
+import main.java.com.coursera.coursemanagement.CourseList;
+import main.java.com.coursera.usermanagement.UserList;
+import main.java.com.coursera.users.User;
 
 /**
  *
@@ -15,10 +24,25 @@ public class RateProfessorJPanel extends javax.swing.JPanel {
     /**
      * Creates new form RateProfessorJPanel
      */
+    List<List<String>> nestedList = new ArrayList<>();
     javax.swing.JPanel CardSequencePanel;
-    public RateProfessorJPanel(JPanel csp) {
+    private CourseList courseList;
+     private UserList ulist;
+    private AuthManager authManager;
+    private int studentId;
+    private User loggedInUser;
+    private String profName;
+    public RateProfessorJPanel(JPanel csp,CourseList courseList,User student,UserList userList, AuthManager authManager,User professor) {
         this.CardSequencePanel=csp;
         initComponents();
+        initComponents();
+        this.courseList =courseList;
+        this.ulist = userList;
+        this.authManager = authManager;
+        this.studentId = student.getUserID();
+       this.profName= professor.getUsername();
+        
+        populateTable();
     }
 
     /**
@@ -47,7 +71,7 @@ public class RateProfessorJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Professor Id", "Professor Name", "Course", "Section"
+                "Professor Id", "Professor Name", "Course Id", "Student Id"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -147,8 +171,10 @@ public class RateProfessorJPanel extends javax.swing.JPanel {
 
     private void btnBackRateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackRateActionPerformed
         // TCardSequencePanel.remove(this); // Remove the current panel
-         CardSequencePanel.remove(this); // Remove the current panel
-        ((java.awt.CardLayout) CardSequencePanel.getLayout()).previous(CardSequencePanel); 
+         StudentJPanel panel=new StudentJPanel(CardSequencePanel, courseList, ulist, authManager);
+                CardSequencePanel.add("StudentJPanel",panel);
+                CardLayout layout=(CardLayout) CardSequencePanel.getLayout();
+                layout.next(CardSequencePanel);
     }//GEN-LAST:event_btnBackRateActionPerformed
 
 
@@ -165,4 +191,35 @@ public class RateProfessorJPanel extends javax.swing.JPanel {
     private javax.swing.JTable tblListProfessor;
     private javax.swing.JTextField txtProf;
     // End of variables declaration//GEN-END:variables
+
+    private void populateTable() {
+        DefaultTableModel dtm=(DefaultTableModel) tblListProfessor.getModel();
+        dtm.setRowCount(0);
+        String student=String.valueOf(studentId);
+        List<String> temp = new ArrayList<>();
+        for(List<String> clist:courseList.nestedList){
+            if(clist.get(0).equals(student)){
+                temp.add(clist.get(1));
+                  temp.add(clist.get(2));
+                  System.out.println(courseList.nestedList);
+            }
+        }
+        for(Course c:courseList.getAllCourses())
+        {
+            for(String tmp: temp){
+                
+                if(Integer.toString(c.getCourseId()).equals(tmp))
+                {
+                Object[] row=new Object[7];
+                row[3]=studentId;
+                row[2] = c.getCourseId();
+                row[1]=profName;
+                row[0]=c.getProfessor();
+                dtm.addRow(row);
+                }
+           
+            }
+        }
+        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
