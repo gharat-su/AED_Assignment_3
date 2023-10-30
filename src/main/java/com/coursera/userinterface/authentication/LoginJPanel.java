@@ -242,5 +242,4 @@ public class LoginJPanel extends javax.swing.JPanel {
     private javax.swing.JPasswordField txtLgpassword;
     private javax.swing.JTextField txtLgusername;
     // End of variables declaration//GEN-END:variables
-
 }

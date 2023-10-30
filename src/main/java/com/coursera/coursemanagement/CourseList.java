@@ -36,7 +36,6 @@ public class CourseList {
         innerList.add(Status);
         return innerList;
     }
-
     public void setCourses(ArrayList<Course> courses) {
         this.courses = courses;
     }

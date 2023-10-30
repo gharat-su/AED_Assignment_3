@@ -14,7 +14,6 @@ import main.java.com.coursera.users.Student;
  * @author sghar
  */
 public class Course {
-
     private static int courseIdCounter = 0;
     private int courseId;
     private String courseName;
