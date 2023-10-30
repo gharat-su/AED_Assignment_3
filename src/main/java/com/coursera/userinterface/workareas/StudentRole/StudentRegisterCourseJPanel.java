@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import main.java.com.coursera.auth.AuthManager;
 import main.java.com.coursera.business.Course;
+import main.java.com.coursera.business.ProfessorRating;
 import main.java.com.coursera.coursemanagement.CourseList;
 import main.java.com.coursera.usermanagement.UserList;
 import main.java.com.coursera.users.User;
@@ -285,22 +286,27 @@ public class StudentRegisterCourseJPanel extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private void populateTable() {
-        DefaultTableModel dtm=(DefaultTableModel) tblListProfessor.getModel();
-        dtm.setRowCount(0);
-        
-        for(Course c:courseList.getAllCourses())
-        {
-            Object[] row=new Object[7];
-            row[0]=studentId;
-            row[1] = c.getCourseId();
-            row[2]=c.getCourseName();
-            row[3]=courseList.getProfessorIdForCourse(c.getCourseId());;
-            row[4]="5";
-            row[5]=c.getCourseStartDate();
-            row[6]=c.getCourseEndDate();
-            
-            dtm.addRow(row);
-        }
+    DefaultTableModel dtm = (DefaultTableModel) tblListProfessor.getModel();
+    dtm.setRowCount(0);
+
+    for (Course c : courseList.getAllCourses()) {
+        Object[] row = new Object[7];
+        row[0] = studentId;
+        row[1] = c.getCourseId();
+        row[2] = c.getCourseName();
+        row[3] = courseList.getProfessorIdForCourse(c.getCourseId());
+
+        // Calculate the average rating for the professor
+        int professorId = courseList.getProfessorIdForCourse(c.getCourseId());
+        double averageRating = ProfessorRating.getInstance().calculateAverageRating(professorId);
+
+        // Display the average rating in the table
+        row[4] = String.format("%.2f", averageRating); // Format the rating to display two decimal places
+        row[5] = c.getCourseStartDate();
+        row[6] = c.getCourseEndDate();
+
+        dtm.addRow(row);
+    }
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
