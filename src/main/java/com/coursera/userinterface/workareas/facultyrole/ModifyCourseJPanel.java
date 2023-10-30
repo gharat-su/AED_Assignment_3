@@ -4,14 +4,17 @@
  */
 package main.java.com.coursera.userinterface.workareas.facultyrole;
 
+import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import main.java.com.coursera.auth.AuthManager;
 import main.java.com.coursera.business.Course;
 import main.java.com.coursera.coursemanagement.CourseList;
 import main.java.com.coursera.usermanagement.UserList;
+import main.java.com.coursera.users.Faculty;
 import main.java.com.coursera.users.User;
 
 /**
@@ -20,23 +23,29 @@ import main.java.com.coursera.users.User;
  */
 public class ModifyCourseJPanel extends javax.swing.JPanel {
 
-    javax.swing.JPanel CardSequencePanel;
-    private CourseList cList;
+    private javax.swing.JPanel CardSequencePanel;
     private UserList uList;
-    private int professorId; // The professor whose courses you want to display
+    private CourseList cList;
+    private AuthManager authManager;
+    private User loggedInUser;
+    private int professorId; // Add professorId variable
 
     /**
      * Creates new form ModifyCourseJPanel
      *
      * @param mcjp
      */
-    public ModifyCourseJPanel(JPanel mcjp, CourseList cList, UserList uList, User professor) {
+    public ModifyCourseJPanel(JPanel mcjp, CourseList cList, UserList uList, AuthManager authManager, int professorId) {
         initComponents();
+        System.out.println(mcjp + " " + cList + " " + uList + " " + authManager);
         this.CardSequencePanel = mcjp;
         this.cList = cList;
         this.uList = uList;
-        this.professorId = professor.getUserID();
-        populateCoursesTable();
+        this.authManager = authManager;
+        //this.loggedInUser = authManager.getLoggedInUser();
+        this.professorId = professorId;
+        populateCoursesTable(); // Call this method to populate the table.
+
     }
 
     /**
@@ -75,7 +84,7 @@ public class ModifyCourseJPanel extends javax.swing.JPanel {
                 java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, true, true, true, true, true, true
+                false, true, false, true, true, true, true
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -125,65 +134,79 @@ public class ModifyCourseJPanel extends javax.swing.JPanel {
 
     private void btnBacklogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBacklogActionPerformed
         // TODO add your handling code here:
+        CardSequencePanel.add(new FacultyJPanel(CardSequencePanel, cList, uList, authManager, professorId));
         CardSequencePanel.remove(this); // Remove the current panel
         ((java.awt.CardLayout) CardSequencePanel.getLayout()).previous(CardSequencePanel); // Show the previous panel
     }//GEN-LAST:event_btnBacklogActionPerformed
 
     private void btnUpdateCourseDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateCourseDetailsActionPerformed
         // TODO add your handling code here:
-       int selectedRow = CoursesJTable.getSelectedRow();
+        int selectedRow = CoursesJTable.getSelectedRow();
 
-    if (selectedRow == -1) {
-        // No course selected, show an error message
-        JOptionPane.showMessageDialog(this, "No course selected. Please select a course to update.", "Error", JOptionPane.ERROR_MESSAGE);
-        return;
-    }
-
-    int courseId = (int) CoursesJTable.getValueAt(selectedRow, 0); // Course ID is in the first column
-    String newStartDate = (String) CoursesJTable.getValueAt(selectedRow, 5); // Start Date in the 6th column
-    String newEndDate = (String) CoursesJTable.getValueAt(selectedRow, 6); // End Date in the 7th column
-    int newCapacity = (int) CoursesJTable.getValueAt(selectedRow, 4); // Capacity in the 5th column
-
-    Course course = cList.getCourseById(courseId);
-
-    if (course != null) {
-        boolean success = true;
-
-        if (!isValidDate(newStartDate)) {
-            // Acknowledge and prevent the update
-            JOptionPane.showMessageDialog(this, "Invalid start date format. Please enter a valid date in the dd/mm/yyyy format.", "Error", JOptionPane.ERROR_MESSAGE);
+        if (selectedRow == -1) {
+            // No course selected, show an error message
+            JOptionPane.showMessageDialog(this, "No course selected. Please select a course to update.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
-        if (!isValidDate(newEndDate)) {
-            // Acknowledge and prevent the update
-            JOptionPane.showMessageDialog(this, "Invalid end date format. Please enter a valid date in the dd/mm/yyyy format.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
+        int courseId = (int) CoursesJTable.getValueAt(selectedRow, 0); // Course ID is in the first column
+        int newAssignedCredits = (int) CoursesJTable.getValueAt(selectedRow, 3); // Assigned Credits in the 4th column
+        String newCourseName = (String) CoursesJTable.getValueAt(selectedRow, 1); // Course Name in the second column
+        String newStartDate = (String) CoursesJTable.getValueAt(selectedRow, 5); // Start Date in the 6th column
+        String newEndDate = (String) CoursesJTable.getValueAt(selectedRow, 6); // End Date in the 7th column
+        int newCapacity = (int) CoursesJTable.getValueAt(selectedRow, 4); // Capacity in the 5th column
 
-        if (newCapacity < 0) {
-            // Capacity cannot be negative, acknowledge and prevent the update
-            JOptionPane.showMessageDialog(this, "Capacity cannot be negative. Please enter a valid capacity.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
+        System.out.println(courseId + " " + newCourseName + " " + newStartDate + " " + newEndDate + " " + newCapacity + "Data");
+        Course course = cList.getCourseById(courseId);
 
-        if (!cList.updateCourseDates(courseId, newStartDate, newEndDate)) {
-            success = false;
-        }
+        if (course != null) {
+            boolean success = true;
 
-        if (!cList.updateCourseCapacity(courseId, newCapacity)) {
-            success = false;
-        }
+            if (!isValidDate(newStartDate)) {
+                // Acknowledge and prevent the update
+                JOptionPane.showMessageDialog(this, "Invalid start date format. Please enter a valid date in the dd/mm/yyyy format.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
 
-        if (success) {
-            // Show a success message or update the table with the new course details
-            populateCoursesTable();
-            JOptionPane.showMessageDialog(this, "Course details updated successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
-        } else {
-            // Show an error message if any updates failed
-            JOptionPane.showMessageDialog(this, "Course details update failed. Please try again.", "Error", JOptionPane.ERROR_MESSAGE);
+            if (!isValidDate(newEndDate)) {
+                // Acknowledge and prevent the update
+                JOptionPane.showMessageDialog(this, "Invalid end date format. Please enter a valid date in the dd/mm/yyyy format.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            if (newCapacity < 0) {
+                // Capacity cannot be negative, acknowledge and prevent the update
+                JOptionPane.showMessageDialog(this, "Capacity cannot be negative. Please enter a valid capacity.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            if (!cList.updateCourseName(courseId, newCourseName)) {
+                success = false;
+            }
+
+            if (!cList.updateCourseDates(courseId, newStartDate, newEndDate)) {
+                success = false;
+            }
+
+            if (!cList.updateCourseCapacity(courseId, newCapacity)) {
+                success = false;
+            }
+            // Update the assigned credits
+            if (!cList.updateAssignedCredits(courseId, newAssignedCredits)) {
+                success = false;
+            }
+
+            if (success) {
+                // Show a success message or update the table with the new course details
+
+                populateCoursesTable();
+                JOptionPane.showMessageDialog(this, "Course details updated successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
+                printCourseList(cList.getAllCourses());
+            } else {
+                // Show an error message if any updates failed
+                JOptionPane.showMessageDialog(this, "Course details update failed. Please try again.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
         }
-    }
 
     }//GEN-LAST:event_btnUpdateCourseDetailsActionPerformed
 
@@ -201,25 +224,45 @@ public class ModifyCourseJPanel extends javax.swing.JPanel {
 
         if (professorId != 0) {
             for (Course course : cList.getAllCourses()) {
-                if (course.getProfessor() != null && course.getProfessor().getUserID() == professorId) {
+                System.out.println("Inside for loop");
+
+                Faculty professor = course.findProfessorById(professorId, uList); // Use the 'findProfessorById' method to get the professor// Get the professor
+                System.out.println(professor + "professor");
+                System.out.println(professor.getUserID() + " " + this.professorId);
+                if (professor != null && professor.getUserID() == professorId) {
+                    System.out.println("Inside the if block");
                     model.addRow(new Object[]{
                         course.getCourseId(),
                         course.getCourseName(),
-                        course.getProfessor().getFullName(),
+                        professor.getFullName(), // Use the 'professor' object to access properties
                         course.getAssignedCredits(),
                         course.getMaxCapacity(),
-                        course.getCourseStartDate(), // Corrected typo here
+                        course.getCourseStartDate(),
                         course.getCourseEndDate()
                     });
                 }
             }
         }
     }
-    
+
     private boolean isValidDate(String date) {
-    String datePattern = "\\d{2}/\\d{2}/\\d{4}"; // Pattern for "dd/mm/yyyy" format
-    Pattern pattern = Pattern.compile(datePattern);
-    Matcher matcher = pattern.matcher(date);
-    return matcher.matches();
-}   
+        String datePattern = "\\d{2}/\\d{2}/\\d{4}"; // Pattern for "dd/mm/yyyy" format
+        Pattern pattern = Pattern.compile(datePattern);
+        Matcher matcher = pattern.matcher(date);
+        return matcher.matches();
+    }
+
+    public void printCourseList(ArrayList<Course> courseList) {
+        System.out.println("Course List:");
+        for (Course course : courseList) {
+            System.out.println("Course ID: " + course.getCourseId());
+            System.out.println("Course Name: " + course.getCourseName());
+            System.out.println("Professor ID: " + course.getProfessorId()); // Display the professor's ID
+            System.out.println("Assigned Credits: " + course.getAssignedCredits());
+            System.out.println("Max Capacity: " + course.getMaxCapacity());
+            System.out.println("Start Date: " + course.getCourseStartDate());
+            System.out.println("End Date: " + course.getCourseEndDate());
+            System.out.println("----------------------------------------");
+        }
+    }
 }

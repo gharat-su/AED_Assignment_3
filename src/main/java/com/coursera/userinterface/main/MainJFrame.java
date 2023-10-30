@@ -1,11 +1,12 @@
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package main.java.com.coursera.userinterface.main;
 
-
 import main.java.com.coursera.auth.AuthManager;
+import main.java.com.coursera.coursemanagement.CourseList;
 import main.java.com.coursera.userinterface.authentication.LoginJPanel;
 import main.java.com.coursera.userinterface.authentication.RegisterMenuJPanel;
 import main.java.com.coursera.usermanagement.UserList;
@@ -22,10 +23,13 @@ public class MainJFrame extends javax.swing.JFrame {
     //javax.swing.JPanel CardSequencePanel;
     private UserList ulist;  // Add a UserList variable here
     private AuthManager authManager; // Add AuthManager
+    private CourseList clist;
+
     public MainJFrame() {
         initComponents();
         this.ulist = new UserList();
-         this.authManager = new AuthManager(ulist);
+        this.clist = new CourseList();
+        this.authManager = new AuthManager(ulist);
         //this.CardSequencePanel=csp;
     }
 
@@ -102,21 +106,17 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
-            LoginJPanel LoginJPanel;
-            LoginJPanel = new LoginJPanel(CardSequencePanel,authManager,ulist);
-            //CardSequencePanel.removeAll();
-            CardSequencePanel.add("Login", LoginJPanel);
-            ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
-       
+        LoginJPanel loginJPanel = new LoginJPanel(CardSequencePanel, authManager, ulist, clist);
+        CardSequencePanel.add("Login", loginJPanel);
+        ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
+
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
         // TODO add your handling code here:
-            RegisterMenuJPanel registerMenu;
-            registerMenu = new RegisterMenuJPanel(CardSequencePanel,ulist);
-            //CardSequencePanel.removeAll();
-            CardSequencePanel.add("Register", registerMenu);
-            ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
+         RegisterMenuJPanel registerMenu = new RegisterMenuJPanel(CardSequencePanel, ulist);
+        CardSequencePanel.add("Register", registerMenu);
+        ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
     }//GEN-LAST:event_btnRegisterActionPerformed
 
     /**

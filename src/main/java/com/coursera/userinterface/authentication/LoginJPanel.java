@@ -8,6 +8,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import main.java.com.coursera.auth.AuthManager;
 import main.java.com.coursera.coursemanagement.CourseList;
+import main.java.com.coursera.userinterface.adminrole.AdminWorkAreaJPanel;
+import main.java.com.coursera.userinterface.employerrole.EmployerJPanel;
 import main.java.com.coursera.userinterface.workareas.StudentRole.StudentJPanel;
 import main.java.com.coursera.userinterface.workareas.facultyrole.FacultyJPanel;
 import main.java.com.coursera.usermanagement.UserList;
@@ -27,15 +29,21 @@ public class LoginJPanel extends javax.swing.JPanel {
     private UserList ulist;
     private CourseList clist;
     private AuthManager authManager; // Add AuthManager
-    private User loggedInUser;
+    private int authenticatedUserID;
+    private int _userid; // Add professorId variable
 
-    public LoginJPanel(JPanel csp, AuthManager authManager, UserList userList) {
+    public LoginJPanel(JPanel csp, AuthManager authManager, UserList userList, CourseList courseList) {
         this.CardSequencePanel = csp;
         this.ulist = userList;
         this.authManager = authManager; // Initialize AuthManager
-        this.clist = new CourseList();
+        this.clist = courseList;
+        clist.printCourseList(courseList);
         initComponents();
 
+    }
+
+    public int getAuthenticatedUserID() {
+        return authenticatedUserID;
     }
 
     /**
@@ -170,22 +178,48 @@ public class LoginJPanel extends javax.swing.JPanel {
 
         if (authenticatedUser != null) {
             // Authentication successful
+
+            // Store the authenticated user's userID
+            authenticatedUserID = authenticatedUser.getUserID();
+
             if (authenticatedUser.getUserType() == UserType.FACULTY) {
                 JOptionPane.showMessageDialog(this, "Welcome, Faculty: " + authenticatedUser.getFullName(), "Login Success", JOptionPane.INFORMATION_MESSAGE);
 
+                this._userid = authenticatedUserID;
+
                 FacultyJPanel facultyJPanel;
-                facultyJPanel = new FacultyJPanel(CardSequencePanel, clist, ulist, authManager);
+                facultyJPanel = new FacultyJPanel(CardSequencePanel, clist, ulist, authManager, _userid);
                 CardSequencePanel.removeAll();
-                CardSequencePanel.add("GradeStudents", facultyJPanel);
+                CardSequencePanel.add("FacultyJPanel", facultyJPanel);
                 ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
 
             } else if (authenticatedUser.getUserType() == UserType.STUDENT) {
                 JOptionPane.showMessageDialog(this, "Welcome, Student: " + authenticatedUser.getFullName(), "Login Success", JOptionPane.INFORMATION_MESSAGE);
-                StudentJPanel studentJPanel;
-                studentJPanel = new StudentJPanel(CardSequencePanel, clist, ulist, authManager);
+                StudentJPanel student;
+                student = new StudentJPanel(CardSequencePanel, clist, ulist, authManager);
                 CardSequencePanel.removeAll();
-                CardSequencePanel.add("Students", studentJPanel);
+                CardSequencePanel.add("StudentJPanel", student);
                 ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
+            } else if (authenticatedUser.getUserType() == UserType.ADMIN) {
+                // Handle admin user login
+                JOptionPane.showMessageDialog(this, "Welcome, Admin: " + authenticatedUser.getFullName(), "Login Success", JOptionPane.INFORMATION_MESSAGE);
+
+                AdminWorkAreaJPanel adminWorkArea;
+                adminWorkArea = new AdminWorkAreaJPanel(CardSequencePanel, ulist, clist);
+                CardSequencePanel.removeAll();
+                CardSequencePanel.add("AdminWorkAreaJPanel", adminWorkArea);
+                ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
+                // Add the code to navigate to the admin panel or perform admin-specific actions here
+            } else if (authenticatedUser.getUserType() == UserType.EMPLOYER) {
+                // Handle admin user login
+                JOptionPane.showMessageDialog(this, "Welcome, Employer: " + authenticatedUser.getFullName(), "Login Success", JOptionPane.INFORMATION_MESSAGE);
+
+                EmployerJPanel employer;
+                employer = new EmployerJPanel(CardSequencePanel, ulist, clist, _userid);
+                CardSequencePanel.removeAll();
+                CardSequencePanel.add("EmployerJPanel", employer);
+                ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
+                // Add the code to navigate to the admin panel or perform admin-specific actions here
             } else {
                 // Handle other user types if needed
                 JOptionPane.showMessageDialog(this, "Welcome, User: " + authenticatedUser.getFullName(), "Login Success", JOptionPane.INFORMATION_MESSAGE);
@@ -208,4 +242,5 @@ public class LoginJPanel extends javax.swing.JPanel {
     private javax.swing.JPasswordField txtLgpassword;
     private javax.swing.JTextField txtLgusername;
     // End of variables declaration//GEN-END:variables
+
 }

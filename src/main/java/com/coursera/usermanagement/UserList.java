@@ -6,7 +6,9 @@ package main.java.com.coursera.usermanagement;
 
 import java.util.ArrayList;
 import main.java.com.coursera.users.Faculty;
+import main.java.com.coursera.users.Student;
 import main.java.com.coursera.users.User;
+import main.java.com.coursera.users.UserType;
 
 /**
  *
@@ -18,6 +20,12 @@ public class UserList {
 
     public UserList() {
         userList = new ArrayList<>();
+
+        User adminUser = new User("admin", "adminpassword", "admin@example.com", "Admin Name", UserType.ADMIN);
+        addUser(adminUser);
+        
+        User employerUser = new User("employer", "employerpassword", "employer@example.com", "Employer Name", UserType.EMPLOYER);
+        addUser(employerUser);
     }
 
     // Create (Add) a new user to the list
@@ -69,5 +77,18 @@ public class UserList {
             }
         }
         return null; // Faculty user not found with the specified ID
+    }
+    
+        public boolean updateStudent(int userID, String newUsername, String newEmail, String newFullName, String newHighEduLevel) {
+        User user = getUserByID(userID);
+        if (user != null && user instanceof Student) {
+            Student student = (Student) user;
+            student.setUsername(newUsername);
+            student.setEmail(newEmail);
+            student.setFullName(newFullName);
+            student.setHighEduLevel(newHighEduLevel);
+            return true;
+        }
+        return false;
     }
 }

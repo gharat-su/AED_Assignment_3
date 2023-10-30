@@ -12,5 +12,6 @@ public enum UserType {
     STUDENT,
     FACULTY,
     ADMIN,
+    EMPLOYER
     // You can add more user types as needed
 }

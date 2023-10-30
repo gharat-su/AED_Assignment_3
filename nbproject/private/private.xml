@@ -3,10 +3,26 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/Assignment_3/Assignment_3/src/main/java/com/coursera/userinterface/authentication/RegistrationJPanel.java</file>
-            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/Assignment_3/Assignment_3/src/main/java/com/coursera/userinterface/authentication/LoginJPanel.java</file>
-            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/Assignment_3/Assignment_3/src/main/java/com/coursera/userinterface/workareas/facultyrole/FacultyWorkAreaJPanel.java</file>
-            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Git/Assignment_3/Assignment_3/src/main/java/com/coursera/userinterface/main/MainJFrame.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Code_merge/Sujendra_coursera/src/main/java/com/coursera/business/Rating.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Code_merge/Sujendra_coursera/src/main/java/com/coursera/usermanagement/UserList.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Code_merge/Sujendra_coursera/src/main/java/com/coursera/coursemanagement/CourseList.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Code_merge/Sujendra_coursera/src/main/java/com/coursera/userinterface/workareas/StudentRole/StudentRegisterCourseJPanel.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Code_merge/Sujendra_coursera/src/main/java/com/coursera/userinterface/authentication/LoginJPanel.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Code_merge/Sujendra_coursera/src/main/java/com/coursera/userinterface/workareas/StudentRole/StudentJPanel.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Code_merge/Sujendra_coursera/src/main/java/com/coursera/userinterface/adminrole/ModifyProfessorJPanel.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Code_merge/Sujendra_coursera/src/main/java/com/coursera/userinterface/adminrole/AdminWorkAreaJPanel.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Code_merge/Sujendra_coursera/src/main/java/com/coursera/users/User.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Code_merge/Sujendra_coursera/src/main/java/com/coursera/users/Student.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Code_merge/Sujendra_coursera/src/main/java/com/coursera/userinterface/workareas/facultyrole/FacultyJPanel.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Code_merge/Sujendra_coursera/src/main/java/com/coursera/userinterface/employerrole/EmployerJPanel.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Code_merge/Sujendra_coursera/src/main/java/com/coursera/userinterface/workareas/StudentRole/ViewCoursesJPanel.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Code_merge/Sujendra_coursera/src/main/java/com/coursera/userinterface/workareas/StudentRole/SearchJPanel.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Code_merge/Sujendra_coursera/src/main/java/com/coursera/userinterface/workareas/StudentRole/GraduatedJPanel.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Code_merge/Sujendra_coursera/src/main/java/com/coursera/business/ProfessorRating.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Code_merge/Sujendra_coursera/src/main/java/com/coursera/userinterface/workareas/StudentRole/RateProfessorJPanel.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Code_merge/Sujendra_coursera/src/main/java/com/coursera/users/UserType.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Code_merge/Sujendra_coursera/src/main/java/com/coursera/users/Faculty.java</file>
+            <file>file:/C:/Users/sghar/OneDrive/Documents/Northeastern/AED/Code_merge/Sujendra_coursera/src/main/java/com/coursera/business/Course.java</file>
         </group>
     </open-files>
 </project-private>

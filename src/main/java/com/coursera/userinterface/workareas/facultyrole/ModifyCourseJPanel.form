@@ -68,7 +68,7 @@
               <Table columnCount="7" rowCount="4">
                 <Column editable="false" title="Course ID" type="java.lang.Integer"/>
                 <Column editable="true" title="Course Title" type="java.lang.String"/>
-                <Column editable="true" title="Assigned Professor" type="java.lang.String"/>
+                <Column editable="false" title="Assigned Professor" type="java.lang.String"/>
                 <Column editable="true" title="Assigned Credits" type="java.lang.Integer"/>
                 <Column editable="true" title="Capacity" type="java.lang.Integer"/>
                 <Column editable="true" title="Start Date" type="java.lang.String"/>

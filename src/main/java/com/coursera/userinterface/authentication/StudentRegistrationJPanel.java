@@ -7,7 +7,6 @@ package main.java.com.coursera.userinterface.authentication;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import main.java.com.coursera.usermanagement.UserList;
-import main.java.com.coursera.users.Faculty;
 import main.java.com.coursera.users.Student;
 import main.java.com.coursera.users.User;
 import main.java.com.coursera.users.UserType;
