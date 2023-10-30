@@ -158,7 +158,7 @@ public class SearchJPanel extends javax.swing.JPanel {
             row[0]=studentId;
             row[1] = c.getCourseId();
             row[2]=c.getCourseName();
-            row[3]=c.getProfessor();
+            row[3]=courseList.getProfessorIdForCourse(c.getCourseId());
             row[4]="5";
             row[5]=c.getCourseStartDate();
             row[6]=c.getCourseEndDate();

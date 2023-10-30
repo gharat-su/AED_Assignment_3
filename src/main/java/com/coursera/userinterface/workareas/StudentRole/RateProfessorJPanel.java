@@ -40,7 +40,7 @@ public class RateProfessorJPanel extends javax.swing.JPanel {
         this.ulist = userList;
         this.authManager = authManager;
         this.studentId = student.getUserID();
-       this.profName= professor.getUsername();
+       this.profName= professor.getFullName();
         
         populateTable();
     }
@@ -214,7 +214,7 @@ public class RateProfessorJPanel extends javax.swing.JPanel {
                 row[3]=studentId;
                 row[2] = c.getCourseId();
                 row[1]=profName;
-                row[0]=c.getProfessor();
+                row[0]=courseList.getProfessorIdForCourse(c.getCourseId());
                 dtm.addRow(row);
                 }
            

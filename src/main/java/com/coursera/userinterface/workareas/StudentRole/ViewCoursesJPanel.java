@@ -198,8 +198,8 @@ public class ViewCoursesJPanel extends javax.swing.JPanel {
         String status = "Completed";//Pradnya ---update previous status
         //courseList.nestedList.add(courseList.getList(StudId, CourseId,status));//Pradnya
         for(List<String> clist:courseList.nestedList){
-            if(clist.get(0).equals(StudId)){
-                
+            if(clist.get(0).equals(StudId) && clist.get(1).equals(CourseId)){
+
                 System.out.println("entered");
                 clist.set(2,"Completed");
                 System.out.println(courseList.nestedList);
@@ -256,7 +256,7 @@ public class ViewCoursesJPanel extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private void populateTable() {
-        String status = "Incomplete";//
+        String status = "";//
         DefaultTableModel dtm=(DefaultTableModel) tblListCourses.getModel();
         dtm.setRowCount(0);
         String student=String.valueOf(studentId);
@@ -282,12 +282,12 @@ public class ViewCoursesJPanel extends javax.swing.JPanel {
             row[0]=studentId;
             row[1] = c.getCourseId();
             row[2]=c.getCourseName();
-            row[3]=c.getProfessor();
+            row[3]=courseList.getProfessorIdForCourse(c.getCourseId());
             row[4]="5";
             row[5]=c.getCourseStartDate();
             row[6]=c.getCourseEndDate();
             for(List<String> clist:courseList.nestedList){
-            if(clist.get(0).equals(Integer.toString(studentId))){
+            if(clist.get(0).equals(Integer.toString(studentId)) && clist.get(1).equals(Integer.toString(c.getCourseId()))){
                 System.out.println("entered");
                 row[7]=clist.get(2);
                 System.out.println(clist.get(2));

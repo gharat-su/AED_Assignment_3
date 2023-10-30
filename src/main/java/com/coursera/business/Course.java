@@ -14,37 +14,39 @@ import main.java.com.coursera.users.Student;
  * @author sghar
  */
 public class Course {
+
     private static int courseIdCounter = 0;
     private int courseId;
     private String courseName;
     private String courseStartDate;
     private String courseEndDate;
     private int assignedCredits;
-    private Faculty professor;
+    private int professorId;
     private int maxCapacity;
+
     private ArrayList<Student> enrolledStudents;
 
-        public Course(String courseName, String courseStartDate, String courseEndDate, int maxCapacity, int assignedCredits, int professorId, UserList userList) {
+    public Course(String courseName, String courseStartDate, String courseEndDate, int maxCapacity, int assignedCredits, int professorId, UserList userList) {
         this.courseId = ++courseIdCounter;
         this.courseName = courseName;
         this.courseStartDate = courseStartDate;
         this.courseEndDate = courseEndDate;
         this.assignedCredits = assignedCredits;
-        this.professor = findProfessorById(professorId, userList);
+        this.professorId = professorId;
         this.maxCapacity = maxCapacity;
         this.enrolledStudents = new ArrayList<>();
     }
 
-    public void setCourseId(int courseId) {
-        this.courseId = courseId;
+    public int getProfessorId() {
+        return professorId;
     }
 
     public void setCourseName(String courseName) {
         this.courseName = courseName;
     }
 
-    public void setAssignedCredits(int assignedCredits) {
-        this.assignedCredits = assignedCredits;
+    public void setProfessorId(int professorId) {
+        this.professorId = professorId;
     }
 
     public int getCourseId() {
@@ -63,7 +65,6 @@ public class Course {
         this.courseStartDate = courseStartDate;
     }
 
-
     public String getCourseEndDate() {
         return courseEndDate;
     }
@@ -72,12 +73,12 @@ public class Course {
         this.courseEndDate = courseEndDate;
     }
 
-    public int getAssignedCredits() {
-        return assignedCredits;
+    public void setAssignedCredits(int assignedCredits) {
+        this.assignedCredits = assignedCredits;
     }
 
-    public Faculty getProfessor() {
-        return professor;
+    public int getAssignedCredits() {
+        return assignedCredits;
     }
 
     public int getMaxCapacity() {
@@ -105,10 +106,9 @@ public class Course {
         enrolledStudents.remove(student);
     }
 
-    private Faculty findProfessorById(int professorId, UserList userList) {
+    public Faculty findProfessorById(int professorId, UserList userList) {
         // Look up the Faculty by their ID in the user list
         return userList.findFacultyById(professorId);
     }
-    
 
 }

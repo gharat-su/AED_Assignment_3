@@ -4,16 +4,13 @@
  */
 package main.java.com.coursera.users;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  *
  * @author sghar
  */
 public class Student  extends User {
     private String high_edu_level;
-   
+    
     public Student(String username, String password, String email, String fullName, UserType userType, String high_edu_level) {
         super(username,password, email, fullName, userType);
         this.high_edu_level = high_edu_level;
@@ -26,6 +23,5 @@ public class Student  extends User {
     public void setHighEduLevel(String high_edu_level) {
         this.high_edu_level = high_edu_level;
     }
-  
 
 }

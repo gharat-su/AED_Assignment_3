@@ -38,9 +38,9 @@ public class GraduatedJPanel extends javax.swing.JPanel {
         this.ulist = userList;
         this.authManager = authManager;
         this.studentId = student.getUserID();
-        //this.studentName = student.getUsername();
+        this.studentName = student.getUsername();
         txtStd.setText(String.valueOf(studentId));
-        //txtStdName.setText(studentName);
+        txtStdName.setText(studentName);
         
         populateTable();
     }
