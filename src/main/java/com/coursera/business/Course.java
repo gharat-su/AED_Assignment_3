@@ -23,6 +23,7 @@ public class Course {
     private int assignedCredits;
     private int professorId;
     private int maxCapacity;
+    private int enrolledStudentsCount = 0;
 
     private ArrayList<Student> enrolledStudents;
 
@@ -111,4 +112,11 @@ public class Course {
         return userList.findFacultyById(professorId);
     }
 
+    public void incrementEnrolledStudentsCount() {
+        enrolledStudentsCount++;
+    }
+
+    public int getEnrolledStudentsCount() {
+        return enrolledStudentsCount;
+    }
 }

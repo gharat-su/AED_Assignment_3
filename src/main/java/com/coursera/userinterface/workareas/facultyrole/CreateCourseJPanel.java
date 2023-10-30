@@ -61,7 +61,6 @@ public class CreateCourseJPanel extends javax.swing.JPanel {
         lblCreateCourseAssignedCredits1 = new javax.swing.JLabel();
         lblCourseEndDate = new javax.swing.JLabel();
         txtCreateCourseScheduleEnd = new javax.swing.JTextField();
-        btnModifyCourse = new javax.swing.JButton();
 
         btnCreateCourse.setFont(new java.awt.Font("Lucida Grande", 0, 13)); // NOI18N
         btnCreateCourse.setText("CREATE");
@@ -98,13 +97,6 @@ public class CreateCourseJPanel extends javax.swing.JPanel {
         lblCourseEndDate.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         lblCourseEndDate.setText("Course End Date:");
 
-        btnModifyCourse.setText("MODIFY COURSE");
-        btnModifyCourse.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnModifyCourseActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -117,8 +109,6 @@ public class CreateCourseJPanel extends javax.swing.JPanel {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(btnModifyCourse)
-                                .addGap(18, 18, 18)
                                 .addComponent(btnCreateCourse)
                                 .addGap(45, 45, 45)
                                 .addComponent(btnBack))
@@ -168,8 +158,7 @@ public class CreateCourseJPanel extends javax.swing.JPanel {
                 .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCreateCourse)
-                    .addComponent(btnBack)
-                    .addComponent(btnModifyCourse))
+                    .addComponent(btnBack))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -241,20 +230,10 @@ public class CreateCourseJPanel extends javax.swing.JPanel {
         CardSequencePanel.add("FacultyJPanel", new FacultyJPanel(CardSequencePanel, clist, ulist, authManager, _professorId));
     }//GEN-LAST:event_btnCreateCourseActionPerformed
 
-    private void btnModifyCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifyCourseActionPerformed
-        // TODO add your handling code here:
-        ModifyCourseJPanel modifyCoursePanel = new ModifyCourseJPanel(CardSequencePanel, clist, ulist, authManager, _professorId);
-
-        CardSequencePanel.removeAll();
-        CardSequencePanel.add("ModifyCourse", modifyCoursePanel);
-        ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
-    }//GEN-LAST:event_btnModifyCourseActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnCreateCourse;
-    private javax.swing.JButton btnModifyCourse;
     private javax.swing.JLabel lblCourseEndDate;
     private javax.swing.JLabel lblCreateCourseAssignedCredits1;
     private javax.swing.JLabel lblCreateCourseName;

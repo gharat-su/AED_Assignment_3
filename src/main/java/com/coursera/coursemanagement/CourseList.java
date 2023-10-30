@@ -97,13 +97,21 @@ public class CourseList {
         return false; // Course not found
     }
 
-    public boolean enrollStudentInCourse(int courseId, Student student) {
-        Course course = getCourseById(courseId);
-        if (course != null) {
-            return course.enrollStudent(student);
+public boolean enrollStudentInCourse(int courseId, Student student) {
+    Course course = getCourseById(courseId);
+    if (course != null) {
+        // Enroll the student in the course
+        boolean enrollmentResult = course.enrollStudent(student);
+        
+        if (enrollmentResult) {
+            // Update the enrolled students count for the course
+            course.incrementEnrolledStudentsCount();
         }
-        return false; // Course not found
+        
+        return enrollmentResult;
     }
+    return false; // Course not found
+}
 
     public boolean removeStudentFromCourse(int courseId, Student student) {
         Course course = getCourseById(courseId);
@@ -157,6 +165,7 @@ public int getEnrolledStudentsForProfessorCourses(int professorId) {
     }
     return enrolledStudents.size(); // Return the size of the list
 }
+
 
     public void printCourseList(CourseList courseList) {
         ArrayList<Course> courses = courseList.getAllCourses();

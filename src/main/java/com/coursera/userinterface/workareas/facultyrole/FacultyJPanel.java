@@ -49,9 +49,7 @@ public class FacultyJPanel extends javax.swing.JPanel {
 
         btnCreateCourse = new javax.swing.JButton();
         btnModifyCourse = new javax.swing.JButton();
-        btnScheduleCourse = new javax.swing.JButton();
         btnBacklog = new javax.swing.JButton();
-        btnGradeStudents = new javax.swing.JButton();
 
         btnCreateCourse.setText("Create Course");
         btnCreateCourse.addActionListener(new java.awt.event.ActionListener() {
@@ -67,24 +65,10 @@ public class FacultyJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnScheduleCourse.setText("Schedule Course");
-        btnScheduleCourse.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnScheduleCourseActionPerformed(evt);
-            }
-        });
-
         btnBacklog.setText("<<Back");
         btnBacklog.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBacklogActionPerformed(evt);
-            }
-        });
-
-        btnGradeStudents.setText("Grade Students");
-        btnGradeStudents.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGradeStudentsActionPerformed(evt);
             }
         });
 
@@ -99,16 +83,11 @@ public class FacultyJPanel extends javax.swing.JPanel {
                         .addComponent(btnBacklog)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 25, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnGradeStudents, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnCreateCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnModifyCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnScheduleCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(29, 29, 29))))
+                        .addGap(0, 70, Short.MAX_VALUE)
+                        .addComponent(btnCreateCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(143, 143, 143)
+                        .addComponent(btnModifyCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(101, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -116,13 +95,10 @@ public class FacultyJPanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(btnBacklog)
                 .addGap(47, 47, 47)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnModifyCourse, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
-                    .addComponent(btnScheduleCourse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnCreateCourse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addComponent(btnGradeStudents, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
-                .addGap(36, 36, 36))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCreateCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnModifyCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(237, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -144,36 +120,16 @@ public class FacultyJPanel extends javax.swing.JPanel {
         ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
     }//GEN-LAST:event_btnModifyCourseActionPerformed
 
-    private void btnScheduleCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnScheduleCourseActionPerformed
-        // TODO add your handling code here:
-        ScheduleCourseJPanel schedulecourseJPanel;
-        schedulecourseJPanel = new ScheduleCourseJPanel(CardSequencePanel);
-        CardSequencePanel.removeAll();
-        CardSequencePanel.add("ScheduleCourse", schedulecourseJPanel);
-        ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
-    }//GEN-LAST:event_btnScheduleCourseActionPerformed
-
     private void btnBacklogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBacklogActionPerformed
         // TODO add your handling code here:
         CardSequencePanel.remove(this); // Remove the current panel
         ((java.awt.CardLayout) CardSequencePanel.getLayout()).previous(CardSequencePanel); // Show the previous panel
     }//GEN-LAST:event_btnBacklogActionPerformed
 
-    private void btnGradeStudentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGradeStudentsActionPerformed
-        // TODO add your handling code here:
-        GradeStudentsJPanel gradestudentsJPanel;
-        gradestudentsJPanel = new GradeStudentsJPanel(CardSequencePanel);
-        CardSequencePanel.removeAll();
-        CardSequencePanel.add("GradeStudents", gradestudentsJPanel);
-        ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
-    }//GEN-LAST:event_btnGradeStudentsActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBacklog;
     private javax.swing.JButton btnCreateCourse;
-    private javax.swing.JButton btnGradeStudents;
     private javax.swing.JButton btnModifyCourse;
-    private javax.swing.JButton btnScheduleCourse;
     // End of variables declaration//GEN-END:variables
 }

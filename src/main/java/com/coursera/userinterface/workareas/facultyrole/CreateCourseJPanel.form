@@ -24,8 +24,6 @@
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="btnModifyCourse" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="btnCreateCourse" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                               <Component id="btnBack" min="-2" max="-2" attributes="0"/>
@@ -91,7 +89,6 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnCreateCourse" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnBack" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnModifyCourse" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -179,14 +176,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtCreateCourseScheduleEnd">
-    </Component>
-    <Component class="javax.swing.JButton" name="btnModifyCourse">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="MODIFY COURSE"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnModifyCourseActionPerformed"/>
-      </Events>
     </Component>
   </SubComponents>
 </Form>
