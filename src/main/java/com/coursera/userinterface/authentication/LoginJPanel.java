@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import main.java.com.coursera.auth.AuthManager;
 import main.java.com.coursera.coursemanagement.CourseList;
 import main.java.com.coursera.userinterface.adminrole.AdminWorkAreaJPanel;
+import main.java.com.coursera.userinterface.employerrole.EmployerJPanel;
 import main.java.com.coursera.userinterface.workareas.StudentRole.StudentJPanel;
 import main.java.com.coursera.userinterface.workareas.facultyrole.FacultyJPanel;
 import main.java.com.coursera.usermanagement.UserList;
@@ -197,16 +198,26 @@ public class LoginJPanel extends javax.swing.JPanel {
                 StudentJPanel student;
                 student = new StudentJPanel(CardSequencePanel, clist, ulist, authManager);
                 CardSequencePanel.removeAll();
-                CardSequencePanel.add("FacultyJPanel", student);
+                CardSequencePanel.add("StudentJPanel", student);
                 ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
             } else if (authenticatedUser.getUserType() == UserType.ADMIN) {
                 // Handle admin user login
                 JOptionPane.showMessageDialog(this, "Welcome, Admin: " + authenticatedUser.getFullName(), "Login Success", JOptionPane.INFORMATION_MESSAGE);
-                
+
                 AdminWorkAreaJPanel adminWorkArea;
                 adminWorkArea = new AdminWorkAreaJPanel(CardSequencePanel, ulist, clist);
                 CardSequencePanel.removeAll();
-                CardSequencePanel.add("FacultyJPanel", adminWorkArea);
+                CardSequencePanel.add("AdminWorkAreaJPanel", adminWorkArea);
+                ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
+                // Add the code to navigate to the admin panel or perform admin-specific actions here
+            } else if (authenticatedUser.getUserType() == UserType.EMPLOYER) {
+                // Handle admin user login
+                JOptionPane.showMessageDialog(this, "Welcome, Employer: " + authenticatedUser.getFullName(), "Login Success", JOptionPane.INFORMATION_MESSAGE);
+
+                EmployerJPanel employer;
+                employer = new EmployerJPanel(CardSequencePanel, ulist, clist, _userid);
+                CardSequencePanel.removeAll();
+                CardSequencePanel.add("EmployerJPanel", employer);
                 ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
                 // Add the code to navigate to the admin panel or perform admin-specific actions here
             } else {

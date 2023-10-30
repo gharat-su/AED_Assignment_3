@@ -5,10 +5,12 @@ import java.util.ArrayList;
 public class ProfessorRating {
 
     private static ProfessorRating instance;
-    private ArrayList<Rating> ratings;
+    private ArrayList<Rating> studentratings;
+    private ArrayList<Rating> employerRatings;
 
     private ProfessorRating() {
-        ratings = new ArrayList<>();
+        studentratings = new ArrayList<>();
+        employerRatings = new ArrayList<>();
     }
 
     public static ProfessorRating getInstance() {
@@ -19,18 +21,30 @@ public class ProfessorRating {
     }
 
     public void addRating(Rating rating) {
-        ratings.add(rating);
+        studentratings.add(rating);
     }
 
     public ArrayList<Rating> getRatings() {
-        return ratings;
+        return studentratings;
     }
-    
-        public double calculateAverageRating(int professorId) {
+
+    public void addEmployerRating(Rating rating) {
+        employerRatings.add(rating);
+    }
+
+    public ArrayList<Rating> getStudentRatings() {
+        return studentratings;
+    }
+
+    public ArrayList<Rating> getEmployerRatings() {
+        return employerRatings;
+    }
+
+    public double calculateAverageRating(int professorId) {
         int sum = 0;
         int count = 0;
 
-        for (Rating rating : ratings) {
+        for (Rating rating : studentratings) {
             if (rating.getProfessorId() == professorId) {
                 sum += rating.getRating();
                 count++;

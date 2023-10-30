@@ -121,7 +121,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         StudentRegistrationJPanel studentRegistration;
         studentRegistration = new StudentRegistrationJPanel(CardSequencePanel, ulist);
         //CardSequencePanel.removeAll();
-        CardSequencePanel.add("Register", studentRegistration);
+        CardSequencePanel.add("RegisterProfessor", studentRegistration);
         ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
     }//GEN-LAST:event_btnAdminCreateStudentActionPerformed
 
@@ -130,7 +130,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         ModifyProfessorJPanel modifyProfessor;
         modifyProfessor = new ModifyProfessorJPanel(CardSequencePanel, ulist, clist);
         //CardSequencePanel.removeAll();
-        CardSequencePanel.add("Register", modifyProfessor);
+        CardSequencePanel.add("ModifyProfessor", modifyProfessor);
         ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
     }//GEN-LAST:event_btnModifyProfessorActionPerformed
 
@@ -139,7 +139,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         ProfessorRegistrationJPanel professorRegistration;
         professorRegistration = new ProfessorRegistrationJPanel(CardSequencePanel, ulist);
         //CardSequencePanel.removeAll();
-        CardSequencePanel.add("Register", professorRegistration);
+        CardSequencePanel.add("AdminCreateProfessor", professorRegistration);
         ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
     }//GEN-LAST:event_btnAdminCreateProfessorActionPerformed
 
@@ -148,7 +148,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         ModifyStudentJPanel modifyStudent;
         modifyStudent = new ModifyStudentJPanel(CardSequencePanel, ulist, clist);
         //CardSequencePanel.removeAll();
-        CardSequencePanel.add("Register", modifyStudent);
+        CardSequencePanel.add("ModifyStudent", modifyStudent);
         ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
     }//GEN-LAST:event_btnModifyStudentActionPerformed
 

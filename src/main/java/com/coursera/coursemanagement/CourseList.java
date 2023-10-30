@@ -24,24 +24,26 @@ public class CourseList {
     public CourseList() {
         if (counter == 0) {
             courses = new ArrayList<>();
-	    nestedList = new ArrayList<>();
+            nestedList = new ArrayList<>();
             counter++;
         }
     }
-    public List<String> getList(String studentid, String courseid,String Status){
+
+    public List<String> getList(String studentid, String courseid, String Status) {
         List<String> innerList = new ArrayList<>();
         innerList.add(studentid);
         innerList.add(courseid);
         innerList.add(Status);
         return innerList;
     }
+
     public void setCourses(ArrayList<Course> courses) {
         this.courses = courses;
     }
 
     public void addCourse(Course course) {
         courses.add(course);
-	System.out.println("add"+courses.size());
+        System.out.println("add" + courses.size());
     }
 
     public Course getCourseById(int courseId) {
@@ -54,7 +56,7 @@ public class CourseList {
     }
 
     public ArrayList<Course> getAllCourses() {
-System.out.println("get"+courses.size());
+        System.out.println("get" + courses.size());
         return courses;
     }
 
@@ -120,7 +122,6 @@ System.out.println("get"+courses.size());
         return new ArrayList<>(); // Course not found or no enrolled students
     }
 
-    
     public int getProfessorIdForCourse(int courseId) {
         Course course = getCourseById(courseId);
         if (course != null) {
@@ -136,22 +137,42 @@ System.out.println("get"+courses.size());
         }
         return null; // Course not found or professor not found
     }
-    
-    public void printCourseList(CourseList courseList) {
-    ArrayList<Course> courses = courseList.getAllCourses();
-    
-    System.out.println("Course List:");
-    
-    for (Course course : courses) {
-        System.out.println("Course ID: " + course.getCourseId());
-        System.out.println("Course Name: " + course.getCourseName());
-        System.out.println("Assigned Professor ID: " + course.getProfessorId());
-        System.out.println("Assigned Credits: " + course.getAssignedCredits());
-        System.out.println("Max Capacity: " + course.getMaxCapacity());
-        System.out.println("Start Date: " + course.getCourseStartDate());
-        System.out.println("End Date: " + course.getCourseEndDate());
-        System.out.println("----------------------------------------");
+
+    public int getNumberOfCoursesForProfessor(int professorId) {
+        int numberOfCourses = 0;
+        for (Course course : courses) {
+            if (course.getProfessorId() == professorId) {
+                numberOfCourses++;
+            }
+        }
+        return numberOfCourses;
     }
+
+public int getEnrolledStudentsForProfessorCourses(int professorId) {
+    ArrayList<Student> enrolledStudents = new ArrayList<>();
+    for (Course course : courses) {
+        if (course.getProfessorId() == professorId) {
+            enrolledStudents.addAll(course.getEnrolledStudents());
+        }
+    }
+    return enrolledStudents.size(); // Return the size of the list
 }
+
+    public void printCourseList(CourseList courseList) {
+        ArrayList<Course> courses = courseList.getAllCourses();
+
+        System.out.println("Course List:");
+
+        for (Course course : courses) {
+            System.out.println("Course ID: " + course.getCourseId());
+            System.out.println("Course Name: " + course.getCourseName());
+            System.out.println("Assigned Professor ID: " + course.getProfessorId());
+            System.out.println("Assigned Credits: " + course.getAssignedCredits());
+            System.out.println("Max Capacity: " + course.getMaxCapacity());
+            System.out.println("Start Date: " + course.getCourseStartDate());
+            System.out.println("End Date: " + course.getCourseEndDate());
+            System.out.println("----------------------------------------");
+        }
+    }
 
 }
