@@ -4,8 +4,17 @@
  */
 package main.java.com.coursera.userinterface.workareas.StudentRole;
 
+import java.awt.CardLayout;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 import main.java.com.coursera.auth.AuthManager;
+import main.java.com.coursera.business.Course;
 import main.java.com.coursera.coursemanagement.CourseList;
 import main.java.com.coursera.usermanagement.UserList;
 import main.java.com.coursera.users.User;
@@ -19,21 +28,44 @@ public class StudentRegisterCourseJPanel extends javax.swing.JPanel {
     /**
      * Creates new form RegisterStudentJPanel
      */
+    List<List<String>> nestedList = new ArrayList<>();
     javax.swing.JPanel CardSequencePanel;
-    private UserList ulist;
-    private CourseList clist;
+    private CourseList courseList;
+     private UserList ulist;
+     private User loggedInUser;
     private AuthManager authManager;
-    private User loggedInUser;
-    private int _studentId; // Add professorId variable
-
-    public StudentRegisterCourseJPanel(JPanel csp, CourseList courseList, UserList userList, AuthManager authManager, int studentId) {
-        this.CardSequencePanel = csp;
-        this.clist = courseList;
+    private int studentId;
+    public StudentRegisterCourseJPanel(JPanel csp,CourseList courseList,User student,UserList userList, AuthManager authManager) {
+        this.CardSequencePanel =csp;
+        initComponents();
+        this.courseList =courseList;
         this.ulist = userList;
         this.authManager = authManager;
-        this._studentId = studentId; // Set the professorId
+        this.studentId = student.getUserID();
+        
+        txtStdId.setText(String.valueOf(studentId));
+        
+       populateTable();
+        /*try {
+            File csvFile = new File("/Users/pradnyashinde/Documents/data.csv");
+            Scanner scanner = new Scanner(csvFile);
 
-        initComponents();
+            // Read the first line (header) and discard it
+            if (scanner.hasNextLine()) {
+                scanner.nextLine();
+            }
+
+            // Read the CSV data starting from the second line
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                String[] data = line.split(",");
+                model.addRow(data);
+            }
+
+            scanner.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }*/
     }
 
     /**
@@ -53,24 +85,33 @@ public class StudentRegisterCourseJPanel extends javax.swing.JPanel {
         txtCourse = new javax.swing.JTextField();
         lblCourse = new javax.swing.JLabel();
         txtStudentId = new javax.swing.JTextField();
-        btnViewCourse = new javax.swing.JButton();
         btnRegisterCourse = new javax.swing.JButton();
         btnBackCourse = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        lblProf = new javax.swing.JLabel();
+        txtProfId = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        txtStdId = new javax.swing.JTextField();
 
         tblListProfessor.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Course Id", "Course Name", "Professor Name", "Professor Rating", "Section "
+                "Student Id", "Course Id", "Course Name", "Professor", "Professor Rating", "Course Start Date", "Course End Date"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                true, false, false, false, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
+            }
+        });
+        tblListProfessor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblListProfessorMouseClicked(evt);
             }
         });
         jScrollPane1.setViewportView(tblListProfessor);
@@ -87,9 +128,12 @@ public class StudentRegisterCourseJPanel extends javax.swing.JPanel {
 
         lblCourse.setText("Course Id:");
 
-        btnViewCourse.setText("View");
-
         btnRegisterCourse.setText("Register");
+        btnRegisterCourse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegisterCourseActionPerformed(evt);
+            }
+        });
 
         btnBackCourse.setText("<<Back");
         btnBackCourse.addActionListener(new java.awt.event.ActionListener() {
@@ -98,64 +142,82 @@ public class StudentRegisterCourseJPanel extends javax.swing.JPanel {
             }
         });
 
+        jButton1.setText("Search");
+
+        lblProf.setText("Professor Id:");
+
+        jLabel1.setText("Student Id:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(574, Short.MAX_VALUE)
-                .addComponent(btnViewCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(192, 192, 192))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(164, 164, 164)
                         .addComponent(lblSearchCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(61, 61, 61)
-                        .addComponent(txtSearchCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtSearchCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(70, 70, 70)
+                        .addComponent(jButton1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(185, 185, 185)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblProf, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(121, 121, 121)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtStudentId, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(332, 332, 332)
-                        .addComponent(btnRegisterCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtProfId, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(27, 27, 27)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnBackCourse)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 833, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 833, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnBackCourse)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(53, 53, 53)
+                                .addComponent(txtStdId, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(62, 62, 62))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(339, 339, 339)
+                        .addComponent(btnRegisterCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addComponent(btnBackCourse)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnBackCourse)
+                    .addComponent(jLabel1)
+                    .addComponent(txtStdId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(46, 46, 46)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtSearchCourse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblSearchCourse))
+                    .addComponent(lblSearchCourse)
+                    .addComponent(jButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(btnViewCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(75, 75, 75)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtStudentId, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtStudentId, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblProf, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtProfId, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnRegisterCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -165,25 +227,80 @@ public class StudentRegisterCourseJPanel extends javax.swing.JPanel {
 
     private void btnBackCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackCourseActionPerformed
         // TODO add your handling code here:
-        StudentJPanel student;
-        student = new StudentJPanel(CardSequencePanel, clist, ulist, authManager, _studentId);
-        //CardSequencePanel.removeAll();
-        CardSequencePanel.add("Student", student);
-        ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
+                
+                StudentJPanel panel=new StudentJPanel(CardSequencePanel, courseList, ulist, authManager);
+                CardSequencePanel.add("StudentJPanel",panel);
+                CardLayout layout=(CardLayout) CardSequencePanel.getLayout();
+                layout.next(CardSequencePanel);
+         //CardSequencePanel.remove(this); // Remove the current panel
+        //((java.awt.CardLayout) CardSequencePanel.getLayout()).previous(CardSequencePanel); 
     }//GEN-LAST:event_btnBackCourseActionPerformed
+ 
+    private void btnRegisterCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterCourseActionPerformed
+        // TODO add your handling code here:
+        String StudId = txtStudentId.getText();
+        String CourseId = txtCourse.getText();
+        String ProfId = txtProfId.getText();
+        String Status ="Incomplete";
+        //nestedList.add(getList(StudId,CourseId,ProfId));
+        courseList.nestedList.add(courseList.getList(StudId, CourseId,Status));
+        JOptionPane.showMessageDialog(null,"Registered successfully");
+        System.out.println(courseList.nestedList);
+    }//GEN-LAST:event_btnRegisterCourseActionPerformed
 
+    private void tblListProfessorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblListProfessorMouseClicked
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) tblListProfessor.getModel();
+        int index=tblListProfessor.getSelectedRow();
+        txtStudentId.setText(model.getValueAt(index,0).toString());
+        txtCourse.setText(model.getValueAt(index,1).toString());
+        txtProfId.setText(model.getValueAt(index,2).toString());
+    }//GEN-LAST:event_tblListProfessorMouseClicked
 
+  
+  public List<String> getList(String StudId, String CourseId,String ProfId){
+    List<String> innerList = new ArrayList<>();
+    innerList.add(StudId);
+    innerList.add(CourseId);
+    innerList.add(ProfId);
+    return innerList;
+  
+}
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBackCourse;
     private javax.swing.JButton btnRegisterCourse;
-    private javax.swing.JButton btnViewCourse;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblCourse;
+    private javax.swing.JLabel lblProf;
     private javax.swing.JLabel lblSearchCourse;
     private javax.swing.JLabel lblStudent;
     private javax.swing.JTable tblListProfessor;
     private javax.swing.JTextField txtCourse;
+    private javax.swing.JTextField txtProfId;
     private javax.swing.JTextField txtSearchCourse;
+    private javax.swing.JTextField txtStdId;
     private javax.swing.JTextField txtStudentId;
     // End of variables declaration//GEN-END:variables
+
+    private void populateTable() {
+        DefaultTableModel dtm=(DefaultTableModel) tblListProfessor.getModel();
+        dtm.setRowCount(0);
+        
+        for(Course c:courseList.getAllCourses())
+        {
+            Object[] row=new Object[7];
+            row[0]=studentId;
+            row[1] = c.getCourseId();
+            row[2]=c.getCourseName();
+            row[3]=courseList.getProfessorIdForCourse(c.getCourseId());;
+            row[4]="5";
+            row[5]=c.getCourseStartDate();
+            row[6]=c.getCourseEndDate();
+            
+            dtm.addRow(row);
+        }
+        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

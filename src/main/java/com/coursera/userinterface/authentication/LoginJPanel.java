@@ -195,7 +195,7 @@ public class LoginJPanel extends javax.swing.JPanel {
             } else if (authenticatedUser.getUserType() == UserType.STUDENT) {
                 JOptionPane.showMessageDialog(this, "Welcome, Student: " + authenticatedUser.getFullName(), "Login Success", JOptionPane.INFORMATION_MESSAGE);
                 StudentJPanel student;
-                student = new StudentJPanel(CardSequencePanel, clist, ulist, authManager, _userid);
+                student = new StudentJPanel(CardSequencePanel, clist, ulist, authManager);
                 CardSequencePanel.removeAll();
                 CardSequencePanel.add("FacultyJPanel", student);
                 ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);

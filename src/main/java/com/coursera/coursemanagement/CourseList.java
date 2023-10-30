@@ -5,6 +5,7 @@
 package main.java.com.coursera.coursemanagement;
 
 import java.util.ArrayList;
+import java.util.List;
 import main.java.com.coursera.business.Course;
 import main.java.com.coursera.usermanagement.UserList;
 import main.java.com.coursera.users.Faculty;
@@ -17,17 +18,30 @@ import main.java.com.coursera.users.Student;
 public class CourseList {
 
     private static ArrayList<Course> courses;
+    public static List<List<String>> nestedList;//Pradnya
     static int counter;
 
     public CourseList() {
         if (counter == 0) {
             courses = new ArrayList<>();
+	    nestedList = new ArrayList<>();
             counter++;
         }
+    }
+    public List<String> getList(String studentid, String courseid,String Status){
+        List<String> innerList = new ArrayList<>();
+        innerList.add(studentid);
+        innerList.add(courseid);
+        innerList.add(Status);
+        return innerList;
+    }
+    public void setCourses(ArrayList<Course> courses) {
+        this.courses = courses;
     }
 
     public void addCourse(Course course) {
         courses.add(course);
+	System.out.println("add"+courses.size());
     }
 
     public Course getCourseById(int courseId) {
@@ -40,6 +54,7 @@ public class CourseList {
     }
 
     public ArrayList<Course> getAllCourses() {
+System.out.println("get"+courses.size());
         return courses;
     }
 
@@ -105,6 +120,7 @@ public class CourseList {
         return new ArrayList<>(); // Course not found or no enrolled students
     }
 
+    
     public int getProfessorIdForCourse(int courseId) {
         Course course = getCourseById(courseId);
         if (course != null) {

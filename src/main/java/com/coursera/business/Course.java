@@ -23,6 +23,7 @@ public class Course {
     private int assignedCredits;
     private int professorId;
     private int maxCapacity;
+
     private ArrayList<Student> enrolledStudents;
 
     public Course(String courseName, String courseStartDate, String courseEndDate, int maxCapacity, int assignedCredits, int professorId, UserList userList) {

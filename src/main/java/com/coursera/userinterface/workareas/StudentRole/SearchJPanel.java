@@ -4,8 +4,11 @@
  */
 package main.java.com.coursera.userinterface.workareas.StudentRole;
 
+import java.awt.CardLayout;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 import main.java.com.coursera.auth.AuthManager;
+import main.java.com.coursera.business.Course;
 import main.java.com.coursera.coursemanagement.CourseList;
 import main.java.com.coursera.usermanagement.UserList;
 import main.java.com.coursera.users.User;
@@ -20,19 +23,18 @@ public class SearchJPanel extends javax.swing.JPanel {
      * Creates new form SearchJPanel
      */
     javax.swing.JPanel CardSequencePanel;
+    private CourseList courseList;
+    private int studentId;
     private UserList ulist;
-    private CourseList clist;
     private AuthManager authManager;
     private User loggedInUser;
-    private int _studentId; // Add professorId variable
-
-    public SearchJPanel(JPanel csp, CourseList courseList, UserList userList, AuthManager authManager, int studentId) {
+    public SearchJPanel(JPanel csp,CourseList courseList,User student) {
         this.CardSequencePanel = csp;
-        this.clist = courseList;
-        this.ulist = userList;
-        this.authManager = authManager;
-        this._studentId = studentId; // Set the professorId
         initComponents();
+        this.courseList=courseList;
+        
+        this.studentId = student.getUserID();
+        populateTable();
     }
 
     /**
@@ -45,12 +47,11 @@ public class SearchJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         btnBackSearch = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tblSearch = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox<>();
         jTextField1 = new javax.swing.JTextField();
-        btnSearchReg = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblListProfessor = new javax.swing.JTable();
 
         btnBackSearch.setText("<<Back");
         btnBackSearch.addActionListener(new java.awt.event.ActionListener() {
@@ -59,34 +60,32 @@ public class SearchJPanel extends javax.swing.JPanel {
             }
         });
 
-        tblSearch.setModel(new javax.swing.table.DefaultTableModel(
+        jLabel1.setText("Search By:");
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Course Name", "Professor Name", " " }));
+
+        tblListProfessor.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Course Id", "Course Name", "Professor Name", "Region", "Language"
+                "Student Id", "Course Id", "Course Name", "Professor", "Professor Rating", "Course Start Date", "Course End Date"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                true, false, false, false, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(tblSearch);
-
-        jLabel1.setText("Search By:");
-
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Course Name", "Professor Name", "Language", "Topic", "Region" }));
-
-        btnSearchReg.setText("Register");
-        btnSearchReg.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSearchRegActionPerformed(evt);
+        tblListProfessor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblListProfessorMouseClicked(evt);
             }
         });
+        jScrollPane1.setViewportView(tblListProfessor);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -105,12 +104,9 @@ public class SearchJPanel extends javax.swing.JPanel {
                         .addGap(115, 115, 115)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 791, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(324, 324, 324)
-                        .addComponent(btnSearchReg, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(56, Short.MAX_VALUE))
+                        .addGap(21, 21, 21)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 833, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -123,39 +119,52 @@ public class SearchJPanel extends javax.swing.JPanel {
                     .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnSearchReg, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(136, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(193, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackSearchActionPerformed
         // TODO add your handling code here:
-        StudentJPanel StudentJPanel;
-        StudentJPanel = new StudentJPanel(CardSequencePanel,  clist, ulist, authManager, _studentId);
-        CardSequencePanel.removeAll();
-        CardSequencePanel.add("Student", StudentJPanel);
-        ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
+                StudentJPanel panel=new StudentJPanel(CardSequencePanel, courseList, ulist, authManager);
+                CardSequencePanel.add("StudentJPanel",panel);
+                CardLayout layout=(CardLayout) CardSequencePanel.getLayout();
+                layout.next(CardSequencePanel); 
     }//GEN-LAST:event_btnBackSearchActionPerformed
 
-    private void btnSearchRegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchRegActionPerformed
+    private void tblListProfessorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblListProfessorMouseClicked
         // TODO add your handling code here:
-        //StudentRegisterCourseJPanel StudentRegisterCourseJPanel;
-       // StudentRegisterCourseJPanel = new StudentRegisterCourseJPanel(CardSequencePanel);
-       // CardSequencePanel.removeAll();
-       // CardSequencePanel.add("Course", StudentRegisterCourseJPanel);
-        //((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
-    }//GEN-LAST:event_btnSearchRegActionPerformed
+        DefaultTableModel model = (DefaultTableModel) tblListProfessor.getModel();
+        int index=tblListProfessor.getSelectedRow();
+    }//GEN-LAST:event_tblListProfessorMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBackSearch;
-    private javax.swing.JButton btnSearchReg;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTable tblSearch;
+    private javax.swing.JTable tblListProfessor;
     // End of variables declaration//GEN-END:variables
+
+    private void populateTable() {
+        DefaultTableModel dtm=(DefaultTableModel) tblListProfessor.getModel();
+        dtm.setRowCount(0);
+        
+        for(Course c:courseList.getAllCourses())
+        {
+            Object[] row=new Object[7];
+            row[0]=studentId;
+            row[1] = c.getCourseId();
+            row[2]=c.getCourseName();
+            row[3]=courseList.getProfessorIdForCourse(c.getCourseId());
+            row[4]="5";
+            row[5]=c.getCourseStartDate();
+            row[6]=c.getCourseEndDate();
+            
+            dtm.addRow(row);
+        }
+        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
