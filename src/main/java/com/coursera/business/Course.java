@@ -111,13 +111,4 @@ public class Course {
         return userList.findFacultyById(professorId);
     }
 
-    public String getProfessorName(UserList userList) {
-        Faculty professor = findProfessorById(professorId, userList);
-        if (professor != null) {
-            return professor.getFullName(); // Assuming Faculty class has a getFullName() method.
-        } else {
-            return "Unknown Professor"; // Or return any appropriate default value.
-        }
-    }
-
 }
