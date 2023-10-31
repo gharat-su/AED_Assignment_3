@@ -4,8 +4,11 @@
  */
 package main.java.com.coursera.userinterface.workareas.facultyrole;
 
+import java.util.ArrayList;
 import javax.swing.JPanel;
 import main.java.com.coursera.auth.AuthManager;
+import main.java.com.coursera.business.ProfessorRating;
+import main.java.com.coursera.business.Rating;
 import main.java.com.coursera.coursemanagement.CourseList;
 import main.java.com.coursera.usermanagement.UserList;
 import main.java.com.coursera.users.User;
@@ -28,13 +31,16 @@ public class FacultyJPanel extends javax.swing.JPanel {
      *
      * @param fjp
      */
-    public FacultyJPanel(JPanel fjp, CourseList courseList, UserList userList, AuthManager authManager, int professorId ) {
+    public FacultyJPanel(JPanel fjp, CourseList courseList, UserList userList, AuthManager authManager, int professorId) {
         initComponents();
         this.CardSequencePanel = fjp;
         this.clist = courseList;
         this.ulist = userList;
         this.authManager = authManager;
         this._professorId = professorId; // Set the professorId
+
+        // Populate employer ratings and comments
+        populateEmployerRatingAndComments();
 
     }
 
@@ -50,6 +56,10 @@ public class FacultyJPanel extends javax.swing.JPanel {
         btnCreateCourse = new javax.swing.JButton();
         btnModifyCourse = new javax.swing.JButton();
         btnBacklog = new javax.swing.JButton();
+        lblEmployerRate = new javax.swing.JLabel();
+        txtEmployerRating = new javax.swing.JTextField();
+        lblEmployerRate1 = new javax.swing.JLabel();
+        txtEmployerComments = new javax.swing.JTextField();
 
         btnCreateCourse.setText("Create Course");
         btnCreateCourse.addActionListener(new java.awt.event.ActionListener() {
@@ -72,6 +82,16 @@ public class FacultyJPanel extends javax.swing.JPanel {
             }
         });
 
+        lblEmployerRate.setText("Employer Rating : ");
+
+        lblEmployerRate1.setText("Employer Comments : ");
+
+        txtEmployerComments.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEmployerCommentsActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -82,12 +102,21 @@ public class FacultyJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnBacklog)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 70, Short.MAX_VALUE)
-                        .addComponent(btnCreateCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(143, 143, 143)
-                        .addComponent(btnModifyCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(101, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(lblEmployerRate, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtEmployerRating))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(lblEmployerRate1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtEmployerComments))
+                            .addComponent(btnCreateCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(btnModifyCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(39, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -98,7 +127,15 @@ public class FacultyJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCreateCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnModifyCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(237, Short.MAX_VALUE))
+                .addGap(55, 55, 55)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblEmployerRate, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtEmployerRating, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblEmployerRate1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtEmployerComments, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(102, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -126,10 +163,33 @@ public class FacultyJPanel extends javax.swing.JPanel {
         ((java.awt.CardLayout) CardSequencePanel.getLayout()).previous(CardSequencePanel); // Show the previous panel
     }//GEN-LAST:event_btnBacklogActionPerformed
 
+    private void txtEmployerCommentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmployerCommentsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmployerCommentsActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBacklog;
     private javax.swing.JButton btnCreateCourse;
     private javax.swing.JButton btnModifyCourse;
+    private javax.swing.JLabel lblEmployerRate;
+    private javax.swing.JLabel lblEmployerRate1;
+    private javax.swing.JTextField txtEmployerComments;
+    private javax.swing.JTextField txtEmployerRating;
     // End of variables declaration//GEN-END:variables
+
+    private void populateEmployerRatingAndComments() {
+        // Retrieve employer ratings and comments for the professor from the data model
+        ProfessorRating professorRating = ProfessorRating.getInstance();
+        ArrayList<Rating> employerRatings = professorRating.getEmployerRatings();
+
+        // Find the ratings and comments for the professor based on their ID
+        for (Rating rating : employerRatings) {
+            if (rating.getProfessorId() == _professorId) {
+                txtEmployerRating.setText(String.valueOf(rating.getRating())); // Populate the employer rating
+                txtEmployerComments.setText(rating.getComments()); // Populate the employer comments
+                break; // Once found, exit the loop
+            }
+        }
+    }
 }

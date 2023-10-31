@@ -23,12 +23,24 @@
                       <Component id="btnBacklog" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="0" pref="70" max="32767" attributes="0"/>
-                      <Component id="btnCreateCourse" min="-2" pref="140" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
-                      <Component id="btnModifyCourse" min="-2" pref="140" max="-2" attributes="0"/>
-                      <EmptySpace pref="101" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace pref="54" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="lblEmployerRate" min="-2" pref="115" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="txtEmployerRating" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="lblEmployerRate1" min="-2" pref="121" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="txtEmployerComments" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="btnCreateCourse" min="-2" pref="242" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btnModifyCourse" min="-2" pref="241" max="-2" attributes="0"/>
+                      <EmptySpace pref="39" max="32767" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -44,7 +56,17 @@
                   <Component id="btnCreateCourse" alignment="3" min="-2" pref="88" max="-2" attributes="0"/>
                   <Component id="btnModifyCourse" alignment="3" min="-2" pref="88" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="237" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblEmployerRate" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                  <Component id="txtEmployerRating" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblEmployerRate1" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                  <Component id="txtEmployerComments" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="102" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -72,6 +94,23 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBacklogActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblEmployerRate">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Employer Rating : "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtEmployerRating">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblEmployerRate1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Employer Comments : "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtEmployerComments">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtEmployerCommentsActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
