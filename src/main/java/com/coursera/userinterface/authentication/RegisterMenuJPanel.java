@@ -38,6 +38,10 @@ public class RegisterMenuJPanel extends javax.swing.JPanel {
         btnStudent = new javax.swing.JButton();
         btnProfessor = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
+        btnStudent.setBackground(new java.awt.Color(212, 31, 47));
+        btnStudent.setForeground(new java.awt.Color(255, 255, 255));
         btnStudent.setText("Student");
         btnStudent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -45,6 +49,8 @@ public class RegisterMenuJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnProfessor.setBackground(new java.awt.Color(212, 31, 47));
+        btnProfessor.setForeground(new java.awt.Color(255, 255, 255));
         btnProfessor.setText("Professor");
         btnProfessor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -57,11 +63,11 @@ public class RegisterMenuJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(37, 37, 37)
+                .addContainerGap(20, Short.MAX_VALUE)
                 .addComponent(btnStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
+                .addGap(29, 29, 29)
                 .addComponent(btnProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -70,7 +76,7 @@ public class RegisterMenuJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(230, Short.MAX_VALUE))
+                .addContainerGap(132, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

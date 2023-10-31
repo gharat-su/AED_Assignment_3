@@ -59,6 +59,8 @@ public class EmployerJPanel extends javax.swing.JPanel {
         jTextField1 = new javax.swing.JTextField();
         btnSubmit = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
         ProfessorDataJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -105,6 +107,8 @@ public class EmployerJPanel extends javax.swing.JPanel {
         jTextField1.setBackground(new java.awt.Color(204, 204, 204));
         jTextField1.setText("(On a scale of 1 to 5 : 1 is minimum and 5 is maximum)");
 
+        btnSubmit.setBackground(new java.awt.Color(212, 31, 47));
+        btnSubmit.setForeground(new java.awt.Color(255, 255, 255));
         btnSubmit.setText("Submit");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -165,35 +169,35 @@ public class EmployerJPanel extends javax.swing.JPanel {
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
-    int selectedRow = ProfessorDataJTable.getSelectedRow();
-    int selectedRating = Integer.parseInt(jComboBoxRating.getSelectedItem().toString());
-    String comments = textAreaComments.getText();
+        int selectedRow = ProfessorDataJTable.getSelectedRow();
+        int selectedRating = Integer.parseInt(jComboBoxRating.getSelectedItem().toString());
+        String comments = textAreaComments.getText();
 
-    // You may want to add more error checking and validation here
-    // Find the selected professor's ID from the table
-    int selectedProfessorId = -1;
-    if (selectedRow >= 0) {
-        selectedProfessorId = (int) ProfessorDataJTable.getValueAt(selectedRow, 0); // Assuming the professor ID is in the first column (column 0)
-    }
+        // You may want to add more error checking and validation here
+        // Find the selected professor's ID from the table
+        int selectedProfessorId = -1;
+        if (selectedRow >= 0) {
+            selectedProfessorId = (int) ProfessorDataJTable.getValueAt(selectedRow, 0); // Assuming the professor ID is in the first column (column 0)
+        }
 
-    // Update the professor's employer rating in the data model
-    if (selectedProfessorId != -1) {  // Ensure a professor is selected
-        ProfessorRating professorRating = ProfessorRating.getInstance();
-        Rating employerRating = new Rating(employerId, selectedProfessorId, selectedRating, comments);
-        professorRating.addEmployerRating(employerRating);
+        // Update the professor's employer rating in the data model
+        if (selectedProfessorId != -1) {  // Ensure a professor is selected
+            ProfessorRating professorRating = ProfessorRating.getInstance();
+            Rating employerRating = new Rating(employerId, selectedProfessorId, selectedRating, comments);
+            professorRating.addEmployerRating(employerRating);
 
-        // Optionally, update the displayed table to reflect the updated rating
-        DefaultTableModel professorTableModel = (DefaultTableModel) ProfessorDataJTable.getModel();
-        for (int i = 0; i < professorTableModel.getRowCount(); i++) {
-            int professorId = (int) professorTableModel.getValueAt(i, 0);
-            if (professorId == selectedProfessorId) {
-                // Update the rating and comments in the table
-                professorTableModel.setValueAt(selectedRating, i, 2); // Assuming the rating column is in the third position (column 2)
-                professorTableModel.fireTableDataChanged();
-                break;  // Exit the loop since the professor is found
+            // Optionally, update the displayed table to reflect the updated rating
+            DefaultTableModel professorTableModel = (DefaultTableModel) ProfessorDataJTable.getModel();
+            for (int i = 0; i < professorTableModel.getRowCount(); i++) {
+                int professorId = (int) professorTableModel.getValueAt(i, 0);
+                if (professorId == selectedProfessorId) {
+                    // Update the rating and comments in the table
+                    professorTableModel.setValueAt(selectedRating, i, 2); // Assuming the rating column is in the third position (column 2)
+                    professorTableModel.fireTableDataChanged();
+                    break;  // Exit the loop since the professor is found
+                }
             }
         }
-    }
     }//GEN-LAST:event_btnSubmitActionPerformed
 
 

@@ -57,6 +57,8 @@ public class StudentRegistrationJPanel extends javax.swing.JPanel {
         lblTitleStudent = new javax.swing.JLabel();
         txtStudentName = new javax.swing.JTextField();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
         lblStudentUsername.setText("Username:");
 
         cbStudentEducation.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select one", "Bachelor's Degree", "Master's Degree", "Doctoral Degree (Ph.D.)", "Professional Degree (e.g., MD, JD, MBA)", "Other" }));
@@ -68,6 +70,8 @@ public class StudentRegistrationJPanel extends javax.swing.JPanel {
 
         lblStudentPassword.setText("Password:");
 
+        btnCreateStudent.setBackground(new java.awt.Color(212, 31, 47));
+        btnCreateStudent.setForeground(new java.awt.Color(255, 255, 255));
         btnCreateStudent.setText("CREATE");
         btnCreateStudent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,6 +81,8 @@ public class StudentRegistrationJPanel extends javax.swing.JPanel {
 
         lblStudentEmailId.setText("Student Email ID:");
 
+        btnStudentBack.setBackground(new java.awt.Color(212, 31, 47));
+        btnStudentBack.setForeground(new java.awt.Color(255, 255, 255));
         btnStudentBack.setText("BACK");
         btnStudentBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

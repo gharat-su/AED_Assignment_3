@@ -64,10 +64,14 @@ public class ViewCoursesJPanel extends javax.swing.JPanel {
         txtStuId = new javax.swing.JTextField();
         btnGraduate = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
         jLabel1.setText("Course Id");
 
         lblStatus.setText("Status");
 
+        btnBackCourse.setBackground(new java.awt.Color(212, 31, 47));
+        btnBackCourse.setForeground(new java.awt.Color(255, 255, 255));
         btnBackCourse.setText("<<Back");
         btnBackCourse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,6 +79,8 @@ public class ViewCoursesJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnDone.setBackground(new java.awt.Color(212, 31, 47));
+        btnDone.setForeground(new java.awt.Color(255, 255, 255));
         btnDone.setText("Mark As Done");
         btnDone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,6 +113,8 @@ public class ViewCoursesJPanel extends javax.swing.JPanel {
 
         jLabel2.setText("Student Id:");
 
+        btnGraduate.setBackground(new java.awt.Color(212, 31, 47));
+        btnGraduate.setForeground(new java.awt.Color(255, 255, 255));
         btnGraduate.setText("Graduate?");
         btnGraduate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -303,4 +311,6 @@ public class ViewCoursesJPanel extends javax.swing.JPanel {
             }
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
+    
 }

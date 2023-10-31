@@ -62,7 +62,11 @@ public class CreateCourseJPanel extends javax.swing.JPanel {
         lblCourseEndDate = new javax.swing.JLabel();
         txtCreateCourseScheduleEnd = new javax.swing.JTextField();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
+        btnCreateCourse.setBackground(new java.awt.Color(212, 31, 47));
         btnCreateCourse.setFont(new java.awt.Font("Lucida Grande", 0, 13)); // NOI18N
+        btnCreateCourse.setForeground(new java.awt.Color(255, 255, 255));
         btnCreateCourse.setText("CREATE");
         btnCreateCourse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,7 +74,9 @@ public class CreateCourseJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnBack.setBackground(new java.awt.Color(212, 31, 47));
         btnBack.setFont(new java.awt.Font("Lucida Grande", 0, 13)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
         btnBack.setText("BACK");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -224,7 +230,7 @@ public class CreateCourseJPanel extends javax.swing.JPanel {
                 + "Assigned Credits: " + assignedCredits;
 
         JOptionPane.showMessageDialog(this, message, "Course Created", JOptionPane.INFORMATION_MESSAGE);
-        printCourseList();
+        //printCourseList();
         clearFormFields();
 
         CardSequencePanel.add("FacultyJPanel", new FacultyJPanel(CardSequencePanel, clist, ulist, authManager, _professorId));

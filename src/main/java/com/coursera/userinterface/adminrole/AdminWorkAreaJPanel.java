@@ -47,7 +47,11 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         btnModifyStudent = new javax.swing.JButton();
         btnModifyProfessor = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
+        btnAdminCreateStudent.setBackground(new java.awt.Color(212, 31, 47));
         btnAdminCreateStudent.setFont(new java.awt.Font("Lucida Grande", 0, 13)); // NOI18N
+        btnAdminCreateStudent.setForeground(new java.awt.Color(255, 255, 255));
         btnAdminCreateStudent.setText("Create Student");
         btnAdminCreateStudent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -55,7 +59,9 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnAdminCreateProfessor.setBackground(new java.awt.Color(212, 31, 47));
         btnAdminCreateProfessor.setFont(new java.awt.Font("Lucida Grande", 0, 13)); // NOI18N
+        btnAdminCreateProfessor.setForeground(new java.awt.Color(255, 255, 255));
         btnAdminCreateProfessor.setText("Create Professor");
         btnAdminCreateProfessor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,6 +73,8 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         lblAdminWorkAreaTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblAdminWorkAreaTitle.setText("ADMIN WORKAREA");
 
+        btnModifyStudent.setBackground(new java.awt.Color(212, 31, 47));
+        btnModifyStudent.setForeground(new java.awt.Color(255, 255, 255));
         btnModifyStudent.setText("Modify Student");
         btnModifyStudent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -74,6 +82,8 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnModifyProfessor.setBackground(new java.awt.Color(212, 31, 47));
+        btnModifyProfessor.setForeground(new java.awt.Color(255, 255, 255));
         btnModifyProfessor.setText("Modify Professor");
         btnModifyProfessor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

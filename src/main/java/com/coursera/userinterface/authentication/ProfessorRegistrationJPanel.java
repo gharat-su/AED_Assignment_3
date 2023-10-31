@@ -56,6 +56,8 @@ public class ProfessorRegistrationJPanel extends javax.swing.JPanel {
         txtPassword = new javax.swing.JTextField();
         lblCreateProfessorBloodGroup2 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
         lblTitleCreateProfessor.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
         lblTitleCreateProfessor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitleCreateProfessor.setText("CREATE PROFESSOR");
@@ -69,6 +71,8 @@ public class ProfessorRegistrationJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnCreateProfessor.setBackground(new java.awt.Color(212, 31, 47));
+        btnCreateProfessor.setForeground(new java.awt.Color(255, 255, 255));
         btnCreateProfessor.setText("CREATE");
         btnCreateProfessor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,6 +82,8 @@ public class ProfessorRegistrationJPanel extends javax.swing.JPanel {
 
         lblCreateProfessorEmailId.setText("Professor Email ID:");
 
+        btnProfessorBack.setBackground(new java.awt.Color(212, 31, 47));
+        btnProfessorBack.setForeground(new java.awt.Color(255, 255, 255));
         btnProfessorBack.setText("BACK");
         btnProfessorBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,10 +114,10 @@ public class ProfessorRegistrationJPanel extends javax.swing.JPanel {
                     .addComponent(lblCreateProfessorBloodGroup1)
                     .addComponent(lblCreateProfessorBloodGroup2))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnCreateProfessor)
-                        .addGap(53, 53, 53)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnProfessorBack))
                     .addComponent(txtCreateProfessorName, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtCreateProfessorSpecialization, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)

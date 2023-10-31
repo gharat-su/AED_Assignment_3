@@ -54,7 +54,8 @@ public class ModifyProfessorJPanel extends javax.swing.JPanel {
         btnBackModifyProfessorDetails = new javax.swing.JButton();
         btnUpdateProfessor = new javax.swing.JButton();
         btnDeleteProfessor = new javax.swing.JButton();
-        btnCourses = new javax.swing.JButton();
+
+        setBackground(new java.awt.Color(255, 255, 255));
 
         lblModifyProfessorJPanel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblModifyProfessorJPanel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -88,6 +89,8 @@ public class ModifyProfessorJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(ProfessorJTable);
 
+        btnBackModifyProfessorDetails.setBackground(new java.awt.Color(212, 31, 47));
+        btnBackModifyProfessorDetails.setForeground(new java.awt.Color(255, 255, 255));
         btnBackModifyProfessorDetails.setText("<< Back");
         btnBackModifyProfessorDetails.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,6 +98,8 @@ public class ModifyProfessorJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnUpdateProfessor.setBackground(new java.awt.Color(212, 31, 47));
+        btnUpdateProfessor.setForeground(new java.awt.Color(255, 255, 255));
         btnUpdateProfessor.setText("Update Details");
         btnUpdateProfessor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,17 +107,12 @@ public class ModifyProfessorJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnDeleteProfessor.setBackground(new java.awt.Color(212, 31, 47));
+        btnDeleteProfessor.setForeground(new java.awt.Color(255, 255, 255));
         btnDeleteProfessor.setText("Delete");
         btnDeleteProfessor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteProfessorActionPerformed(evt);
-            }
-        });
-
-        btnCourses.setText("Courses");
-        btnCourses.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCoursesActionPerformed(evt);
             }
         });
 
@@ -129,9 +129,7 @@ public class ModifyProfessorJPanel extends javax.swing.JPanel {
                         .addComponent(btnBackModifyProfessorDetails)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(btnCourses, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnUpdateProfessor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(btnUpdateProfessor)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnDeleteProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
@@ -148,9 +146,7 @@ public class ModifyProfessorJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnUpdateProfessor)
                     .addComponent(btnDeleteProfessor))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnCourses)
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -231,27 +227,10 @@ public class ModifyProfessorJPanel extends javax.swing.JPanel {
 
     }//GEN-LAST:event_btnDeleteProfessorActionPerformed
 
-    private void btnCoursesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCoursesActionPerformed
-        // TODO add your handling code here:
-        int selectedRow = ProfessorJTable.getSelectedRow();
-
-        if (selectedRow == -1) {
-            // No row selected, display an error message
-            JOptionPane.showMessageDialog(this, "Please select a professor to get Courses.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        ModifyCourseJPanel modifycourseJPanel;
-        modifycourseJPanel = new ModifyCourseJPanel(CardSequencePanel, clist, ulist, authManager, professorId);
-        CardSequencePanel.removeAll();
-        CardSequencePanel.add("ModifyCourse", modifycourseJPanel);
-        ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
-    }//GEN-LAST:event_btnCoursesActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable ProfessorJTable;
     private javax.swing.JButton btnBackModifyProfessorDetails;
-    private javax.swing.JButton btnCourses;
     private javax.swing.JButton btnDeleteProfessor;
     private javax.swing.JButton btnUpdateProfessor;
     private javax.swing.JScrollPane jScrollPane1;

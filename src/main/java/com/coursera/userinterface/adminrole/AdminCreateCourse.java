@@ -44,23 +44,20 @@ public class AdminCreateCourse extends javax.swing.JPanel {
         lblCreateCourseEndDate = new javax.swing.JLabel();
         txtCreateCourseEndDate = new javax.swing.JTextField();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
         lblTitleCreateCourse.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
         lblTitleCreateCourse.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitleCreateCourse.setText("CREATE COURSE");
 
-        lblCreateCourseName.setFont(new java.awt.Font("Lucida Grande", 0, 13)); // NOI18N
         lblCreateCourseName.setText("Course Name:");
 
-        lblCreateCourseId.setFont(new java.awt.Font("Lucida Grande", 0, 13)); // NOI18N
         lblCreateCourseId.setText("Course ID:");
 
-        lblCreateProfessorName.setFont(new java.awt.Font("Lucida Grande", 0, 13)); // NOI18N
         lblCreateProfessorName.setText("Professor Name:");
 
-        lblCreateCourseStartDate.setFont(new java.awt.Font("Lucida Grande", 0, 13)); // NOI18N
         lblCreateCourseStartDate.setText("Course Start Date:");
 
-        lblCreateMaxNoOfStudents.setFont(new java.awt.Font("Lucida Grande", 0, 13)); // NOI18N
         lblCreateMaxNoOfStudents.setText("Maximum No. of Students:");
 
         txtProfessorName.addActionListener(new java.awt.event.ActionListener() {
@@ -69,13 +66,16 @@ public class AdminCreateCourse extends javax.swing.JPanel {
             }
         });
 
-        lblCreateCourseAssignedCredits.setFont(new java.awt.Font("Lucida Grande", 0, 13)); // NOI18N
         lblCreateCourseAssignedCredits.setText("Assigned Credits:");
 
+        btnCreateCourse.setBackground(new java.awt.Color(212, 31, 47));
         btnCreateCourse.setFont(new java.awt.Font("Lucida Grande", 0, 13)); // NOI18N
+        btnCreateCourse.setForeground(new java.awt.Color(255, 255, 255));
         btnCreateCourse.setText("CREATE");
 
+        btnBack.setBackground(new java.awt.Color(212, 31, 47));
         btnBack.setFont(new java.awt.Font("Lucida Grande", 0, 13)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
         btnBack.setText("BACK");
 
         lblCreateCourseEndDate.setText("CourseEnd Date:");
@@ -86,37 +86,15 @@ public class AdminCreateCourse extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(lblTitleCreateCourse, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(lblCreateCourseAssignedCredits)
-                                .addGap(31, 31, 31))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lblCreateMaxNoOfStudents)
-                                    .addComponent(lblCreateCourseEndDate))
-                                .addGap(18, 18, 18)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtCreateCourseAssignedCredits, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                            .addComponent(txtMaxNoOfStudents, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                            .addComponent(txtCreateCourseEndDate)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(138, 138, 138)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblCreateCourseStartDate, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(37, 37, 37)
-                                        .addComponent(lblCreateCourseId, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addComponent(lblCreateProfessorName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(15, 15, 15)
-                                        .addComponent(lblCreateCourseName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                .addGap(5, 5, 5)))
-                        .addGap(18, 18, 18)
+                            .addComponent(lblCreateCourseId, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblCreateCourseName, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblCreateProfessorName, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblCreateCourseStartDate, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(23, 23, 23)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnCreateCourse)
@@ -125,8 +103,19 @@ public class AdminCreateCourse extends javax.swing.JPanel {
                             .addComponent(txtCreateCourseId, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtCreateCourseStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtCreateCourseName, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtProfessorName, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(320, 320, 320))
+                            .addComponent(txtProfessorName, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(133, 133, 133)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblCreateCourseEndDate)
+                            .addComponent(lblCreateCourseAssignedCredits)
+                            .addComponent(lblCreateMaxNoOfStudents))
+                        .addGap(23, 23, 23)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtCreateCourseAssignedCredits, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(txtMaxNoOfStudents, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(txtCreateCourseEndDate))))
+                .addContainerGap(320, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -141,7 +130,7 @@ public class AdminCreateCourse extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCreateCourseId)
                     .addComponent(txtCreateCourseId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCreateProfessorName)
                     .addComponent(txtProfessorName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -149,15 +138,15 @@ public class AdminCreateCourse extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCreateCourseStartDate)
                     .addComponent(txtCreateCourseStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCreateCourseEndDate)
                     .addComponent(txtCreateCourseEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCreateMaxNoOfStudents)
                     .addComponent(txtMaxNoOfStudents, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtCreateCourseAssignedCredits, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblCreateCourseAssignedCredits))

@@ -53,6 +53,8 @@ public class MainJFrame extends javax.swing.JFrame {
 
         MainSplitPane.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
+        mainMenuJPanel.setBackground(new java.awt.Color(0, 0, 0));
+        mainMenuJPanel.setForeground(new java.awt.Color(255, 255, 255));
         mainMenuJPanel.setMinimumSize(new java.awt.Dimension(800, 100));
         mainMenuJPanel.setPreferredSize(new java.awt.Dimension(800, 100));
 
@@ -95,6 +97,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         MainSplitPane.setLeftComponent(mainMenuJPanel);
 
+        CardSequencePanel.setBackground(new java.awt.Color(255, 255, 255));
         CardSequencePanel.setPreferredSize(new java.awt.Dimension(800, 800));
         CardSequencePanel.setLayout(new java.awt.CardLayout());
         MainSplitPane.setRightComponent(CardSequencePanel);

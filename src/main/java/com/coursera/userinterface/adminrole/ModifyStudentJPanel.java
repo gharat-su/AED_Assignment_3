@@ -50,6 +50,10 @@ public class ModifyStudentJPanel extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         StudentJTable = new javax.swing.JTable();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
+        btnDeleteStudent.setBackground(new java.awt.Color(212, 31, 47));
+        btnDeleteStudent.setForeground(new java.awt.Color(255, 255, 255));
         btnDeleteStudent.setText("Delete");
         btnDeleteStudent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -57,6 +61,8 @@ public class ModifyStudentJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnBackModifyStudentDetails.setBackground(new java.awt.Color(212, 31, 47));
+        btnBackModifyStudentDetails.setForeground(new java.awt.Color(255, 255, 255));
         btnBackModifyStudentDetails.setText("<< Back");
         btnBackModifyStudentDetails.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,6 +74,8 @@ public class ModifyStudentJPanel extends javax.swing.JPanel {
         lblModifyStudentJPanel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblModifyStudentJPanel.setText("Modify Student Details");
 
+        btnUpdateStudent.setBackground(new java.awt.Color(212, 31, 47));
+        btnUpdateStudent.setForeground(new java.awt.Color(255, 255, 255));
         btnUpdateStudent.setText("Update Details");
         btnUpdateStudent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

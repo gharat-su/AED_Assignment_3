@@ -64,6 +64,8 @@ public class LoginJPanel extends javax.swing.JPanel {
         btnexit = new javax.swing.JButton();
         btnlogin = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
         txtLgpassword.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         cbLgshowpassword.setFont(new java.awt.Font("Lucida Grande", 0, 13)); // NOI18N
@@ -86,7 +88,9 @@ public class LoginJPanel extends javax.swing.JPanel {
         lblLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLogin.setText("  LOGIN APPLICATION");
 
+        btnexit.setBackground(new java.awt.Color(212, 31, 47));
         btnexit.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        btnexit.setForeground(new java.awt.Color(255, 255, 255));
         btnexit.setText("EXIT");
         btnexit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,7 +98,7 @@ public class LoginJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnlogin.setBackground(new java.awt.Color(4, 120, 92));
+        btnlogin.setBackground(new java.awt.Color(212, 31, 47));
         btnlogin.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         btnlogin.setForeground(new java.awt.Color(255, 255, 255));
         btnlogin.setText("LOGIN");
